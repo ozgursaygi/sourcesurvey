@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="Genel" />
+  <Alias Key="Target" Value="Genel.Store" />
+  <EntityContainerMapping CdmEntityContainer="GenelContainer1" StorageEntityContainer="GenelStoreContainer">
+    <EntitySetMapping Name="gnl_ref_uyelik_tipleri">
+      <EntityTypeMapping TypeName="Genel.gnl_ref_uyelik_tipleri">
+        <MappingFragment StoreEntitySet="gnl_ref_uyelik_tipleri">
+          <ScalarProperty Name="uyelik_tipi" ColumnName="uyelik_tipi" />
+          <ScalarProperty Name="uyelik_tipi_id" ColumnName="uyelik_tipi_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_uye_kullanicilar">
+      <EntityTypeMapping TypeName="Genel.gnl_uye_kullanicilar">
+        <MappingFragment StoreEntitySet="gnl_uye_kullanicilar">
+          <ScalarProperty Name="kalan_anket_sayisi" ColumnName="kalan_anket_sayisi" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+          <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+          <ScalarProperty Name="son_odeme_tipi_id" ColumnName="son_odeme_tipi_id" />
+          <ScalarProperty Name="uye_bitis_tarihi" ColumnName="uye_bitis_tarihi" />
+          <ScalarProperty Name="uye_baslangic_tarihi" ColumnName="uye_baslangic_tarihi" />
+          <ScalarProperty Name="aktif" ColumnName="aktif" />
+          <ScalarProperty Name="grup_sirket_tipi_id" ColumnName="grup_sirket_tipi_id" />
+          <ScalarProperty Name="vergi_no" ColumnName="vergi_no" />
+          <ScalarProperty Name="vergi_dairesi" ColumnName="vergi_dairesi" />
+          <ScalarProperty Name="sirket_adi" ColumnName="sirket_adi" />
+          <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+          <ScalarProperty Name="dogum_tarihi" ColumnName="dogum_tarihi" />
+          <ScalarProperty Name="grup_adi" ColumnName="grup_adi" />
+          <ScalarProperty Name="grup_uid" ColumnName="grup_uid" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="cep_telefonu" ColumnName="cep_telefonu" />
+          <ScalarProperty Name="telefonu" ColumnName="telefonu" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="user_uid" ColumnName="user_uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_uyelik_odeme_tipleri_tanimlari">
+      <EntityTypeMapping TypeName="Genel.gnl_uyelik_odeme_tipleri_tanimlari">
+        <MappingFragment StoreEntitySet="gnl_uyelik_odeme_tipleri_tanimlari">
+          <ScalarProperty Name="ucret" ColumnName="ucret" />
+          <ScalarProperty Name="sure_ay" ColumnName="sure_ay" />
+          <ScalarProperty Name="katilimci_sayisi" ColumnName="katilimci_sayisi" />
+          <ScalarProperty Name="anket_sayisi" ColumnName="anket_sayisi" />
+          <ScalarProperty Name="odeme_tipi" ColumnName="odeme_tipi" />
+          <ScalarProperty Name="uyelik_tip_id" ColumnName="uyelik_tip_id" />
+          <ScalarProperty Name="odeme_tipi_id" ColumnName="odeme_tipi_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_uyelik_aktivasyon_mail_gonderi_tarihcesi">
+      <EntityTypeMapping TypeName="Genel.gnl_uyelik_aktivasyon_mail_gonderi_tarihcesi">
+        <MappingFragment StoreEntitySet="gnl_uyelik_aktivasyon_mail_gonderi_tarihcesi">
+          <ScalarProperty Name="gonderen_user_uid" ColumnName="gonderen_user_uid" />
+          <ScalarProperty Name="gonderilme_tarihi" ColumnName="gonderilme_tarihi" />
+          <ScalarProperty Name="gonderilen_email" ColumnName="gonderilen_email" />
+          <ScalarProperty Name="gonderilen_soyad" ColumnName="gonderilen_soyad" />
+          <ScalarProperty Name="gonderilen_ad" ColumnName="gonderilen_ad" />
+          <ScalarProperty Name="paket_uid" ColumnName="paket_uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_uyelik_bitis_bilgilendirme_mail_gonderi_tarihcesi">
+      <EntityTypeMapping TypeName="Genel.gnl_uyelik_bitis_bilgilendirme_mail_gonderi_tarihcesi">
+        <MappingFragment StoreEntitySet="gnl_uyelik_bitis_bilgilendirme_mail_gonderi_tarihcesi">
+          <ScalarProperty Name="gonderen_user_uid" ColumnName="gonderen_user_uid" />
+          <ScalarProperty Name="gonderilme_tarihi" ColumnName="gonderilme_tarihi" />
+          <ScalarProperty Name="gonderilen_email" ColumnName="gonderilen_email" />
+          <ScalarProperty Name="gonderilen_soyad" ColumnName="gonderilen_soyad" />
+          <ScalarProperty Name="gonderilen_ad" ColumnName="gonderilen_ad" />
+          <ScalarProperty Name="user_uid" ColumnName="user_uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_mail_service">
+      <EntityTypeMapping TypeName="Genel.gnl_mail_service">
+        <MappingFragment StoreEntitySet="gnl_mail_service">
+          <ScalarProperty Name="anket_uid" ColumnName="anket_uid" />
+          <ScalarProperty Name="gonderimtarihi" ColumnName="gonderimtarihi" />
+          <ScalarProperty Name="gonderildi" ColumnName="gonderildi" />
+          <ScalarProperty Name="eklemetarihi" ColumnName="eklemetarihi" />
+          <ScalarProperty Name="body" ColumnName="body" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="eposta_to" ColumnName="eposta_to" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_suggest_to_friend">
+      <EntityTypeMapping TypeName="Genel.gnl_suggest_to_friend">
+        <MappingFragment StoreEntitySet="gnl_suggest_to_friend">
+          <ScalarProperty Name="suggesting_message" ColumnName="suggesting_message" />
+          <ScalarProperty Name="suggest_email" ColumnName="suggest_email" />
+          <ScalarProperty Name="suggest_date" ColumnName="suggest_date" />
+          <ScalarProperty Name="suggesting_user_uid" ColumnName="suggesting_user_uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_uyelik_paket_alimlari">
+      <EntityTypeMapping TypeName="Genel.gnl_uyelik_paket_alimlari">
+        <MappingFragment StoreEntitySet="gnl_uyelik_paket_alimlari">
+          <ScalarProperty Name="islem_id" ColumnName="islem_id" />
+          <ScalarProperty Name="fatura_kesildi" ColumnName="fatura_kesildi" />
+          <ScalarProperty Name="SurveyResponsibilities" ColumnName="SurveyResponsibilities" />
+          <ScalarProperty Name="UyelikKosullari" ColumnName="UyelikKosullari" />
+          <ScalarProperty Name="kabul_edildi" ColumnName="kabul_edildi" />
+          <ScalarProperty Name="aktive_edildi" ColumnName="aktive_edildi" />
+          <ScalarProperty Name="odeme_sekli_id" ColumnName="odeme_sekli_id" />
+          <ScalarProperty Name="grup_sirket_tipi_id" ColumnName="grup_sirket_tipi_id" />
+          <ScalarProperty Name="vergi_no" ColumnName="vergi_no" />
+          <ScalarProperty Name="vergi_dairesi" ColumnName="vergi_dairesi" />
+          <ScalarProperty Name="sirket_adi" ColumnName="sirket_adi" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="cep_telefonu" ColumnName="cep_telefonu" />
+          <ScalarProperty Name="telefonu" ColumnName="telefonu" />
+          <ScalarProperty Name="uyelik_bitis_tarihi" ColumnName="uyelik_bitis_tarihi" />
+          <ScalarProperty Name="paket_suresi" ColumnName="paket_suresi" />
+          <ScalarProperty Name="anket_basina_katilimci_sayisi" ColumnName="anket_basina_katilimci_sayisi" />
+          <ScalarProperty Name="anket_sayisi" ColumnName="anket_sayisi" />
+          <ScalarProperty Name="paket_fiyati" ColumnName="paket_fiyati" />
+          <ScalarProperty Name="paket_alim_tarihi" ColumnName="paket_alim_tarihi" />
+          <ScalarProperty Name="odeme_tipi_id" ColumnName="odeme_tipi_id" />
+          <ScalarProperty Name="grup_uid" ColumnName="grup_uid" />
+          <ScalarProperty Name="user_uid" ColumnName="user_uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_notification">
+      <EntityTypeMapping TypeName="Genel.gnl_notification">
+        <MappingFragment StoreEntitySet="gnl_notification">
+          <ScalarProperty Name="notification_statu" ColumnName="notification_statu" />
+          <ScalarProperty Name="notification_creation_date" ColumnName="notification_creation_date" />
+          <ScalarProperty Name="notification_created_uid" ColumnName="notification_created_uid" />
+          <ScalarProperty Name="notification" ColumnName="notification" />
+          <ScalarProperty Name="notification_subject" ColumnName="notification_subject" />
+          <ScalarProperty Name="notification_date" ColumnName="notification_date" />
+          <ScalarProperty Name="notification_uid" ColumnName="notification_uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_group_user_definitions">
+      <EntityTypeMapping TypeName="Genel.gnl_group_user_definitions">
+        <MappingFragment StoreEntitySet="gnl_group_user_definitions">
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+          <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+          <ScalarProperty Name="is_user_admin" ColumnName="is_user_admin" />
+          <ScalarProperty Name="is_admin" ColumnName="is_admin" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="user_uid" ColumnName="user_uid" />
+          <ScalarProperty Name="group_uid" ColumnName="group_uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_message">
+      <EntityTypeMapping TypeName="Genel.gnl_message">
+        <MappingFragment StoreEntitySet="gnl_message">
+          <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+          <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+          <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+          <ScalarProperty Name="sent_date" ColumnName="sent_date" />
+          <ScalarProperty Name="send_user_uid" ColumnName="send_user_uid" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="message_subject" ColumnName="message_subject" />
+          <ScalarProperty Name="related_message_uid" ColumnName="related_message_uid" />
+          <ScalarProperty Name="message_uid" ColumnName="message_uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_message_inbox">
+      <EntityTypeMapping TypeName="Genel.gnl_message_inbox">
+        <MappingFragment StoreEntitySet="gnl_message_inbox">
+          <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+          <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="read_date" ColumnName="read_date" />
+          <ScalarProperty Name="message_is_read" ColumnName="message_is_read" />
+          <ScalarProperty Name="recipient_type" ColumnName="recipient_type" />
+          <ScalarProperty Name="user_uid" ColumnName="user_uid" />
+          <ScalarProperty Name="message_uid" ColumnName="message_uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_message_recipient">
+      <EntityTypeMapping TypeName="Genel.gnl_message_recipient">
+        <MappingFragment StoreEntitySet="gnl_message_recipient">
+          <ScalarProperty Name="recipient_type" ColumnName="recipient_type" />
+          <ScalarProperty Name="recipient_rank" ColumnName="recipient_rank" />
+          <ScalarProperty Name="user_uid" ColumnName="user_uid" />
+          <ScalarProperty Name="message_uid" ColumnName="message_uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_user_groups">
+      <EntityTypeMapping TypeName="Genel.gnl_user_groups">
+        <MappingFragment StoreEntitySet="gnl_user_groups">
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+          <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="group_name" ColumnName="group_name" />
+          <ScalarProperty Name="group_uid" ColumnName="group_uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_users">
+      <EntityTypeMapping TypeName="Genel.gnl_users">
+        <MappingFragment StoreEntitySet="gnl_users">
+          <ScalarProperty Name="survey_responsibilities" ColumnName="survey_responsibilities" />
+          <ScalarProperty Name="membership_conditions" ColumnName="membership_conditions" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+          <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+          <ScalarProperty Name="dont_activate_purchase" ColumnName="dont_activate_purchase" />
+          <ScalarProperty Name="is_system_admin" ColumnName="is_system_admin" />
+          <ScalarProperty Name="activation_ok" ColumnName="activation_ok" />
+          <ScalarProperty Name="activation_key" ColumnName="activation_key" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="group_name" ColumnName="group_name" />
+          <ScalarProperty Name="group_uid" ColumnName="group_uid" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="second_name" ColumnName="second_name" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="user_uid" ColumnName="user_uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_kullanici_sifre_sifirlama">
+      <EntityTypeMapping TypeName="Genel.gnl_kullanici_sifre_sifirlama">
+        <MappingFragment StoreEntitySet="gnl_kullanici_sifre_sifirlama">
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="sifirlama_kabul_edilme_tarihi" ColumnName="sifirlama_kabul_edilme_tarihi" />
+          <ScalarProperty Name="sifirlama_kabul_edildi" ColumnName="sifirlama_kabul_edildi" />
+          <ScalarProperty Name="sifirlama_key" ColumnName="sifirlama_key" />
+          <ScalarProperty Name="sifirlama_istek_tarihi" ColumnName="sifirlama_istek_tarihi" />
+          <ScalarProperty Name="sifre_sifirlanacak_email" ColumnName="sifre_sifirlanacak_email" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

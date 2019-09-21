@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /RequestPassword.aspx
+Disallow: /Survey
+Disallow: /Admin
+Sitemap: http://www.anketleme.com/sitemap.xml

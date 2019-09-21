@@ -1,0 +1,1535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A57C5B12-6111-4CBE-9455-48F18C5E6C5F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BaseWebSite</RootNamespace>
+    <AssemblyName>BaseWebSite</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\BaseWebSite.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\BaseWebSite.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WebForms.10.0.40219.1\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account.aspx" />
+    <Content Include="Activation.aspx" />
+    <Content Include="Admin\AdminMain.aspx" />
+    <Content Include="Admin\Duyurular.aspx" />
+    <Content Include="Admin\FaturaKesilecekler.aspx" />
+    <Content Include="Admin\FaturaKesilenler.aspx" />
+    <Content Include="Admin\OdemeAktiveEt.aspx" />
+    <Content Include="Admin\Raporlar\AnketListesiRaporu.aspx" />
+    <Content Include="Admin\Raporlar\KullanicilarRaporu.aspx" />
+    <Content Include="Admin\Raporlar\UyeKullanicilarRaporu.aspx" />
+    <Content Include="Admin\SablonDetayi.aspx" />
+    <Content Include="Admin\SablonGoster.aspx" />
+    <Content Include="Admin\SablonTanimlari.aspx" />
+    <Content Include="Admin\Templates\OdemeAktivasyonMailTemplate.html" />
+    <Content Include="Admin\YeniSablon.aspx" />
+    <Content Include="Anket\AdresGruplari.aspx" />
+    <Content Include="Anket\Anket.aspx" />
+    <Content Include="Anket\AnketBitti.aspx" />
+    <Content Include="Anket\AnketDashboard.aspx" />
+    <Content Include="Anket\AnketDetayi.aspx" />
+    <Content Include="Anket\AnketiGoster.aspx" />
+    <Content Include="Anket\AnketTemalari\AnketTema1.html" />
+    <Content Include="Anket\AnketTemalari\AnketTema2.html" />
+    <Content Include="Anket\AnketTemalari\AnketTema3.html" />
+    <Content Include="Anket\AnketTestSonuclari.aspx" />
+    <Content Include="Anket\AnketYayinla.aspx" />
+    <Content Include="Anket\Controls\RepeaterSurveySayfalama.ascx" />
+    <Content Include="Anket\ExceldenAktar.aspx" />
+    <Content Include="Anket\GrupKullanicilari.aspx" />
+    <Content Include="ArkadasimaOner.aspx" />
+    <Content Include="Anket\HTMLPage1.htm" />
+    <Content Include="Anket\KullaniciGruplar.aspx" />
+    <Content Include="Anket\Raporlar\AnketSoruCevapRaporuTumu.aspx" />
+    <Content Include="Anket\Raporlar\AnketSoruTipileriCevapRaporu.aspx" />
+    <Content Include="Anket\Raporlar\AcikAnketSoruTipileriCevapRaporu.aspx" />
+    <Content Include="Anket\Raporlar\KullaniciBazliAnketDurumRaporu.aspx" />
+    <Content Include="Anket\Raporlar\KullaniciBazliAnketBitirmeRaporu.aspx" />
+    <Content Include="Anket\Raporlar\KullaniciBazliAnketCevaplanmaRaporu.aspx" />
+    <Content Include="Anket\Raporlar\KullaniciBazliAnketGirisRaporu.aspx" />
+    <Content Include="Anket\Raporlar\KullaniciBazliAnketRapor.aspx" />
+    <Content Include="Anket\Raporlar\ReportViewer.aspx" />
+    <Content Include="Anket\RaporPage.aspx" />
+    <Content Include="Anket\ShowHtmlTemplate.aspx" />
+    <Content Include="Anket\Templates\Anket123Sorumluluklari.html" />
+    <Content Include="Anket\Templates\AnketYayinlamaMailTemplate.html" />
+    <Content Include="Anket\Templates\AnketTestMailTemplate.html" />
+    <Content Include="Anket\Templates\AnketKapanisMailTemplate.html" />
+    <Content Include="Anket\Templates\AnketLimitBitisiMailTemplate.html" />
+    <Content Include="Anket\Templates\UyelikKosullariTemplate.html" />
+    <Content Include="css\custom-theme\images\ui-bg_glass_55_fcf0ba_1x400.png" />
+    <Content Include="css\custom-theme\images\ui-bg_gloss-wave_100_ece8da_500x100.png" />
+    <Content Include="css\custom-theme\images\ui-bg_highlight-hard_100_f5f3e5_1x100.png" />
+    <Content Include="css\custom-theme\images\ui-bg_highlight-hard_100_fafaf4_1x100.png" />
+    <Content Include="css\custom-theme\images\ui-bg_highlight-hard_15_304f08_1x100.png" />
+    <Content Include="css\custom-theme\images\ui-bg_highlight-hard_15_639027_1x100.png" />
+    <Content Include="css\custom-theme\images\ui-bg_highlight-hard_95_cccccc_1x100.png" />
+    <Content Include="css\custom-theme\images\ui-bg_highlight-soft_95_ffedad_1x100.png" />
+    <Content Include="css\custom-theme\images\ui-bg_inset-soft_15_2b2922_1x100.png" />
+    <Content Include="css\custom-theme\images\ui-icons_808080_256x240.png" />
+    <Content Include="css\custom-theme\images\ui-icons_847e71_256x240.png" />
+    <Content Include="css\custom-theme\images\ui-icons_8dc262_256x240.png" />
+    <Content Include="css\custom-theme\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="css\custom-theme\images\ui-icons_eeeeee_256x240.png" />
+    <Content Include="css\custom-theme\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="css\custom-theme\jquery-ui-1.8.20.custom.css" />
+    <Content Include="css\ddsmoothmenu.css" />
+    <Content Include="css\jquery.fancybox.css" />
+    <Content Include="css\reset.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\theme1.css" />
+    <Content Include="css\theme2.css" />
+    <Content Include="css\theme3.css" />
+    <Content Include="css\uniform.default.css" />
+    <Content Include="Iletisim.aspx" />
+    <Content Include="Images\bg-input-focus.png" />
+    <Content Include="Images\bg-input.png" />
+    <Content Include="Images\blank.gif" />
+    <Content Include="Images\excel_ornek.png" />
+    <Content Include="Images\fancybox_loading.gif" />
+    <Content Include="Images\fancybox_sprite.png" />
+    <Content Include="Images\garanti.jpg" />
+    <Content Include="Images\is_bankasi.jpg" />
+    <Content Include="Images\RapidSSL_SEAL-90x50.gif" />
+    <Content Include="Images\sprite.png" />
+    <Content Include="Images\ico-valid.gif" />
+    <Content Include="img\aciklar.png" />
+    <Content Include="img\anket123-newsletter-logo.png" />
+    <Content Include="img\anketOlustur.png" />
+    <Content Include="img\anketTema1Bg.png" />
+    <Content Include="img\anketTema2Bg.png" />
+    <Content Include="img\anketTema3Bg.png" />
+    <Content Include="img\anketTemaFooterBg.png" />
+    <Content Include="img\anketTemaFooterBg2.png" />
+    <Content Include="img\arsiv.png" />
+    <Content Include="img\bg-input-focus.png" />
+    <Content Include="img\bg-input.png" />
+    <Content Include="img\bodyBg.png" />
+    <Content Include="img\captcha.gif" />
+    <Content Include="img\check.png" />
+    <Content Include="img\checkbox.gif" />
+    <Content Include="img\checkbox.png" />
+    <Content Include="img\coklu.png" />
+    <Content Include="img\cokluText.png" />
+    <Content Include="img\dogruYanlis.png" />
+    <Content Include="img\dot1.png" />
+    <Content Include="img\eposta.png" />
+    <Content Include="img\firstLinkBg.png" />
+    <Content Include="img\grayBorder.png" />
+    <Content Include="img\hemenBaslayin.png" />
+    <Content Include="img\homeImgBoxBg.png" />
+    <Content Include="img\homePageSliderBg.png" />
+    <Content Include="img\htmlBg.png" />
+    <Content Include="img\indir.png" />
+    <Content Include="img\input.gif" />
+    <Content Include="img\input.png" />
+    <Content Include="img\kapalilar.png" />
+    <Content Include="img\leftArrow.png" />
+    <Content Include="img\leftArrow2.png" />
+    <Content Include="img\leftArrow3.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\logOut.png" />
+    <Content Include="img\mainHeadersBg.png" />
+    <Content Include="img\mainLinkHover.png" />
+    <Content Include="img\matris.png" />
+    <Content Include="img\navBg.png" />
+    <Content Include="img\navLinkBorder.png" />
+    <Content Include="img\pageNumberBg.png" />
+    <Content Include="img\questionNumberBg.png" />
+    <Content Include="img\questionNumberBg2.png" />
+    <Content Include="img\radio.gif" />
+    <Content Include="img\radio.png" />
+    <Content Include="img\raporOlustur.png" />
+    <Content Include="img\rightArrow.png" />
+    <Content Include="img\rightArrow2.png" />
+    <Content Include="img\rightArrow3.png" />
+    <Content Include="img\sayisal.png" />
+    <Content Include="img\search.png" />
+    <Content Include="img\selectBg.png" />
+    <Content Include="img\select_right.gif" />
+    <Content Include="img\select_right.png" />
+    <Content Include="img\sliderImage.png" />
+    <Content Include="img\sonuclariTopla.png" />
+    <Content Include="img\sprite.png" />
+    <Content Include="img\surveyFilterMenuButtons.png" />
+    <Content Include="img\surveyFinishButton.png" />
+    <Content Include="img\surveyFinishButton2.png" />
+    <Content Include="img\surveyFinishButton3.png" />
+    <Content Include="img\surveyLogoBg.png" />
+    <Content Include="img\surveyLogoBg2.png" />
+    <Content Include="img\surveyLogoBg3.png" />
+    <Content Include="img\surveySampleLogo.png" />
+    <Content Include="img\surveySaveButton.png" />
+    <Content Include="img\surveySaveButton2.png" />
+    <Content Include="img\surveySaveButton3.png" />
+    <Content Include="img\surveyStatusButtons.png" />
+    <Content Include="img\tarih.png" />
+    <Content Include="img\telefon.png" />
+    <Content Include="img\tema01-thumb.jpg" />
+    <Content Include="img\tema02-thumb.jpg" />
+    <Content Include="img\tema03-thumb.jpg" />
+    <Content Include="img\tema1.jpg" />
+    <Content Include="img\tema2.jpg" />
+    <Content Include="img\tema3.jpg" />
+    <Content Include="img\tema3WrapperBg.png" />
+    <Content Include="img\text.png" />
+    <Content Include="img\tumu.png" />
+    <Content Include="img\yayindakiler.png" />
+    <Content Include="js\cufon-yui.js" />
+    <Content Include="js\ddsmoothmenu.js" />
+    <Content Include="js\Diavlo.font.js" />
+    <Content Include="js\jquery-1.7.2.min.js" />
+    <Content Include="js\jquery-ui-1.8.20.custom.min.js" />
+    <Content Include="js\jquery.ae.image.resize.min.js" />
+    <Content Include="js\jquery.fancybox.pack.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.uniform.js" />
+    <Content Include="js\jquery.uniform.min.js" />
+    <Content Include="PrePurchase.aspx" />
+    <Content Include="robots.txt" />
+    <Content Include="sitemap.xml" />
+    <Content Include="Templates\ActivationMailTemplate.html" />
+    <Content Include="Templates\ArkadasimaOnerMailTemplate.html" />
+    <Content Include="Templates\KrediKartiOdemeMailTemplate.html" />
+    <Content Include="Templates\HavaleOdemeMailTemplate.html" />
+    <Content Include="Templates\DavetMailTemplate.html" />
+    <Content Include="Templates\UyelikBitisBilgilendirmeMailTemplate.html" />
+    <Content Include="Anket\Templates\MesajMailTemplate.html" />
+    <Content Include="Anket\YeniAnket.aspx" />
+    <Content Include="BaseControls\RepeaterPaging.ascx" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="ChangePasswordSuccess.aspx" />
+    <Content Include="Davet.aspx" />
+    <Content Include="Help.aspx" />
+    <Content Include="Images\AnketTema1.jpg" />
+    <Content Include="Images\AnketTema2.jpg" />
+    <Content Include="Images\AnketTema3.jpg" />
+    <Content Include="Images\anket_menu_plus.png" />
+    <Content Include="Images\anket_menu_issue.png" />
+    <Content Include="Images\anket_menu_settings.png" />
+    <Content Include="Images\soru_menu_true-false.png" />
+    <Content Include="Images\soru_menu_matris.png" />
+    <Content Include="Images\anket_menu_networking.png" />
+    <Content Include="Images\anket_menu_category.png" />
+    <Content Include="Images\anket_menu_order-1.png" />
+    <Content Include="Images\anket_graphic-design.png" />
+    <Content Include="Images\anket_menu_archives.png" />
+    <Content Include="Images\anket_menu_search.png" />
+    <Content Include="Images\anket_menu_sign-in.png" />
+    <Content Include="Images\anket_menu_finished-work.png" />
+    <Content Include="Images\anket_menu_adres_defteri.png" />
+    <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\anket_old-versions.png" />
+    <Content Include="Images\anket_menu_future-projects.png" />
+    <Content Include="Images\anket_menu_process.png" />
+    <Content Include="Images\anket_menu_statistics.png" />
+    <Content Include="Images\anket_menu_home.png" />
+    <Content Include="Images\soru_menu_options.png" />
+    <Content Include="Images\soru_menu_text.png" />
+    <Content Include="Images\_spacer.gif" />
+    <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="Anket\MainPage.aspx" />
+    <Content Include="Anket\Messages.aspx" />
+    <Content Include="Purchase.aspx" />
+    <Content Include="PurchaseApprove.aspx" />
+    <Content Include="PurchaseControl.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="cache_dep.txt" />
+    <Content Include="RegisterationInfoPage.aspx" />
+    <Content Include="RequestPassword.aspx" />
+    <Content Include="Scripts\css\template_.css" />
+    <Content Include="Scripts\css\validationEngine.jquery.css" />
+    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.17.custom.min.js" />
+    <Content Include="Scripts\jquery.maskedinput-1.2.2.js" />
+    <Content Include="Scripts\jquery.numeric.js" />
+    <Content Include="Scripts\jquery.ui.accordion.min.js" />
+    <Content Include="Scripts\JQValidationEngine\contrib\other-validations.js" />
+    <Content Include="Scripts\JQValidationEngine\jquery-1.6.min.js" />
+    <Content Include="Scripts\JQValidationEngine\jquery.validationEngine.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-cz.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-da.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-de.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-en.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-es.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-et.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-fa.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-fi.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-fr.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-hr.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-hu.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-it.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-ja.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-nl.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-pl.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-pt.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-pt_BR.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-ro.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-ru.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-sv.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-tr.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-zh_CN.js" />
+    <Content Include="Scripts\JQValidationEngine\languages\jquery.validationEngine-zh_TW.js" />
+    <Content Include="Scripts\JQ\jquery.ui.datepicker-tr.js" />
+    <Content Include="Scripts\JQ\jquery.ui.datepicker.js" />
+    <Content Include="Styles\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Styles\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="Styles\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Styles\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Styles\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Styles\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Styles\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Styles\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Styles\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Styles\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Styles\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Styles\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Styles\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\cupertino\jquery-ui-1.8.17.custom.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Templates\PasswordReminderMailTemplate.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account.aspx.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account.aspx.designer.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Activation.aspx.cs">
+      <DependentUpon>Activation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Activation.aspx.designer.cs">
+      <DependentUpon>Activation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminMain.aspx.cs">
+      <DependentUpon>AdminMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMain.aspx.designer.cs">
+      <DependentUpon>AdminMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Duyurular.aspx.cs">
+      <DependentUpon>Duyurular.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Duyurular.aspx.designer.cs">
+      <DependentUpon>Duyurular.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FaturaKesilecekler.aspx.cs">
+      <DependentUpon>FaturaKesilecekler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FaturaKesilecekler.aspx.designer.cs">
+      <DependentUpon>FaturaKesilecekler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FaturaKesilenler.aspx.cs">
+      <DependentUpon>FaturaKesilenler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FaturaKesilenler.aspx.designer.cs">
+      <DependentUpon>FaturaKesilenler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OdemeAktiveEt.aspx.cs">
+      <DependentUpon>OdemeAktiveEt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OdemeAktiveEt.aspx.designer.cs">
+      <DependentUpon>OdemeAktiveEt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Raporlar\AnketListesiDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnketListesiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Raporlar\AnketListesiRaporu.aspx.cs">
+      <DependentUpon>AnketListesiRaporu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Raporlar\AnketListesiRaporu.aspx.designer.cs">
+      <DependentUpon>AnketListesiRaporu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Raporlar\KullanicilarDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KullanicilarDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Raporlar\KullanicilarRaporu.aspx.cs">
+      <DependentUpon>KullanicilarRaporu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Raporlar\KullanicilarRaporu.aspx.designer.cs">
+      <DependentUpon>KullanicilarRaporu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Raporlar\UyeKullanicilar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UyeKullanicilar.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Raporlar\UyeKullanicilarRaporu.aspx.cs">
+      <DependentUpon>UyeKullanicilarRaporu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Raporlar\UyeKullanicilarRaporu.aspx.designer.cs">
+      <DependentUpon>UyeKullanicilarRaporu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SablonDetayi.aspx.cs">
+      <DependentUpon>SablonDetayi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SablonDetayi.aspx.designer.cs">
+      <DependentUpon>SablonDetayi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SablonGoster.aspx.cs">
+      <DependentUpon>SablonGoster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SablonGoster.aspx.designer.cs">
+      <DependentUpon>SablonGoster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SablonTanimlari.aspx.cs">
+      <DependentUpon>SablonTanimlari.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SablonTanimlari.aspx.designer.cs">
+      <DependentUpon>SablonTanimlari.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\YeniSablon.aspx.cs">
+      <DependentUpon>YeniSablon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\YeniSablon.aspx.designer.cs">
+      <DependentUpon>YeniSablon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\AdresGruplari.aspx.cs">
+      <DependentUpon>AdresGruplari.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\AdresGruplari.aspx.designer.cs">
+      <DependentUpon>AdresGruplari.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Anket.aspx.cs">
+      <DependentUpon>Anket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\Anket.aspx.designer.cs">
+      <DependentUpon>Anket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\AnketAshx\IsGrupAdmin.ashx.cs">
+      <DependentUpon>IsGrupAdmin.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\AnketAshx\SablonGetir.ashx.cs">
+      <DependentUpon>SablonGetir.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\AnketBitti.aspx.cs">
+      <DependentUpon>AnketBitti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\AnketBitti.aspx.designer.cs">
+      <DependentUpon>AnketBitti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\AnketDashboard.aspx.cs">
+      <DependentUpon>AnketDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\AnketDashboard.aspx.designer.cs">
+      <DependentUpon>AnketDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\AnketDetayi.aspx.cs">
+      <DependentUpon>AnketDetayi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\AnketDetayi.aspx.designer.cs">
+      <DependentUpon>AnketDetayi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\AnketiGoster.aspx.cs">
+      <DependentUpon>AnketiGoster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\AnketiGoster.aspx.designer.cs">
+      <DependentUpon>AnketiGoster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\AnketTestSonuclari.aspx.cs">
+      <DependentUpon>AnketTestSonuclari.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\AnketTestSonuclari.aspx.designer.cs">
+      <DependentUpon>AnketTestSonuclari.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\AnketYayinla.aspx.cs">
+      <DependentUpon>AnketYayinla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\AnketYayinla.aspx.designer.cs">
+      <DependentUpon>AnketYayinla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Controls\RepeaterSurveySayfalama.ascx.cs">
+      <DependentUpon>RepeaterSurveySayfalama.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\Controls\RepeaterSurveySayfalama.ascx.designer.cs">
+      <DependentUpon>RepeaterSurveySayfalama.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\ExceldenAktar.aspx.cs">
+      <DependentUpon>ExceldenAktar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\ExceldenAktar.aspx.designer.cs">
+      <DependentUpon>ExceldenAktar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\GrupKullanicilari.aspx.cs">
+      <DependentUpon>GrupKullanicilari.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\GrupKullanicilari.aspx.designer.cs">
+      <DependentUpon>GrupKullanicilari.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\KullaniciGruplar.aspx.cs">
+      <DependentUpon>KullaniciGruplar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\KullaniciGruplar.aspx.designer.cs">
+      <DependentUpon>KullaniciGruplar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AcikAnketSoruTipi10CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcikAnketSoruTipi10CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AcikAnketSoruTipi11CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcikAnketSoruTipi11CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AcikAnketSoruTipi1CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcikAnketSoruTipi1CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AcikAnketSoruTipi2CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcikAnketSoruTipi2CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AcikAnketSoruTipi3CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcikAnketSoruTipi3CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AcikAnketSoruTipi4CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcikAnketSoruTipi4CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AcikAnketSoruTipi5CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcikAnketSoruTipi5CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AcikAnketSoruTipi6CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcikAnketSoruTipi6CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AcikAnketSoruTipi7CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcikAnketSoruTipi7CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AcikAnketSoruTipi8CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcikAnketSoruTipi8CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AcikAnketSoruTipi9CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcikAnketSoruTipi9CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AnketSoruCevapRaporuTumu.aspx.cs">
+      <DependentUpon>AnketSoruCevapRaporuTumu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AnketSoruCevapRaporuTumu.aspx.designer.cs">
+      <DependentUpon>AnketSoruCevapRaporuTumu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AnketSoruCevapRaporuTumu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnketSoruCevapRaporuTumu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AnketSoruTipi10CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnketSoruTipi10CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AnketSoruTipi11CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnketSoruTipi11CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AnketSoruTipi3CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnketSoruTipi3CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AnketSoruTipi4CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnketSoruTipi4CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AnketSoruTipi5CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnketSoruTipi5CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AnketSoruTipi6CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnketSoruTipi6CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AnketSoruTipi7CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnketSoruTipi7CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AnketSoruTipi8CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnketSoruTipi8CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AnketSoruTipi9CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnketSoruTipi9CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AnketSoruTipileriCevapRaporu.aspx.cs">
+      <DependentUpon>AnketSoruTipileriCevapRaporu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AnketSoruTipileriCevapRaporu.aspx.designer.cs">
+      <DependentUpon>AnketSoruTipileriCevapRaporu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AnketSoruTipi1CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnketSoruTipi1CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AnketSoruTipi2CevapRaporu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnketSoruTipi2CevapRaporu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AcikAnketSoruTipileriCevapRaporu.aspx.cs">
+      <DependentUpon>AcikAnketSoruTipileriCevapRaporu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\Raporlar\AcikAnketSoruTipileriCevapRaporu.aspx.designer.cs">
+      <DependentUpon>AcikAnketSoruTipileriCevapRaporu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\KullaniciBazliAnketDurumRaporu.aspx.cs">
+      <DependentUpon>KullaniciBazliAnketDurumRaporu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\Raporlar\KullaniciBazliAnketDurumRaporu.aspx.designer.cs">
+      <DependentUpon>KullaniciBazliAnketDurumRaporu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\KullaniciBazliAnketBitirmeRaporu.aspx.cs">
+      <DependentUpon>KullaniciBazliAnketBitirmeRaporu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\Raporlar\KullaniciBazliAnketBitirmeRaporu.aspx.designer.cs">
+      <DependentUpon>KullaniciBazliAnketBitirmeRaporu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\KullaniciBazliAnketBitirmeRaporuDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KullaniciBazliAnketBitirmeRaporuDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\KullaniciBazliAnketCevaplanmaRaporu.aspx.cs">
+      <DependentUpon>KullaniciBazliAnketCevaplanmaRaporu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\Raporlar\KullaniciBazliAnketCevaplanmaRaporu.aspx.designer.cs">
+      <DependentUpon>KullaniciBazliAnketCevaplanmaRaporu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\KullaniciBazliAnketCevaplanmaRaporuDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KullaniciBazliAnketCevaplanmaRaporuDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\KullaniciBazliAnketDurumRaporuDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KullaniciBazliAnketDurumRaporuDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\KullaniciBazliAnketGirisRaporu.aspx.cs">
+      <DependentUpon>KullaniciBazliAnketGirisRaporu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\Raporlar\KullaniciBazliAnketGirisRaporu.aspx.designer.cs">
+      <DependentUpon>KullaniciBazliAnketGirisRaporu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\KullaniciBazliAnketGirisRaporuDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KullaniciBazliAnketGirisRaporuDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\KullaniciBazliAnketRapor.aspx.cs">
+      <DependentUpon>KullaniciBazliAnketRapor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\Raporlar\KullaniciBazliAnketRapor.aspx.designer.cs">
+      <DependentUpon>KullaniciBazliAnketRapor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\KullaniciBazliRaporDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KullaniciBazliRaporDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Raporlar\ReportViewer.aspx.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\Raporlar\ReportViewer.aspx.designer.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\RaporPage.aspx.cs">
+      <DependentUpon>RaporPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\RaporPage.aspx.designer.cs">
+      <DependentUpon>RaporPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\AnketAshx\UyeGetir.ashx.cs">
+      <DependentUpon>UyeGetir.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\ShowHtmlTemplate.aspx.cs">
+      <DependentUpon>ShowHtmlTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\ShowHtmlTemplate.aspx.designer.cs">
+      <DependentUpon>ShowHtmlTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\YeniAnket.aspx.cs">
+      <DependentUpon>YeniAnket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\YeniAnket.aspx.designer.cs">
+      <DependentUpon>YeniAnket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArkadasimaOner.aspx.cs">
+      <DependentUpon>ArkadasimaOner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArkadasimaOner.aspx.designer.cs">
+      <DependentUpon>ArkadasimaOner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseAshx\ShowImage.ashx.cs">
+      <DependentUpon>ShowImage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControls\RepeaterPaging.ascx.cs">
+      <DependentUpon>RepeaterPaging.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseControls\RepeaterPaging.ascx.designer.cs">
+      <DependentUpon>RepeaterPaging.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Davet.aspx.cs">
+      <DependentUpon>Davet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Davet.aspx.designer.cs">
+      <DependentUpon>Davet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Help.aspx.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help.aspx.designer.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Iletisim.aspx.cs">
+      <DependentUpon>Iletisim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Iletisim.aspx.designer.cs">
+      <DependentUpon>Iletisim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\MainPage.aspx.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\MainPage.aspx.designer.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anket\Messages.aspx.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anket\Messages.aspx.designer.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Anket.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Anket.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AnketConstants.cs" />
+    <Compile Include="Models\AnketRepository.cs" />
+    <Compile Include="Models\Genel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Genel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GenelRepository.cs" />
+    <Compile Include="Models\gnl_ileti.cs" />
+    <Compile Include="Models\gnl_ileti_gelen.cs" />
+    <Compile Include="Models\RepositoryManager.cs" />
+    <Compile Include="PrePurchase.aspx.cs">
+      <DependentUpon>PrePurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrePurchase.aspx.designer.cs">
+      <DependentUpon>PrePurchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase.aspx.cs">
+      <DependentUpon>Purchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Purchase.aspx.designer.cs">
+      <DependentUpon>Purchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseApprove.aspx.cs">
+      <DependentUpon>PurchaseApprove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseApprove.aspx.designer.cs">
+      <DependentUpon>PurchaseApprove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseControl.aspx.cs">
+      <DependentUpon>PurchaseControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseControl.aspx.designer.cs">
+      <DependentUpon>PurchaseControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterationInfoPage.aspx.cs">
+      <DependentUpon>RegisterationInfoPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterationInfoPage.aspx.designer.cs">
+      <DependentUpon>RegisterationInfoPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RequestPassword.aspx.cs">
+      <DependentUpon>RequestPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RequestPassword.aspx.designer.cs">
+      <DependentUpon>RequestPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SiberAnketDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiberAnketDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Themes\Style\" />
+    <Folder Include="ChartImages\" />
+    <Folder Include="Temp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnketBusiness\AnketBusiness.csproj">
+      <Project>{B1A3AC8E-DD12-46B4-8AEA-743CBFBAC023}</Project>
+      <Name>AnketBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BaseClasses\BaseClasses.csproj">
+      <Project>{673F8691-18A4-44E3-B57C-81353BD95E1C}</Project>
+      <Name>BaseClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BaseDB\BaseDB.csproj">
+      <Project>{134CF4EA-4CE6-4C99-8A0D-CDA3F1CB3516}</Project>
+      <Name>BaseDB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\Anket.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Anket.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\Genel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Genel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Admin\Raporlar\AnketListesiRaporu.rdlc" />
+    <EmbeddedResource Include="Admin\Raporlar\KullanicilarRaporu.rdlc" />
+    <EmbeddedResource Include="Admin\Raporlar\UyeKullanicilarRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AnketSoruCevapRaporuTumu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AnketSoruTipi10CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AnketSoruTipi11CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AnketSoruTipi1CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AnketSoruTipi2CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AnketSoruTipi3CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AnketSoruTipi4CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AnketSoruTipi5CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AnketSoruTipi6CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AnketSoruTipi7CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AnketSoruTipi8CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AnketSoruTipi9CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AcikAnketSoruTipi1CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AcikAnketSoruTipi10CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AcikAnketSoruTipi11CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AcikAnketSoruTipi2CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AcikAnketSoruTipi3CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AcikAnketSoruTipi4CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AcikAnketSoruTipi5CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AcikAnketSoruTipi6CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AcikAnketSoruTipi7CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AcikAnketSoruTipi8CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\AcikAnketSoruTipi9CevapRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\KullaniciBazliAnketBitirmeRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\KullaniciBazliAnketCevaplanmaRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\KullaniciBazliAnketDurumRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\KullaniciBazliAnketGirisRaporu.rdlc" />
+    <EmbeddedResource Include="Anket\Raporlar\KullaniciBazliAnketRaporu.rdlc" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BaseAshx\ShowImage.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Admin\Raporlar\AnketListesiDataSet.xsc">
+      <DependentUpon>AnketListesiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Admin\Raporlar\AnketListesiDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnketListesiDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Admin\Raporlar\AnketListesiDataSet.xss">
+      <DependentUpon>AnketListesiDataSet.xsd</DependentUpon>
+    </None>
+    <Content Include="Anket\AnketAshx\IsGrupAdmin.ashx" />
+    <Content Include="Anket\AnketAshx\SablonGetir.ashx" />
+    <None Include="Admin\Raporlar\KullanicilarDataSet.xsc">
+      <DependentUpon>KullanicilarDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Admin\Raporlar\KullanicilarDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KullanicilarDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Admin\Raporlar\KullanicilarDataSet.xss">
+      <DependentUpon>KullanicilarDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Admin\Raporlar\UyeKullanicilar.xsc">
+      <DependentUpon>UyeKullanicilar.xsd</DependentUpon>
+    </None>
+    <None Include="Admin\Raporlar\UyeKullanicilar.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UyeKullanicilar.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Admin\Raporlar\UyeKullanicilar.xss">
+      <DependentUpon>UyeKullanicilar.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi10CevapRaporu.xsc">
+      <DependentUpon>AcikAnketSoruTipi10CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi10CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AcikAnketSoruTipi10CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi10CevapRaporu.xss">
+      <DependentUpon>AcikAnketSoruTipi10CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi11CevapRaporu.xsc">
+      <DependentUpon>AcikAnketSoruTipi11CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi11CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AcikAnketSoruTipi11CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi11CevapRaporu.xss">
+      <DependentUpon>AcikAnketSoruTipi11CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi1CevapRaporu.xsc">
+      <DependentUpon>AcikAnketSoruTipi1CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi1CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AcikAnketSoruTipi1CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi1CevapRaporu.xss">
+      <DependentUpon>AcikAnketSoruTipi1CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi2CevapRaporu.xsc">
+      <DependentUpon>AcikAnketSoruTipi2CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi2CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AcikAnketSoruTipi2CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi2CevapRaporu.xss">
+      <DependentUpon>AcikAnketSoruTipi2CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi3CevapRaporu.xsc">
+      <DependentUpon>AcikAnketSoruTipi3CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi3CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AcikAnketSoruTipi3CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi3CevapRaporu.xss">
+      <DependentUpon>AcikAnketSoruTipi3CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi4CevapRaporu.xsc">
+      <DependentUpon>AcikAnketSoruTipi4CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi4CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AcikAnketSoruTipi4CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi4CevapRaporu.xss">
+      <DependentUpon>AcikAnketSoruTipi4CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi5CevapRaporu.xsc">
+      <DependentUpon>AcikAnketSoruTipi5CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi5CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AcikAnketSoruTipi5CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi5CevapRaporu.xss">
+      <DependentUpon>AcikAnketSoruTipi5CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi6CevapRaporu.xsc">
+      <DependentUpon>AcikAnketSoruTipi6CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi6CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AcikAnketSoruTipi6CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi6CevapRaporu.xss">
+      <DependentUpon>AcikAnketSoruTipi6CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi7CevapRaporu.xsc">
+      <DependentUpon>AcikAnketSoruTipi7CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi7CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AcikAnketSoruTipi7CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi7CevapRaporu.xss">
+      <DependentUpon>AcikAnketSoruTipi7CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi8CevapRaporu.xsc">
+      <DependentUpon>AcikAnketSoruTipi8CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi8CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AcikAnketSoruTipi8CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi8CevapRaporu.xss">
+      <DependentUpon>AcikAnketSoruTipi8CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi9CevapRaporu.xsc">
+      <DependentUpon>AcikAnketSoruTipi9CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi9CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AcikAnketSoruTipi9CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AcikAnketSoruTipi9CevapRaporu.xss">
+      <DependentUpon>AcikAnketSoruTipi9CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruCevapRaporuTumu.xsc">
+      <DependentUpon>AnketSoruCevapRaporuTumu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruCevapRaporuTumu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnketSoruCevapRaporuTumu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruCevapRaporuTumu.xss">
+      <DependentUpon>AnketSoruCevapRaporuTumu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi10CevapRaporu.xsc">
+      <DependentUpon>AnketSoruTipi10CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi10CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnketSoruTipi10CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi10CevapRaporu.xss">
+      <DependentUpon>AnketSoruTipi10CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi11CevapRaporu.xsc">
+      <DependentUpon>AnketSoruTipi11CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi11CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnketSoruTipi11CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi11CevapRaporu.xss">
+      <DependentUpon>AnketSoruTipi11CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi1CevapRaporu.xsc">
+      <DependentUpon>AnketSoruTipi1CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi1CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnketSoruTipi1CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi1CevapRaporu.xss">
+      <DependentUpon>AnketSoruTipi1CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi2CevapRaporu.xsc">
+      <DependentUpon>AnketSoruTipi2CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi2CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnketSoruTipi2CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi2CevapRaporu.xss">
+      <DependentUpon>AnketSoruTipi2CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi3CevapRaporu.xsc">
+      <DependentUpon>AnketSoruTipi3CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi3CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnketSoruTipi3CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi3CevapRaporu.xss">
+      <DependentUpon>AnketSoruTipi3CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi4CevapRaporu.xsc">
+      <DependentUpon>AnketSoruTipi4CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi4CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnketSoruTipi4CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi4CevapRaporu.xss">
+      <DependentUpon>AnketSoruTipi4CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi5CevapRaporu.xsc">
+      <DependentUpon>AnketSoruTipi5CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi5CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnketSoruTipi5CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi5CevapRaporu.xss">
+      <DependentUpon>AnketSoruTipi5CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi6CevapRaporu.xsc">
+      <DependentUpon>AnketSoruTipi6CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi6CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnketSoruTipi6CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi6CevapRaporu.xss">
+      <DependentUpon>AnketSoruTipi6CevapRaporu.xsd</DependentUpon>
+    </None>
+    <Content Include="Anket\Raporlar\app.config" />
+    <None Include="Anket\Raporlar\AnketSoruTipi7CevapRaporu.xsc">
+      <DependentUpon>AnketSoruTipi7CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi7CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnketSoruTipi7CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi7CevapRaporu.xss">
+      <DependentUpon>AnketSoruTipi7CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi8CevapRaporu.xsc">
+      <DependentUpon>AnketSoruTipi8CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi8CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnketSoruTipi8CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi8CevapRaporu.xss">
+      <DependentUpon>AnketSoruTipi8CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi9CevapRaporu.xsc">
+      <DependentUpon>AnketSoruTipi9CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi9CevapRaporu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnketSoruTipi9CevapRaporu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\AnketSoruTipi9CevapRaporu.xss">
+      <DependentUpon>AnketSoruTipi9CevapRaporu.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\KullaniciBazliAnketBitirmeRaporuDataSet.xsc">
+      <DependentUpon>KullaniciBazliAnketBitirmeRaporuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\KullaniciBazliAnketBitirmeRaporuDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KullaniciBazliAnketBitirmeRaporuDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\KullaniciBazliAnketBitirmeRaporuDataSet.xss">
+      <DependentUpon>KullaniciBazliAnketBitirmeRaporuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\KullaniciBazliAnketCevaplanmaRaporuDataSet.xsc">
+      <DependentUpon>KullaniciBazliAnketCevaplanmaRaporuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\KullaniciBazliAnketCevaplanmaRaporuDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KullaniciBazliAnketCevaplanmaRaporuDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\KullaniciBazliAnketCevaplanmaRaporuDataSet.xss">
+      <DependentUpon>KullaniciBazliAnketCevaplanmaRaporuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\KullaniciBazliAnketDurumRaporuDataSet.xsc">
+      <DependentUpon>KullaniciBazliAnketDurumRaporuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\KullaniciBazliAnketDurumRaporuDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KullaniciBazliAnketDurumRaporuDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\KullaniciBazliAnketDurumRaporuDataSet.xss">
+      <DependentUpon>KullaniciBazliAnketDurumRaporuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\KullaniciBazliAnketGirisRaporuDataSet.xsc">
+      <DependentUpon>KullaniciBazliAnketGirisRaporuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\KullaniciBazliAnketGirisRaporuDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KullaniciBazliAnketGirisRaporuDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\KullaniciBazliAnketGirisRaporuDataSet.xss">
+      <DependentUpon>KullaniciBazliAnketGirisRaporuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\KullaniciBazliRaporDataSet.xsc">
+      <DependentUpon>KullaniciBazliRaporDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Anket\Raporlar\KullaniciBazliRaporDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KullaniciBazliRaporDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Anket\Raporlar\KullaniciBazliRaporDataSet.xss">
+      <DependentUpon>KullaniciBazliRaporDataSet.xsd</DependentUpon>
+    </None>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Anket\AnketAshx\UyeGetir.ashx" />
+    <None Include="SiberAnketDataSet.xsc">
+      <DependentUpon>SiberAnketDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SiberAnketDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SiberAnketDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SiberAnketDataSet.xss">
+      <DependentUpon>SiberAnketDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7829</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

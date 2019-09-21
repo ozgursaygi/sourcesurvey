@@ -1,0 +1,35 @@
+ @charset "utf-8";
+/* CSS Document */
+html { background:url(../img/htmlBg.png) repeat; }
+body { background:url(../img/bodyBg.png) repeat-x; font-family:Arial, Helvetica, sans-serif; font-size:14px; }
+#wrapper { width:960px; height:auto; margin:0 auto; overflow:hidden; padding:0 6px }
+#header { width:960px; height:auto; float:left; }
+#main { width:960px; min-height:400px; height:auto; float:left; margin-top:20px }
+#mainTopSection { width:960px; height:auto; float:left }
+#mainLeft { width:215px; height:auto; float:left; display:block; margin-right:20px; }
+/* Tema 1*/
+.theme1{ background:#e3eac8 url(../img/anketTema1Bg.png) left top repeat-x; font-family:"Georgia", Times New Roman, Times, serif }
+.theme #wrapper { width:800px; height:auto; margin:0 auto; overflow:hidden; padding:0}
+.theme1 #header { width:730px; height:auto; float:left; padding:0 35px;  }
+.theme1 .surveyLogo { background: url(../img/surveyLogoBg.png) no-repeat scroll left top transparent; display: table; float: left; height: 122px; text-align: center; width: 156px; margin-top:10px }
+.theme1 .surveyLogoInner { display: table-cell; vertical-align: middle; }
+.theme1 .surveyTitle { font-weight:bold; font-size: 20px; color:#6a783b; float:right; margin-top:20px;text-shadow:1px 1px 0px #FFFFFF;word-wrap: break-word; width: 550px; }
+.theme1 #main { width:730px; height:auto; float:left;padding:0 35px; }
+.theme1 .surveyQuestion{ width:730px; height:auto; float:left; margin-bottom:30px }
+.theme1 .surveyQuestionId{ width:50px; height:auto; float:left; font-weight:bold; font-size:30px; color:#6a783b; line-height:30px;}
+.theme1 .surveyQuestionContent{ width:680px; height:auto; float:left;}
+.theme1 .surveyQuestionTitle{ width:680px; height:auto; float:left; font-size:14px; color:#6a783b; line-height:30px}
+.theme1 .surveyQuestionAnswer{ width:680px; height:auto; float:left;}
+.theme1 .surveyQuestionAnswer label{ font:normal 13px Arial, Helvetica, sans-serif;color:#181818;}
+.theme1 .surveyQuestionAnswer input[type="text"]{ color:#181818; background:#fff; padding:5px; width:450px}
+.theme1 .surveyQuestionAnswer .checker{ margin-bottom:5px}
+.theme1 .surveyQuestionAnswer .radio{ margin-bottom:3px}
+.theme1 #footer { width:730px; height:auto; float:left; border-top:10px solid #fff;padding:25px 35px;  }
+.theme1 #footer .nav { width:45px; height:auto; float:left; }
+.theme1 #footer .nav .previousNav{ width:21px; height:21px; float:left; display:block; text-indent:-9999px; font-size:0;  background:url(../img/leftArrow.png) no-repeat; margin-right:3px }
+.theme1 #footer .nav .nextNav{ width:21px; height:21px; float:left; display:block; text-indent:-9999px; font-size:0; background:url(../img/rightArrow.png) no-repeat; }
+.theme1 #footer .pageNumber{ width:auto; height:21px; float:left; display:block; font-size:12px; color:#6a783b; line-height:21px; padding:0 20px; }
+.theme1 #footer .totalQuestionNumber{ width:auto; height:21px; float:left; display:block; font-size:12px; color:#6a783b; line-height:21px; padding:0 10px; font-weight:bold }
+.theme1 #footer .surveyButtons{ float:right; width:auto; height:auto}
+.theme1 #footer .surveySave{ width:91px; height:26px; float:left; display:block; font-size:0;  color:#6a783b; line-height:21px; padding:0; font-weight:bold; text-decoration:none; background:url(../img/surveySaveButton.png) no-repeat; text-indent:-9999px; margin:0 10px 0 0} 
+.theme1 #footer .surveyFinish{ width:58px; height:26px; float:left; display:block; font-size:0;  color:#6a783b; line-height:21px; padding:0; font-weight:bold; text-decoration:none; background:url(../img/surveyFinishButton.png) no-repeat; text-indent:-9999px} 

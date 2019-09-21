@@ -1,0 +1,815 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BaseWebSites.Models" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="sbr_anket">
+    <Key>
+      <PropertyRef Name="anket_uid" />
+    </Key>
+    <Property Name="anket_uid" Type="Guid" Nullable="false" />
+    <Property Name="grup_uid" Type="Guid" />
+    <Property Name="kullanici_uid" Type="Guid" />
+    <Property Name="anket_adi" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="anket_goruntulenen_ad" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="anket_goruntulenen_ad_ekle" Type="Boolean" />
+    <Property Name="kategori_id" Type="Int32" />
+    <Property Name="anket_tipi_id" Type="Int32" />
+    <Property Name="anket_mesaji" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="anket_mesaji_ekle" Type="Boolean" />
+    <Property Name="anket_sonuc_mesaji" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="anket_sonuc_mesaji_ekle" Type="Boolean" />
+    <Property Name="baslangic_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="bitis_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="olusturma_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="olusturan_kullanici_uid" Type="Guid" />
+    <Property Name="anket_durumu_id" Type="Int32" />
+    <Property Name="anket_durumu_uid" Type="Guid" />
+    <Property Name="ip_kisitlamasi" Type="Boolean" />
+    <Property Name="sayfadaki_soru_sayisi" Type="Int32" />
+    <Property Name="soru_cevaplama_zorunlulugu" Type="Int32" />
+    <Property Name="anket_tema_id" Type="Int32" />
+    <Property Name="logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="bitis_tarihinde_anketi_kaldir" Type="Boolean" />
+    <Property Name="inserted_by" Type="Guid" />
+    <Property Name="inserted_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_by" Type="Guid" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sbr_anket_davet">
+    <Key>
+      <PropertyRef Name="davet_uid" />
+    </Key>
+    <Property Name="davet_uid" Type="Guid" Nullable="false" />
+    <Property Name="davet_eden_kullanici_uid" Type="Guid" />
+    <Property Name="davet_edilen_grup_uid" Type="Guid" />
+    <Property Name="davet_edilen_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="davet_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="davet_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="davet_kabul_edildi" Type="Boolean" />
+    <Property Name="davet_kabul_edilme_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="davet_kabul_eden_kullanici_uid" Type="Guid" />
+  </EntityType>
+  <EntityType Name="sbr_anket_durum_tarihcesi">
+    <Key>
+      <PropertyRef Name="anket_durumu_uid" />
+    </Key>
+    <Property Name="anket_durumu_uid" Type="Guid" Nullable="false" />
+    <Property Name="anket_uid" Type="Guid" />
+    <Property Name="anket_durumu_id" Type="Int32" />
+    <Property Name="durumu_olusturan_kullanici" Type="Guid" />
+    <Property Name="durum_olusma_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="durum_aciklamasi" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_anket_sorulari">
+    <Key>
+      <PropertyRef Name="soru_uid" />
+    </Key>
+    <Property Name="soru_uid" Type="Guid" Nullable="false" />
+    <Property Name="anket_uid" Type="Guid" />
+    <Property Name="soru_tipi_id" Type="Int32" />
+    <Property Name="soru" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_sira_no" Type="Int32" />
+    <Property Name="soru_sitili_id" Type="Int32" />
+    <Property Name="soru_siralama_sekli_id" Type="Int32" />
+    <Property Name="soru_zorunlu" Type="Boolean" />
+    <Property Name="soru_sayisal_ondalik" Type="Boolean" />
+    <Property Name="soru_olusturma_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="soru_olusturan_kullanici_uid" Type="Guid" />
+    <Property Name="inserted_by" Type="Guid" />
+    <Property Name="inserted_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_by" Type="Guid" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <Property Name="soru_tek_satir" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sbr_anket_test_mail_gonderi_kisi_tarihcesi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="anket_uid" Type="Guid" />
+    <Property Name="gonderi_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="gonderen_user_uid" Type="Guid" />
+    <Property Name="gonderilen_email_adresi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="anket_test_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="anket_test_sonucu_id" Type="Int32" />
+    <Property Name="anket_test_sonucu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sbr_anket_yayinlama_acik_anket_aktivasyon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="anket_uid" Type="Guid" />
+    <Property Name="giris_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="anket_bitirildi" Type="Boolean" />
+    <Property Name="anket_bitirilme_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="host_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_host_adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="browser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="platform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="versiyon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_anket_yayinlama_mail_gonderi_aktivasyon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="anket_uid" Type="Guid" />
+    <Property Name="tarihce_uid" Type="Guid" />
+    <Property Name="anket_gonderilen_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="anket_gonderilen_soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="anket_gonderilen_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="anket_gonderilme_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="anket_gonderilme_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ankete_girildi" Type="Boolean" />
+    <Property Name="ankete_giris_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="anket_bitirildi" Type="Boolean" />
+    <Property Name="anket_bitirilme_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="ankete_cevap_verildi" Type="Boolean" />
+    <Property Name="ankete_cevap_verilme_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="anket_mail_grubu_uid" Type="Guid" />
+  </EntityType>
+  <EntityType Name="sbr_anket_yayinlama_mail_gonderi_kisi_tarihcesi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="tarihce_uid" Type="Guid" />
+    <Property Name="gonderilen_kisi_ismi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="gonderilen_email_adresi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_anket_yayinlama_mail_gonderi_tarihcesi">
+    <Key>
+      <PropertyRef Name="tarihce_uid" />
+    </Key>
+    <Property Name="tarihce_uid" Type="Guid" Nullable="false" />
+    <Property Name="anket_uid" Type="Guid" />
+    <Property Name="gonderilen_mail_grubu_uid" Type="Guid" />
+    <Property Name="gonderi_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="gonderen_user_uid" Type="Guid" />
+    <Property Name="gonderilen_mail_konusu" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="gonderilen_mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="host_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_host_adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_mail_gruplari">
+    <Key>
+      <PropertyRef Name="mail_grubu_uid" />
+    </Key>
+    <Property Name="mail_grubu_uid" Type="Guid" Nullable="false" />
+    <Property Name="grup_uid" Type="Guid" />
+    <Property Name="mail_grubu_adi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="olusturan_kullanici_uid" Type="Guid" />
+    <Property Name="olusturma_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="is_deleted" Type="Boolean" />
+    <Property Name="deleted_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sbr_mail_gruplari_dosyalari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="dosya_ekleyen_user_uid" Type="Guid" />
+    <Property Name="dosya_eklenma_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="dosya_uzanti_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dosya" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="mail_grubu_uid" Type="Guid" />
+  </EntityType>
+  <EntityType Name="sbr_mail_gruplari_kullanici_listesi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="mail_grubu_uid" Type="Guid" />
+    <Property Name="ad" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="soyad" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_deleted" Type="Boolean" />
+    <Property Name="deleted_date" Type="DateTime" Precision="3" />
+    <Property Name="olusturma_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="olusturan_kullanici_uid" Type="Guid" />
+  </EntityType>
+  <EntityType Name="sbr_ref_anket_durumu">
+    <Key>
+      <PropertyRef Name="anket_durumu_id" />
+    </Key>
+    <Property Name="anket_durumu_id" Type="Int32" Nullable="false" />
+    <Property Name="anket_durumu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_ref_anket_kategori">
+    <Key>
+      <PropertyRef Name="kategori_id" />
+    </Key>
+    <Property Name="kategori_id" Type="Int32" Nullable="false" />
+    <Property Name="kategori_kodu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="kategori_adi" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_ref_anket_temalari">
+    <Key>
+      <PropertyRef Name="anket_tema_id" />
+    </Key>
+    <Property Name="anket_tema_id" Type="Int32" Nullable="false" />
+    <Property Name="anket_tema_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_ref_anket_test_sonucu">
+    <Key>
+      <PropertyRef Name="anket_test_sonucu_id" />
+    </Key>
+    <Property Name="anket_test_sonucu_id" Type="Int32" Nullable="false" />
+    <Property Name="anket_test_sonucu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_ref_anket_tipi">
+    <Key>
+      <PropertyRef Name="anket_tipi_id" />
+    </Key>
+    <Property Name="anket_tipi_id" Type="Int32" Nullable="false" />
+    <Property Name="anket_tipi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_ref_sablon_durumu">
+    <Key>
+      <PropertyRef Name="sablon_durumu_id" />
+    </Key>
+    <Property Name="sablon_durumu_id" Type="Int32" Nullable="false" />
+    <Property Name="sablon_durumu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_ref_soru_siralama_sekli">
+    <Key>
+      <PropertyRef Name="soru_siralama_sekli_id" />
+    </Key>
+    <Property Name="soru_siralama_sekli_id" Type="Int32" Nullable="false" />
+    <Property Name="soru_siralama_sekli" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_ref_soru_sitili">
+    <Key>
+      <PropertyRef Name="soru_sitili_id" />
+    </Key>
+    <Property Name="soru_sitili_id" Type="Int32" Nullable="false" />
+    <Property Name="soru_sitili" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_ref_soru_tipi">
+    <Key>
+      <PropertyRef Name="soru_tipi_id" />
+    </Key>
+    <Property Name="soru_tipi_id" Type="Int32" Nullable="false" />
+    <Property Name="soru_tipi_kodu" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="soru_tipi_adi" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_sablon">
+    <Key>
+      <PropertyRef Name="sablon_uid" />
+    </Key>
+    <Property Name="sablon_uid" Type="Guid" Nullable="false" />
+    <Property Name="grup_uid" Type="Guid" />
+    <Property Name="kullanici_uid" Type="Guid" />
+    <Property Name="sablon_adi" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="kategori_id" Type="Int32" />
+    <Property Name="soru_sayisal_ondalik" Type="Boolean" />
+    <Property Name="olusturma_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="olusturan_kullanici_uid" Type="Guid" />
+    <Property Name="sablon_durumu_id" Type="Int32" />
+    <Property Name="sablon_durumu_uid" Type="Guid" />
+    <Property Name="inserted_by" Type="Guid" />
+    <Property Name="inserted_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_by" Type="Guid" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_durum_tarihcesi">
+    <Key>
+      <PropertyRef Name="sablon_durumu_uid" />
+    </Key>
+    <Property Name="sablon_durumu_uid" Type="Guid" Nullable="false" />
+    <Property Name="sablon_uid" Type="Guid" />
+    <Property Name="sablon_durumu_id" Type="Int32" />
+    <Property Name="durumu_olusturan_kullanici" Type="Guid" />
+    <Property Name="durum_olusma_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="durum_aciklamasi" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_1_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_10_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_11_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_2_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_3_secenek_kolonlari">
+    <Key>
+      <PropertyRef Name="soru_secenek_kolon_uid" />
+    </Key>
+    <Property Name="soru_secenek_kolon_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_kolon_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_kolon_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_3_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_4_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_5_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_6_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_7_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_8_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_9_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_sorulari">
+    <Key>
+      <PropertyRef Name="soru_uid" />
+    </Key>
+    <Property Name="soru_uid" Type="Guid" Nullable="false" />
+    <Property Name="sablon_uid" Type="Guid" />
+    <Property Name="soru_tipi_id" Type="Int32" />
+    <Property Name="soru" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_sira_no" Type="Int32" />
+    <Property Name="soru_sitili_id" Type="Int32" />
+    <Property Name="soru_siralama_sekli_id" Type="Int32" />
+    <Property Name="soru_zorunlu" Type="Boolean" />
+    <Property Name="soru_sayisal_ondalik" Type="Boolean" />
+    <Property Name="soru_olusturma_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="soru_olusturan_kullanici_uid" Type="Guid" />
+    <Property Name="inserted_by" Type="Guid" />
+    <Property Name="inserted_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_by" Type="Guid" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+    <Property Name="soru_tek_satir" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_1_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="cevap_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_uid" Type="Guid" />
+    <Property Name="cevap" Type="Boolean" />
+    <Property Name="cevaplayan_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="cavaplama_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="session_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="host_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_host_adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="browser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="platform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_1_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_10_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="cevap_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_uid" Type="Guid" />
+    <Property Name="cevap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="cavaplama_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="session_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="host_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_host_adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="browser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="platform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_10_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_11_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="cevap_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_uid" Type="Guid" />
+    <Property Name="cevap" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="cavaplama_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="session_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="host_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_host_adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="browser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="platform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_11_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_2_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="cevap_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_uid" Type="Guid" />
+    <Property Name="cevap" Type="Boolean" />
+    <Property Name="cevaplayan_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="cavaplama_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="session_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="host_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_host_adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="browser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="platform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_2_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_3_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="cevap_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_uid" Type="Guid" />
+    <Property Name="soru_secenek_kolon_uid" Type="Guid" />
+    <Property Name="cevap" Type="Boolean" />
+    <Property Name="cevaplayan_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="cavaplama_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="session_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="host_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_host_adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="browser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="platform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_3_secenek_kolonlari">
+    <Key>
+      <PropertyRef Name="soru_secenek_kolon_uid" />
+    </Key>
+    <Property Name="soru_secenek_kolon_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_kolon_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_kolon_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_3_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_4_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="cevap_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_uid" Type="Guid" />
+    <Property Name="cevap" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="cevaplayan_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="cavaplama_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="session_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="host_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_host_adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="browser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="platform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_4_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_5_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="cevap_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_uid" Type="Guid" />
+    <Property Name="cevap" Type="Boolean" />
+    <Property Name="cevaplayan_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="cavaplama_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="session_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="host_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_host_adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="browser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="platform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_5_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_6_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="cevap_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_uid" Type="Guid" />
+    <Property Name="cevap" Type="Boolean" />
+    <Property Name="cevaplayan_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="cavaplama_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="session_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="host_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_host_adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="browser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="platform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_6_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_7_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="cevap_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_uid" Type="Guid" />
+    <Property Name="cevap" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="cevaplayan_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="cavaplama_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="session_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="host_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_host_adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="browser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="platform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_7_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_8_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="cevap_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_uid" Type="Guid" />
+    <Property Name="cevap" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="cevaplayan_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="cavaplama_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="session_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="host_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_host_adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="browser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="platform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_8_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_9_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="cevap_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_uid" Type="Guid" />
+    <Property Name="cevap" Type="DateTime" Precision="3" />
+    <Property Name="cevaplayan_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cevaplayan_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="cavaplama_tarihi" Type="DateTime" Precision="3" />
+    <Property Name="session_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="host_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_host_adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="browser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="platform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_9_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="Guid" Nullable="false" />
+    <Property Name="soru_uid" Type="Guid" />
+    <Property Name="soru_secenek_ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soru_secenek_sira_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="SurveyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sbr_anket" EntityType="Self.sbr_anket" />
+    <EntitySet Name="sbr_anket_davet" EntityType="Self.sbr_anket_davet" />
+    <EntitySet Name="sbr_anket_durum_tarihcesi" EntityType="Self.sbr_anket_durum_tarihcesi" />
+    <EntitySet Name="sbr_anket_sorulari" EntityType="Self.sbr_anket_sorulari" />
+    <EntitySet Name="sbr_anket_test_mail_gonderi_kisi_tarihcesi" EntityType="Self.sbr_anket_test_mail_gonderi_kisi_tarihcesi" />
+    <EntitySet Name="sbr_anket_yayinlama_acik_anket_aktivasyon" EntityType="Self.sbr_anket_yayinlama_acik_anket_aktivasyon" />
+    <EntitySet Name="sbr_anket_yayinlama_mail_gonderi_aktivasyon" EntityType="Self.sbr_anket_yayinlama_mail_gonderi_aktivasyon" />
+    <EntitySet Name="sbr_anket_yayinlama_mail_gonderi_kisi_tarihcesi" EntityType="Self.sbr_anket_yayinlama_mail_gonderi_kisi_tarihcesi" />
+    <EntitySet Name="sbr_anket_yayinlama_mail_gonderi_tarihcesi" EntityType="Self.sbr_anket_yayinlama_mail_gonderi_tarihcesi" />
+    <EntitySet Name="sbr_mail_gruplari" EntityType="Self.sbr_mail_gruplari" />
+    <EntitySet Name="sbr_mail_gruplari_dosyalari" EntityType="Self.sbr_mail_gruplari_dosyalari" />
+    <EntitySet Name="sbr_mail_gruplari_kullanici_listesi" EntityType="Self.sbr_mail_gruplari_kullanici_listesi" />
+    <EntitySet Name="sbr_ref_anket_durumu" EntityType="Self.sbr_ref_anket_durumu" />
+    <EntitySet Name="sbr_ref_anket_kategori" EntityType="Self.sbr_ref_anket_kategori" />
+    <EntitySet Name="sbr_ref_anket_temalari" EntityType="Self.sbr_ref_anket_temalari" />
+    <EntitySet Name="sbr_ref_anket_test_sonucu" EntityType="Self.sbr_ref_anket_test_sonucu" />
+    <EntitySet Name="sbr_ref_anket_tipi" EntityType="Self.sbr_ref_anket_tipi" />
+    <EntitySet Name="sbr_ref_sablon_durumu" EntityType="Self.sbr_ref_sablon_durumu" />
+    <EntitySet Name="sbr_ref_soru_siralama_sekli" EntityType="Self.sbr_ref_soru_siralama_sekli" />
+    <EntitySet Name="sbr_ref_soru_sitili" EntityType="Self.sbr_ref_soru_sitili" />
+    <EntitySet Name="sbr_ref_soru_tipi" EntityType="Self.sbr_ref_soru_tipi" />
+    <EntitySet Name="sbr_sablon" EntityType="Self.sbr_sablon" />
+    <EntitySet Name="sbr_sablon_durum_tarihcesi" EntityType="Self.sbr_sablon_durum_tarihcesi" />
+    <EntitySet Name="sbr_sablon_soru_tipi_1_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_1_secenekleri" />
+    <EntitySet Name="sbr_sablon_soru_tipi_10_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_10_secenekleri" />
+    <EntitySet Name="sbr_sablon_soru_tipi_11_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_11_secenekleri" />
+    <EntitySet Name="sbr_sablon_soru_tipi_2_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_2_secenekleri" />
+    <EntitySet Name="sbr_sablon_soru_tipi_3_secenek_kolonlari" EntityType="Self.sbr_sablon_soru_tipi_3_secenek_kolonlari" />
+    <EntitySet Name="sbr_sablon_soru_tipi_3_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_3_secenekleri" />
+    <EntitySet Name="sbr_sablon_soru_tipi_4_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_4_secenekleri" />
+    <EntitySet Name="sbr_sablon_soru_tipi_5_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_5_secenekleri" />
+    <EntitySet Name="sbr_sablon_soru_tipi_6_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_6_secenekleri" />
+    <EntitySet Name="sbr_sablon_soru_tipi_7_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_7_secenekleri" />
+    <EntitySet Name="sbr_sablon_soru_tipi_8_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_8_secenekleri" />
+    <EntitySet Name="sbr_sablon_soru_tipi_9_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_9_secenekleri" />
+    <EntitySet Name="sbr_sablon_sorulari" EntityType="Self.sbr_sablon_sorulari" />
+    <EntitySet Name="sbr_soru_tipi_1_cevaplari" EntityType="Self.sbr_soru_tipi_1_cevaplari" />
+    <EntitySet Name="sbr_soru_tipi_1_secenekleri" EntityType="Self.sbr_soru_tipi_1_secenekleri" />
+    <EntitySet Name="sbr_soru_tipi_10_cevaplari" EntityType="Self.sbr_soru_tipi_10_cevaplari" />
+    <EntitySet Name="sbr_soru_tipi_10_secenekleri" EntityType="Self.sbr_soru_tipi_10_secenekleri" />
+    <EntitySet Name="sbr_soru_tipi_11_cevaplari" EntityType="Self.sbr_soru_tipi_11_cevaplari" />
+    <EntitySet Name="sbr_soru_tipi_11_secenekleri" EntityType="Self.sbr_soru_tipi_11_secenekleri" />
+    <EntitySet Name="sbr_soru_tipi_2_cevaplari" EntityType="Self.sbr_soru_tipi_2_cevaplari" />
+    <EntitySet Name="sbr_soru_tipi_2_secenekleri" EntityType="Self.sbr_soru_tipi_2_secenekleri" />
+    <EntitySet Name="sbr_soru_tipi_3_cevaplari" EntityType="Self.sbr_soru_tipi_3_cevaplari" />
+    <EntitySet Name="sbr_soru_tipi_3_secenek_kolonlari" EntityType="Self.sbr_soru_tipi_3_secenek_kolonlari" />
+    <EntitySet Name="sbr_soru_tipi_3_secenekleri" EntityType="Self.sbr_soru_tipi_3_secenekleri" />
+    <EntitySet Name="sbr_soru_tipi_4_cevaplari" EntityType="Self.sbr_soru_tipi_4_cevaplari" />
+    <EntitySet Name="sbr_soru_tipi_4_secenekleri" EntityType="Self.sbr_soru_tipi_4_secenekleri" />
+    <EntitySet Name="sbr_soru_tipi_5_cevaplari" EntityType="Self.sbr_soru_tipi_5_cevaplari" />
+    <EntitySet Name="sbr_soru_tipi_5_secenekleri" EntityType="Self.sbr_soru_tipi_5_secenekleri" />
+    <EntitySet Name="sbr_soru_tipi_6_cevaplari" EntityType="Self.sbr_soru_tipi_6_cevaplari" />
+    <EntitySet Name="sbr_soru_tipi_6_secenekleri" EntityType="Self.sbr_soru_tipi_6_secenekleri" />
+    <EntitySet Name="sbr_soru_tipi_7_cevaplari" EntityType="Self.sbr_soru_tipi_7_cevaplari" />
+    <EntitySet Name="sbr_soru_tipi_7_secenekleri" EntityType="Self.sbr_soru_tipi_7_secenekleri" />
+    <EntitySet Name="sbr_soru_tipi_8_cevaplari" EntityType="Self.sbr_soru_tipi_8_cevaplari" />
+    <EntitySet Name="sbr_soru_tipi_8_secenekleri" EntityType="Self.sbr_soru_tipi_8_secenekleri" />
+    <EntitySet Name="sbr_soru_tipi_9_cevaplari" EntityType="Self.sbr_soru_tipi_9_cevaplari" />
+    <EntitySet Name="sbr_soru_tipi_9_secenekleri" EntityType="Self.sbr_soru_tipi_9_secenekleri" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+  </EntityContainer>
+</Schema>

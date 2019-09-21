@@ -1,0 +1,7 @@
+D:\BaseWebSite\BaseClasses\bin\x86\Debug\BaseClasses.dll
+D:\BaseWebSite\BaseClasses\bin\x86\Debug\BaseClasses.pdb
+D:\BaseWebSite\BaseClasses\bin\x86\Debug\BaseDB.dll
+D:\BaseWebSite\BaseClasses\bin\x86\Debug\BaseDB.pdb
+D:\BaseWebSite\BaseClasses\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\BaseWebSite\BaseClasses\obj\x86\Debug\BaseClasses.dll
+D:\BaseWebSite\BaseClasses\obj\x86\Debug\BaseClasses.pdb

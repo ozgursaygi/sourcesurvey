@@ -1,0 +1,36 @@
+ @charset "utf-8";
+/* CSS Document */
+html { background:url(../img/htmlBg.png) repeat; }
+body { background:url(../img/bodyBg.png) repeat-x; font-family:Arial, Helvetica, sans-serif; font-size:14px; }
+#wrapper { width:960px; height:auto; margin:0 auto; overflow:hidden; padding:0 6px }
+#header { width:960px; height:auto; float:left; }
+#main { width:960px; min-height:400px; height:auto; float:left; margin-top:20px }
+#mainTopSection { width:960px; height:auto; float:left }
+#mainLeft { width:215px; height:auto; float:left; display:block; margin-right:20px; }
+/* Tema 1*/
+.theme1{ background:#fff ; font-family:Tahoma, Geneva, sans-serif;}
+.theme #wrapper { width:800px; height:auto; margin:0 auto; overflow:hidden; padding:0; background:url(../img/tema3WrapperBg.png) center top repeat-y;}
+.theme1 #header { width:760px; height:auto; float:left; padding:0 20px; background:url(../img/anketTema3Bg.png) center top no-repeat;  }
+.theme1 .surveyLogo { background: url(../img/surveyLogoBg3.png) no-repeat scroll left top transparent; display: table; float: left; height: 137px; text-align: center; width: 153px; padding:0 25px 11px 25px;}
+.theme1 .surveyLogoInner { display: table-cell; vertical-align: middle; }
+.theme1 .surveyTitle { font-weight:bold; font-size: 20px; color:#fff; float:right;margin-top: 20px;
+margin-right: 30px;word-wrap: break-word; width: 500px;  }
+.theme1 #main { width:730px; height:auto; float:left;padding:0 35px; }
+.theme1 .surveyQuestion{ width:730px; height:auto; float:left; margin-bottom:30px }
+.theme1 .surveyQuestionId{width:24px; height:24px; margin:0 5px; float:left; font-size:16px; color:#fff; line-height:24px; background:url(../img/questionNumberBg2.png) center center no-repeat; text-align:center}
+.theme1 .surveyQuestionContent{ width:650px; height:auto; float:left; padding-left:30px}
+.theme1 .surveyQuestionTitle{ width:650px; height:auto; float:left; font-size:14px; color:#343434; line-height:24px}
+.theme1 .surveyQuestionAnswer{ width:650px; height:auto; float:left;}
+.theme1 .surveyQuestionAnswer label{ font:normal 13px Arial, Helvetica, sans-serif;color:#343434;}
+.theme1 .surveyQuestionAnswer input[type="text"]{ color:#181818; background:#fff; padding:5px; width:450px}
+.theme1 .surveyQuestionAnswer .checker{ margin-bottom:5px}
+.theme1 .surveyQuestionAnswer .radio{ margin-bottom:3px}
+.theme1 #footer { width:730px; height:auto; float:left;padding:5px 35px;background:url(../img/anketTemaFooterBg2.png) repeat-x;  }
+.theme1 #footer .nav { width:55px; height:auto; float:left; margin-top:6px }
+.theme1 #footer .nav .previousNav{ width:28px; height:26px; float:left; display:block; text-indent:-9999px; font-size:0;  background:url(../img/leftArrow3.png) no-repeat;}
+.theme1 #footer .nav .nextNav{ width:27px; height:26px; float:left; display:block; text-indent:-9999px; font-size:0; background:url(../img/rightArrow3.png) no-repeat; }
+.theme1 #footer .pageNumber{ width:78px; height:38px; float:left; display:block; font-size:12px; color:#fff; line-height:21px; padding:0 0px; background:url(../img/pageNumberBg.png) no-repeat; text-align:center; line-height:29px; margin-top:2px}
+.theme1 #footer .totalQuestionNumber{ width:auto; height:20px; float:left; display:block; font-size:12px; color:#fff; line-height:32px; padding:0 10px; }
+.theme1 #footer .surveyButtons{ float:right; width:auto; height:auto; margin-top:5px}
+.theme1 #footer .surveySave{ width:68px; height:30px; float:left; display:block; font-size:0;  color:#6a783b; line-height:21px; padding:0; font-weight:bold; text-decoration:none; background:url(../img/surveySaveButton3.png) no-repeat; text-indent:-9999px; margin:0 10px 0 0;} 
+.theme1 #footer .surveyFinish{ width:68px; height:30px; float:left; display:block; font-size:0;  color:#6a783b; line-height:21px; padding:0; font-weight:bold; text-decoration:none; background:url(../img/surveyFinishButton3.png) no-repeat; text-indent:-9999px} 

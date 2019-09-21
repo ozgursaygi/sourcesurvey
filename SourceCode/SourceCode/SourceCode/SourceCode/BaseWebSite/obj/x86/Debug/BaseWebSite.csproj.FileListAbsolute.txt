@@ -1,0 +1,15 @@
+D:\BaseWebSite\BaseWebSite\bin\x86\Debug\BaseWebSite.dll
+D:\BaseWebSite\BaseWebSite\bin\x86\Debug\BaseWebSite.pdb
+D:\BaseWebSite\BaseWebSite\bin\x86\Debug\AnketBusiness.dll
+D:\BaseWebSite\BaseWebSite\bin\x86\Debug\BaseClasses.dll
+D:\BaseWebSite\BaseWebSite\bin\x86\Debug\BaseDB.dll
+D:\BaseWebSite\BaseWebSite\bin\x86\Debug\Captcha.dll
+D:\BaseWebSite\BaseWebSite\bin\x86\Debug\AnketDataAccess.dll
+D:\BaseWebSite\BaseWebSite\bin\x86\Debug\AnketBusiness.pdb
+D:\BaseWebSite\BaseWebSite\bin\x86\Debug\BaseClasses.pdb
+D:\BaseWebSite\BaseWebSite\bin\x86\Debug\BaseDB.pdb
+D:\BaseWebSite\BaseWebSite\bin\x86\Debug\Captcha.pdb
+D:\BaseWebSite\BaseWebSite\bin\x86\Debug\AnketDataAccess.pdb
+D:\BaseWebSite\BaseWebSite\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\BaseWebSite\BaseWebSite\obj\x86\Debug\BaseWebSite.dll
+D:\BaseWebSite\BaseWebSite\obj\x86\Debug\BaseWebSite.pdb

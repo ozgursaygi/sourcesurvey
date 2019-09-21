@@ -1,0 +1,19 @@
+.ddsmoothmenu{width:960px;height:auto;float:left;margin-bottom:20px;}
+.ddsmoothmenu ul{z-index:0;margin:0;padding:0;list-style-type:none;}
+.ddsmoothmenu ul li{position:relative;display:inline;float:left;margin-right:12px;z-index:0 !important}
+.ddsmoothmenu ul li a{font:normal 12px "Trebuchet MS", Arial, Helvetica, sans-serif;padding:8px 12px;display:block;float:left;background:#e1e1e1;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;text-decoration:none;-moz-box-shadow:1px 1px 0 #CCCCCC inset;-webkit-box-shadow:1px 1px 0 #CCCCCC inset;box-shadow:1px 1px 0 #CCCCCC inset;}
+* html .ddsmoothmenu ul li a{display:inline-block;}
+.ddsmoothmenu ul li a:link, .ddsmoothmenu ul li a:visited{color:#181818;}
+.ddsmoothmenu ul li a.selected{color:#fff;background:url(../img/mainLinkHover.png) repeat-x;-moz-box-shadow:0px 0px 0 #CCCCCC inset;-webkit-box-shadow:0px 0px 0 #CCCCCC inset;box-shadow:0px 0px 0 #CCCCCC inset;}
+.ddsmoothmenu ul li a:hover{color:#fff;background:url(../img/mainLinkHover.png) repeat-x;-moz-box-shadow:0px 0px 0 #CCCCCC inset;-webkit-box-shadow:0px 0px 0 #CCCCCC inset;box-shadow:0px 0px 0 #CCCCCC inset;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
+.ddsmoothmenu ul li ul{position:absolute;left:0;display:none;visibility:hidden;box-shadow:none !important;-webkit-border-radius:3px !important;-moz-border-radius:3px !important;border-radius:3px !important;top:35px !important;border:none !important;z-index:0}
+.ddsmoothmenu ul li ul li{display:list-item;float:none;border:none !important}
+.ddsmoothmenu ul li ul li ul{top:0;-webkit-border-radius:3px !important;-moz-border-radius:3px !important;border-radius:3px !important;border:none !important}
+.ddsmoothmenu ul li ul li a{width:140px;font:normal 12px "Trebuchet MS", Arial, Helvetica, sans-serif;padding:8px 12px;display:block;float:left;background:#639027;text-decoration:none;-webkit-border-radius:0px;-moz-border-radius:0px;border-radius:0px;-moz-box-shadow:none;-webkit-box-shadow:none;box-shadow:none;color:#fff !important;border-bottom:1px solid #4d7517 !important;border-top:1px solid #83a754 !important;}
+.ddsmoothmenu ul li ul li.first{-webkit-border-radius:3px 3px 0 0 !important;-moz-border-radius:3px 3px 0 0 !important;border-radius:3px 3px 0 0 !important;}
+.ddsmoothmenu ul li ul li.last{-webkit-border-radius:0 0 3px 3px !important;-moz-border-radius:0 0 3px 3px !important;border-radius:0 0 3px 3px !important;}
+.ddsmoothmenu ul li ul li a:hover{-webkit-border-radius:0px;-moz-border-radius:0px;border-radius:0px;background:#304f08;}
+* html .ddsmoothmenu{height:1%;}
+.ddshadow{position:absolute;left:0;top:0;width:0;height:0;background:silver;}
+.toplevelshadow{opacity:0.8;}
+.downarrowclass{display:none;}

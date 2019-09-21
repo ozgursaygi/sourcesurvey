@@ -1,0 +1,63 @@
+body {
+
+	background-image: none;
+	background-color: #F6F6F6;
+}
+
+#header {
+	height: 99px;
+	margin-top: 20px;
+}
+
+#logo {
+	text-align: center;
+	width: auto;
+}
+
+#logo img {
+	width: 70px;
+	height: 70px;
+	padding: 4px;
+	background: white;
+	border: #74777D 1px solid;
+	margin-top: 8px;
+}
+
+#title {
+	margin-top: 20px;
+}
+
+#title h1 a { text-shadow: 1px 1px gray;}
+
+.require {
+	text-decoration: none;
+	float: none;
+	display: inline;
+	padding: 0px;
+	margin: 0px 3px;
+	font-weight: bold;
+	color: red;
+	border-bottom-width: 0;
+}
+
+span.qnumber {
+	display: block;
+	padding: 8px;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	background: url(../../images/bar-sprite.png) repeat-x -251px -312px;
+	-border-radius:20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	width:20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	margin: 8px;
+}
+
+.fldTitle {
+	font-weight: bold;
+	color: inherit;
+}

@@ -1,0 +1,14 @@
+D:\BaseWebSite\BaseClasses\bin\Release\BaseClasses.dll
+D:\BaseWebSite\BaseClasses\bin\Release\BaseClasses.pdb
+D:\BaseWebSite\BaseClasses\bin\Release\BaseDB.dll
+D:\BaseWebSite\BaseClasses\bin\Release\BaseDB.pdb
+D:\BaseWebSite\BaseClasses\obj\Release\ResolveAssemblyReference.cache
+D:\BaseWebSite\BaseClasses\obj\Release\BaseClasses.dll
+D:\BaseWebSite\BaseClasses\obj\Release\BaseClasses.pdb
+C:\WebApps\BaseWebSite\BaseClasses\bin\Release\BaseClasses.dll
+C:\WebApps\BaseWebSite\BaseClasses\bin\Release\BaseClasses.pdb
+C:\WebApps\BaseWebSite\BaseClasses\bin\Release\BaseDB.dll
+C:\WebApps\BaseWebSite\BaseClasses\bin\Release\BaseDB.pdb
+C:\WebApps\BaseWebSite\BaseClasses\obj\Release\BaseClasses.csprojResolveAssemblyReference.cache
+C:\WebApps\BaseWebSite\BaseClasses\obj\Release\BaseClasses.dll
+C:\WebApps\BaseWebSite\BaseClasses\obj\Release\BaseClasses.pdb

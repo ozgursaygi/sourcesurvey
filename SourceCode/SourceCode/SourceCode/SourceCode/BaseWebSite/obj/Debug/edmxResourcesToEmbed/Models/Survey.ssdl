@@ -1,0 +1,815 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BaseWebSites.Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="sbr_anket">
+    <Key>
+      <PropertyRef Name="anket_uid" />
+    </Key>
+    <Property Name="anket_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="grup_uid" Type="uniqueidentifier" />
+    <Property Name="kullanici_uid" Type="uniqueidentifier" />
+    <Property Name="anket_adi" Type="nvarchar" MaxLength="4000" />
+    <Property Name="anket_goruntulenen_ad" Type="nvarchar" MaxLength="4000" />
+    <Property Name="anket_goruntulenen_ad_ekle" Type="bit" />
+    <Property Name="kategori_id" Type="int" />
+    <Property Name="anket_tipi_id" Type="int" />
+    <Property Name="anket_mesaji" Type="text" />
+    <Property Name="anket_mesaji_ekle" Type="bit" />
+    <Property Name="anket_sonuc_mesaji" Type="text" />
+    <Property Name="anket_sonuc_mesaji_ekle" Type="bit" />
+    <Property Name="baslangic_tarihi" Type="datetime" />
+    <Property Name="bitis_tarihi" Type="datetime" />
+    <Property Name="olusturma_tarihi" Type="datetime" />
+    <Property Name="olusturan_kullanici_uid" Type="uniqueidentifier" />
+    <Property Name="anket_durumu_id" Type="int" />
+    <Property Name="anket_durumu_uid" Type="uniqueidentifier" />
+    <Property Name="ip_kisitlamasi" Type="bit" />
+    <Property Name="sayfadaki_soru_sayisi" Type="int" />
+    <Property Name="soru_cevaplama_zorunlulugu" Type="int" />
+    <Property Name="anket_tema_id" Type="int" />
+    <Property Name="logo" Type="image" />
+    <Property Name="bitis_tarihinde_anketi_kaldir" Type="bit" />
+    <Property Name="inserted_by" Type="uniqueidentifier" />
+    <Property Name="inserted_at" Type="datetime" />
+    <Property Name="updated_by" Type="uniqueidentifier" />
+    <Property Name="updated_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sbr_anket_davet">
+    <Key>
+      <PropertyRef Name="davet_uid" />
+    </Key>
+    <Property Name="davet_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="davet_eden_kullanici_uid" Type="uniqueidentifier" />
+    <Property Name="davet_edilen_grup_uid" Type="uniqueidentifier" />
+    <Property Name="davet_edilen_email" Type="nvarchar" MaxLength="200" />
+    <Property Name="davet_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="davet_tarihi" Type="datetime" />
+    <Property Name="davet_kabul_edildi" Type="bit" />
+    <Property Name="davet_kabul_edilme_tarihi" Type="datetime" />
+    <Property Name="davet_kabul_eden_kullanici_uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="sbr_anket_durum_tarihcesi">
+    <Key>
+      <PropertyRef Name="anket_durumu_uid" />
+    </Key>
+    <Property Name="anket_durumu_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="anket_uid" Type="uniqueidentifier" />
+    <Property Name="anket_durumu_id" Type="int" />
+    <Property Name="durumu_olusturan_kullanici" Type="uniqueidentifier" />
+    <Property Name="durum_olusma_tarihi" Type="datetime" />
+    <Property Name="durum_aciklamasi" Type="nvarchar" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="sbr_anket_sorulari">
+    <Key>
+      <PropertyRef Name="soru_uid" />
+    </Key>
+    <Property Name="soru_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="anket_uid" Type="uniqueidentifier" />
+    <Property Name="soru_tipi_id" Type="int" />
+    <Property Name="soru" Type="text" />
+    <Property Name="soru_sira_no" Type="int" />
+    <Property Name="soru_sitili_id" Type="int" />
+    <Property Name="soru_siralama_sekli_id" Type="int" />
+    <Property Name="soru_zorunlu" Type="bit" />
+    <Property Name="soru_sayisal_ondalik" Type="bit" />
+    <Property Name="soru_olusturma_tarihi" Type="datetime" />
+    <Property Name="soru_olusturan_kullanici_uid" Type="uniqueidentifier" />
+    <Property Name="inserted_by" Type="uniqueidentifier" />
+    <Property Name="inserted_at" Type="datetime" />
+    <Property Name="updated_by" Type="uniqueidentifier" />
+    <Property Name="updated_at" Type="datetime" />
+    <Property Name="soru_tek_satir" Type="bit" />
+  </EntityType>
+  <EntityType Name="sbr_anket_test_mail_gonderi_kisi_tarihcesi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="anket_uid" Type="uniqueidentifier" />
+    <Property Name="gonderi_tarihi" Type="datetime" />
+    <Property Name="gonderen_user_uid" Type="uniqueidentifier" />
+    <Property Name="gonderilen_email_adresi" Type="nvarchar" MaxLength="500" />
+    <Property Name="anket_test_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="anket_test_sonucu_id" Type="int" />
+    <Property Name="anket_test_sonucu" Type="text" />
+  </EntityType>
+  <EntityType Name="sbr_anket_yayinlama_acik_anket_aktivasyon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="anket_uid" Type="uniqueidentifier" />
+    <Property Name="giris_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="anket_bitirildi" Type="bit" />
+    <Property Name="anket_bitirilme_tarihi" Type="datetime" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_host_adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="browser" Type="nvarchar" MaxLength="50" />
+    <Property Name="platform" Type="nvarchar" MaxLength="50" />
+    <Property Name="versiyon" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sbr_anket_yayinlama_mail_gonderi_aktivasyon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="anket_uid" Type="uniqueidentifier" />
+    <Property Name="tarihce_uid" Type="uniqueidentifier" />
+    <Property Name="anket_gonderilen_ad" Type="nvarchar" MaxLength="100" />
+    <Property Name="anket_gonderilen_soyad" Type="nvarchar" MaxLength="100" />
+    <Property Name="anket_gonderilen_email" Type="nvarchar" MaxLength="200" />
+    <Property Name="anket_gonderilme_tarihi" Type="datetime" />
+    <Property Name="anket_gonderilme_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="ankete_girildi" Type="bit" />
+    <Property Name="ankete_giris_tarihi" Type="datetime" />
+    <Property Name="anket_bitirildi" Type="bit" />
+    <Property Name="anket_bitirilme_tarihi" Type="datetime" />
+    <Property Name="ankete_cevap_verildi" Type="bit" />
+    <Property Name="ankete_cevap_verilme_tarihi" Type="datetime" />
+    <Property Name="anket_mail_grubu_uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="sbr_anket_yayinlama_mail_gonderi_kisi_tarihcesi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="tarihce_uid" Type="uniqueidentifier" />
+    <Property Name="gonderilen_kisi_ismi" Type="nvarchar" MaxLength="200" />
+    <Property Name="gonderilen_email_adresi" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="sbr_anket_yayinlama_mail_gonderi_tarihcesi">
+    <Key>
+      <PropertyRef Name="tarihce_uid" />
+    </Key>
+    <Property Name="tarihce_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="anket_uid" Type="uniqueidentifier" />
+    <Property Name="gonderilen_mail_grubu_uid" Type="uniqueidentifier" />
+    <Property Name="gonderi_tarihi" Type="datetime" />
+    <Property Name="gonderen_user_uid" Type="uniqueidentifier" />
+    <Property Name="gonderilen_mail_konusu" Type="nvarchar" MaxLength="4000" />
+    <Property Name="gonderilen_mail" Type="text" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_host_adres" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sbr_mail_gruplari">
+    <Key>
+      <PropertyRef Name="mail_grubu_uid" />
+    </Key>
+    <Property Name="mail_grubu_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="grup_uid" Type="uniqueidentifier" />
+    <Property Name="mail_grubu_adi" Type="nvarchar" MaxLength="500" />
+    <Property Name="olusturan_kullanici_uid" Type="uniqueidentifier" />
+    <Property Name="olusturma_tarihi" Type="datetime" />
+    <Property Name="is_deleted" Type="bit" />
+    <Property Name="deleted_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sbr_mail_gruplari_dosyalari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="dosya_ekleyen_user_uid" Type="uniqueidentifier" />
+    <Property Name="dosya_eklenma_tarihi" Type="datetime" />
+    <Property Name="dosya_uzanti_adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="dosya" Type="image" />
+    <Property Name="mail_grubu_uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="sbr_mail_gruplari_kullanici_listesi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="mail_grubu_uid" Type="uniqueidentifier" />
+    <Property Name="ad" Type="nvarchar" MaxLength="200" />
+    <Property Name="soyad" Type="nvarchar" MaxLength="200" />
+    <Property Name="email" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_deleted" Type="bit" />
+    <Property Name="deleted_date" Type="datetime" />
+    <Property Name="olusturma_tarihi" Type="datetime" />
+    <Property Name="olusturan_kullanici_uid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="sbr_ref_anket_durumu">
+    <Key>
+      <PropertyRef Name="anket_durumu_id" />
+    </Key>
+    <Property Name="anket_durumu_id" Type="int" Nullable="false" />
+    <Property Name="anket_durumu" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="sbr_ref_anket_kategori">
+    <Key>
+      <PropertyRef Name="kategori_id" />
+    </Key>
+    <Property Name="kategori_id" Type="int" Nullable="false" />
+    <Property Name="kategori_kodu" Type="nvarchar" MaxLength="500" />
+    <Property Name="kategori_adi" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="sbr_ref_anket_temalari">
+    <Key>
+      <PropertyRef Name="anket_tema_id" />
+    </Key>
+    <Property Name="anket_tema_id" Type="int" Nullable="false" />
+    <Property Name="anket_tema_name" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="sbr_ref_anket_test_sonucu">
+    <Key>
+      <PropertyRef Name="anket_test_sonucu_id" />
+    </Key>
+    <Property Name="anket_test_sonucu_id" Type="int" Nullable="false" />
+    <Property Name="anket_test_sonucu" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="sbr_ref_anket_tipi">
+    <Key>
+      <PropertyRef Name="anket_tipi_id" />
+    </Key>
+    <Property Name="anket_tipi_id" Type="int" Nullable="false" />
+    <Property Name="anket_tipi" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="sbr_ref_sablon_durumu">
+    <Key>
+      <PropertyRef Name="sablon_durumu_id" />
+    </Key>
+    <Property Name="sablon_durumu_id" Type="int" Nullable="false" />
+    <Property Name="sablon_durumu" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="sbr_ref_soru_siralama_sekli">
+    <Key>
+      <PropertyRef Name="soru_siralama_sekli_id" />
+    </Key>
+    <Property Name="soru_siralama_sekli_id" Type="int" Nullable="false" />
+    <Property Name="soru_siralama_sekli" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="sbr_ref_soru_sitili">
+    <Key>
+      <PropertyRef Name="soru_sitili_id" />
+    </Key>
+    <Property Name="soru_sitili_id" Type="int" Nullable="false" />
+    <Property Name="soru_sitili" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="sbr_ref_soru_tipi">
+    <Key>
+      <PropertyRef Name="soru_tipi_id" />
+    </Key>
+    <Property Name="soru_tipi_id" Type="int" Nullable="false" />
+    <Property Name="soru_tipi_kodu" Type="nvarchar" MaxLength="1000" />
+    <Property Name="soru_tipi_adi" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="sbr_sablon">
+    <Key>
+      <PropertyRef Name="sablon_uid" />
+    </Key>
+    <Property Name="sablon_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="grup_uid" Type="uniqueidentifier" />
+    <Property Name="kullanici_uid" Type="uniqueidentifier" />
+    <Property Name="sablon_adi" Type="nvarchar" MaxLength="4000" />
+    <Property Name="kategori_id" Type="int" />
+    <Property Name="soru_sayisal_ondalik" Type="bit" />
+    <Property Name="olusturma_tarihi" Type="datetime" />
+    <Property Name="olusturan_kullanici_uid" Type="uniqueidentifier" />
+    <Property Name="sablon_durumu_id" Type="int" />
+    <Property Name="sablon_durumu_uid" Type="uniqueidentifier" />
+    <Property Name="inserted_by" Type="uniqueidentifier" />
+    <Property Name="inserted_at" Type="datetime" />
+    <Property Name="updated_by" Type="uniqueidentifier" />
+    <Property Name="updated_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_durum_tarihcesi">
+    <Key>
+      <PropertyRef Name="sablon_durumu_uid" />
+    </Key>
+    <Property Name="sablon_durumu_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="sablon_uid" Type="uniqueidentifier" />
+    <Property Name="sablon_durumu_id" Type="int" />
+    <Property Name="durumu_olusturan_kullanici" Type="uniqueidentifier" />
+    <Property Name="durum_olusma_tarihi" Type="datetime" />
+    <Property Name="durum_aciklamasi" Type="nvarchar" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_1_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_10_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_11_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_2_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_3_secenek_kolonlari">
+    <Key>
+      <PropertyRef Name="soru_secenek_kolon_uid" />
+    </Key>
+    <Property Name="soru_secenek_kolon_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_kolon_ad" Type="text" />
+    <Property Name="soru_secenek_kolon_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_3_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_4_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_5_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_6_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_7_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_8_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_soru_tipi_9_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_sablon_sorulari">
+    <Key>
+      <PropertyRef Name="soru_uid" />
+    </Key>
+    <Property Name="soru_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="sablon_uid" Type="uniqueidentifier" />
+    <Property Name="soru_tipi_id" Type="int" />
+    <Property Name="soru" Type="text" />
+    <Property Name="soru_sira_no" Type="int" />
+    <Property Name="soru_sitili_id" Type="int" />
+    <Property Name="soru_siralama_sekli_id" Type="int" />
+    <Property Name="soru_zorunlu" Type="bit" />
+    <Property Name="soru_sayisal_ondalik" Type="bit" />
+    <Property Name="soru_olusturma_tarihi" Type="datetime" />
+    <Property Name="soru_olusturan_kullanici_uid" Type="uniqueidentifier" />
+    <Property Name="inserted_by" Type="uniqueidentifier" />
+    <Property Name="inserted_at" Type="datetime" />
+    <Property Name="updated_by" Type="uniqueidentifier" />
+    <Property Name="updated_at" Type="datetime" />
+    <Property Name="soru_tek_satir" Type="bit" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_1_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="cevap_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" />
+    <Property Name="cevap" Type="bit" />
+    <Property Name="cevaplayan_ad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_soyad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_email" Type="nvarchar" MaxLength="200" />
+    <Property Name="cavaplama_tarihi" Type="datetime" />
+    <Property Name="session_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_host_adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="browser" Type="nvarchar" MaxLength="50" />
+    <Property Name="platform" Type="nvarchar" MaxLength="50" />
+    <Property Name="version" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_1_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_10_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="cevap_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" />
+    <Property Name="cevap" Type="nvarchar" MaxLength="50" />
+    <Property Name="cevaplayan_ad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_soyad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_email" Type="nvarchar" MaxLength="200" />
+    <Property Name="cavaplama_tarihi" Type="datetime" />
+    <Property Name="session_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_host_adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="browser" Type="nvarchar" MaxLength="50" />
+    <Property Name="platform" Type="nvarchar" MaxLength="50" />
+    <Property Name="version" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_10_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_11_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="cevap_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" />
+    <Property Name="cevap" Type="nvarchar" MaxLength="200" />
+    <Property Name="cevaplayan_ad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_soyad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_email" Type="nvarchar" MaxLength="200" />
+    <Property Name="cavaplama_tarihi" Type="datetime" />
+    <Property Name="session_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_host_adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="browser" Type="nvarchar" MaxLength="50" />
+    <Property Name="platform" Type="nvarchar" MaxLength="50" />
+    <Property Name="version" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_11_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_2_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="cevap_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" />
+    <Property Name="cevap" Type="bit" />
+    <Property Name="cevaplayan_ad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_soyad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_email" Type="nvarchar" MaxLength="200" />
+    <Property Name="cavaplama_tarihi" Type="datetime" />
+    <Property Name="session_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_host_adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="browser" Type="nvarchar" MaxLength="50" />
+    <Property Name="platform" Type="nvarchar" MaxLength="50" />
+    <Property Name="version" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_2_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_3_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="cevap_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_kolon_uid" Type="uniqueidentifier" />
+    <Property Name="cevap" Type="bit" />
+    <Property Name="cevaplayan_ad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_soyad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_email" Type="nvarchar" MaxLength="200" />
+    <Property Name="cavaplama_tarihi" Type="datetime" />
+    <Property Name="session_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_host_adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="browser" Type="nvarchar" MaxLength="50" />
+    <Property Name="platform" Type="nvarchar" MaxLength="50" />
+    <Property Name="version" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_3_secenek_kolonlari">
+    <Key>
+      <PropertyRef Name="soru_secenek_kolon_uid" />
+    </Key>
+    <Property Name="soru_secenek_kolon_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_kolon_ad" Type="text" />
+    <Property Name="soru_secenek_kolon_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_3_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_4_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="cevap_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" />
+    <Property Name="cevap" Type="text" />
+    <Property Name="cevaplayan_ad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_soyad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_email" Type="nvarchar" MaxLength="200" />
+    <Property Name="cavaplama_tarihi" Type="datetime" />
+    <Property Name="session_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_host_adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="browser" Type="nvarchar" MaxLength="50" />
+    <Property Name="platform" Type="nvarchar" MaxLength="50" />
+    <Property Name="version" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_4_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_5_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="cevap_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" />
+    <Property Name="cevap" Type="bit" />
+    <Property Name="cevaplayan_ad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_soyad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_email" Type="nvarchar" MaxLength="200" />
+    <Property Name="cavaplama_tarihi" Type="datetime" />
+    <Property Name="session_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_host_adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="browser" Type="nvarchar" MaxLength="50" />
+    <Property Name="platform" Type="nvarchar" MaxLength="50" />
+    <Property Name="version" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_5_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_6_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="cevap_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" />
+    <Property Name="cevap" Type="bit" />
+    <Property Name="cevaplayan_ad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_soyad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_email" Type="nvarchar" MaxLength="200" />
+    <Property Name="cavaplama_tarihi" Type="datetime" />
+    <Property Name="session_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_host_adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="browser" Type="nvarchar" MaxLength="50" />
+    <Property Name="platform" Type="nvarchar" MaxLength="50" />
+    <Property Name="version" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_6_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_7_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="cevap_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" />
+    <Property Name="cevap" Type="text" />
+    <Property Name="cevaplayan_ad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_soyad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_email" Type="nvarchar" MaxLength="200" />
+    <Property Name="cavaplama_tarihi" Type="datetime" />
+    <Property Name="session_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_host_adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="browser" Type="nvarchar" MaxLength="50" />
+    <Property Name="platform" Type="nvarchar" MaxLength="50" />
+    <Property Name="version" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_7_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_8_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="cevap_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" />
+    <Property Name="cevap" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="cevaplayan_ad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_soyad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_email" Type="nvarchar" MaxLength="200" />
+    <Property Name="cavaplama_tarihi" Type="datetime" />
+    <Property Name="session_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_host_adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="browser" Type="nvarchar" MaxLength="50" />
+    <Property Name="platform" Type="nvarchar" MaxLength="50" />
+    <Property Name="version" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_8_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_9_cevaplari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="cevap_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" />
+    <Property Name="cevap" Type="datetime" />
+    <Property Name="cevaplayan_ad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_soyad" Type="nvarchar" MaxLength="100" />
+    <Property Name="cevaplayan_email" Type="nvarchar" MaxLength="200" />
+    <Property Name="cavaplama_tarihi" Type="datetime" />
+    <Property Name="session_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="host_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_host_adres" Type="nvarchar" MaxLength="50" />
+    <Property Name="browser" Type="nvarchar" MaxLength="50" />
+    <Property Name="platform" Type="nvarchar" MaxLength="50" />
+    <Property Name="version" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sbr_soru_tipi_9_secenekleri">
+    <Key>
+      <PropertyRef Name="soru_secenek_uid" />
+    </Key>
+    <Property Name="soru_secenek_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="soru_uid" Type="uniqueidentifier" />
+    <Property Name="soru_secenek_ad" Type="text" />
+    <Property Name="soru_secenek_sira_no" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityContainer Name="BaseWebSitesModelsStoreContainer">
+    <EntitySet Name="sbr_anket" EntityType="Self.sbr_anket" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_anket_davet" EntityType="Self.sbr_anket_davet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_anket_durum_tarihcesi" EntityType="Self.sbr_anket_durum_tarihcesi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_anket_sorulari" EntityType="Self.sbr_anket_sorulari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_anket_test_mail_gonderi_kisi_tarihcesi" EntityType="Self.sbr_anket_test_mail_gonderi_kisi_tarihcesi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_anket_yayinlama_acik_anket_aktivasyon" EntityType="Self.sbr_anket_yayinlama_acik_anket_aktivasyon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_anket_yayinlama_mail_gonderi_aktivasyon" EntityType="Self.sbr_anket_yayinlama_mail_gonderi_aktivasyon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_anket_yayinlama_mail_gonderi_kisi_tarihcesi" EntityType="Self.sbr_anket_yayinlama_mail_gonderi_kisi_tarihcesi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_anket_yayinlama_mail_gonderi_tarihcesi" EntityType="Self.sbr_anket_yayinlama_mail_gonderi_tarihcesi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_mail_gruplari" EntityType="Self.sbr_mail_gruplari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_mail_gruplari_dosyalari" EntityType="Self.sbr_mail_gruplari_dosyalari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_mail_gruplari_kullanici_listesi" EntityType="Self.sbr_mail_gruplari_kullanici_listesi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_ref_anket_durumu" EntityType="Self.sbr_ref_anket_durumu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_ref_anket_kategori" EntityType="Self.sbr_ref_anket_kategori" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_ref_anket_temalari" EntityType="Self.sbr_ref_anket_temalari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_ref_anket_test_sonucu" EntityType="Self.sbr_ref_anket_test_sonucu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_ref_anket_tipi" EntityType="Self.sbr_ref_anket_tipi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_ref_sablon_durumu" EntityType="Self.sbr_ref_sablon_durumu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_ref_soru_siralama_sekli" EntityType="Self.sbr_ref_soru_siralama_sekli" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_ref_soru_sitili" EntityType="Self.sbr_ref_soru_sitili" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_ref_soru_tipi" EntityType="Self.sbr_ref_soru_tipi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_sablon" EntityType="Self.sbr_sablon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_sablon_durum_tarihcesi" EntityType="Self.sbr_sablon_durum_tarihcesi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_sablon_soru_tipi_1_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_1_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_sablon_soru_tipi_10_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_10_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_sablon_soru_tipi_11_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_11_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_sablon_soru_tipi_2_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_2_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_sablon_soru_tipi_3_secenek_kolonlari" EntityType="Self.sbr_sablon_soru_tipi_3_secenek_kolonlari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_sablon_soru_tipi_3_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_3_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_sablon_soru_tipi_4_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_4_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_sablon_soru_tipi_5_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_5_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_sablon_soru_tipi_6_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_6_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_sablon_soru_tipi_7_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_7_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_sablon_soru_tipi_8_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_8_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_sablon_soru_tipi_9_secenekleri" EntityType="Self.sbr_sablon_soru_tipi_9_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_sablon_sorulari" EntityType="Self.sbr_sablon_sorulari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_1_cevaplari" EntityType="Self.sbr_soru_tipi_1_cevaplari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_1_secenekleri" EntityType="Self.sbr_soru_tipi_1_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_10_cevaplari" EntityType="Self.sbr_soru_tipi_10_cevaplari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_10_secenekleri" EntityType="Self.sbr_soru_tipi_10_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_11_cevaplari" EntityType="Self.sbr_soru_tipi_11_cevaplari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_11_secenekleri" EntityType="Self.sbr_soru_tipi_11_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_2_cevaplari" EntityType="Self.sbr_soru_tipi_2_cevaplari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_2_secenekleri" EntityType="Self.sbr_soru_tipi_2_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_3_cevaplari" EntityType="Self.sbr_soru_tipi_3_cevaplari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_3_secenek_kolonlari" EntityType="Self.sbr_soru_tipi_3_secenek_kolonlari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_3_secenekleri" EntityType="Self.sbr_soru_tipi_3_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_4_cevaplari" EntityType="Self.sbr_soru_tipi_4_cevaplari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_4_secenekleri" EntityType="Self.sbr_soru_tipi_4_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_5_cevaplari" EntityType="Self.sbr_soru_tipi_5_cevaplari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_5_secenekleri" EntityType="Self.sbr_soru_tipi_5_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_6_cevaplari" EntityType="Self.sbr_soru_tipi_6_cevaplari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_6_secenekleri" EntityType="Self.sbr_soru_tipi_6_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_7_cevaplari" EntityType="Self.sbr_soru_tipi_7_cevaplari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_7_secenekleri" EntityType="Self.sbr_soru_tipi_7_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_8_cevaplari" EntityType="Self.sbr_soru_tipi_8_cevaplari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_8_secenekleri" EntityType="Self.sbr_soru_tipi_8_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_9_cevaplari" EntityType="Self.sbr_soru_tipi_9_cevaplari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sbr_soru_tipi_9_secenekleri" EntityType="Self.sbr_soru_tipi_9_secenekleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

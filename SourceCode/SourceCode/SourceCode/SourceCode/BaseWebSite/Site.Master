@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BaseWebSite.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <title>HomePage | Survey - Easy and Fast Solution</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+    <%--<script src="<%=ApplicationPath%>js/cufon-yui.js" type="text/javascript"></script>--%>
+    <script src="<%=ApplicationPath%>js/Diavlo.font.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <%# Response.CacheControl = "no-cache"%>
+    <% Response.AddHeader("Pragma", "no-cache"); %>
+    <% Response.Expires = -1; %>
+    <script type="text/javascript">
+        function GosterHtml(tip) {
+            if (tip == 1) {
+                window.open('<%=ResolveClientUrl("~/Anket/ShowHtmlTemplate.aspx")%>?tip=1', 'Register', 'toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=900,height=500');
+            }
+            else if (tip == 2) {
+                window.open('<%=ResolveClientUrl("~/Anket/ShowHtmlTemplate.aspx")%>?tip=2', 'Register', 'toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=1,resizable=1,width=900,height=500');
+            }
+            else if (tip == 3) {
+                
+            }
+        }
+        $(function () {
+            //Cufon.replace('.headerLogo h2');
+            //            $(".fancybox").fancybox();
+        });
+    </script>
+    <form runat="server">
+    <div id="div_default" runat="server">
+        <div id="wrapper">
+            <div id="header">
+                <div id="headerTop">
+                    <div class="logo">
+                        <div style="float:left">
+                                    <a href="<%=ResolveClientUrl("Default.aspx")%>">
+                                        <img src="<%=ResolveClientUrl("img/surveySampleLogo.png")%>" alt="logo" /></a>
+                         </div>
+                         <div class="headerLogo" style="float:left" >
+                         <h2>
+                                            Survey</h2>
+                         </div>
+                                
+                    </div>
+                    <div id="div_login_display" class="login" runat="server">
+                        <a href="<%=ResolveClientUrl("Login.aspx")%>" class="userName">SIGN IN</a></div>
+                    <div id="div_user_display" class="login" runat="server">
+                        <a href="<%=ResolveClientUrl("Account.aspx")%>" class="userName">
+                            <asp:Literal ID="UserNameSurname" runat="server"></asp:Literal></a><span>,</span><a
+                                href="<%=ResolveClientUrl("Logout.aspx?Type=1")%>" class="logOut">LOGOUT</a>
+                    </div>
+                </div>
+                <div id="headerBottom">
+                    <asp:Literal ID="ltlMenu" runat="server"></asp:Literal>
+                </div>
+            </div>
+            <div id="main">
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+            <div style="float: right; padding-top: 20px;">
+                </div>
+            <div id="footer">
+                <div class="footerLeft">
+                    <p>
+                        </p>
+                </div>
+                <div class="footerRight">
+                    <ul>
+                        <li><a href="#" onclick="GosterHtml(1);return false;">User Agreement</a></li>
+                        <li><a href="#" onclick="GosterHtml(2);return false;">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

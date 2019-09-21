@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9803e68224a14e89920846f8dc64b8e5" Name="Diagram1" ZoomLevel="30">
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_anket" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_anket_davet" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_anket_durum_tarihcesi" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_anket_sorulari" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_anket_test_mail_gonderi_kisi_tarihcesi" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_anket_yayinlama_acik_anket_aktivasyon" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_anket_yayinlama_mail_gonderi_aktivasyon" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_anket_yayinlama_mail_gonderi_kisi_tarihcesi" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_anket_yayinlama_mail_gonderi_tarihcesi" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_mail_gruplari" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_mail_gruplari_dosyalari" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_mail_gruplari_kullanici_listesi" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_ref_anket_durumu" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_ref_anket_kategori" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_ref_anket_temalari" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_ref_anket_test_sonucu" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_ref_anket_tipi" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_ref_sablon_durumu" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_ref_soru_siralama_sekli" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_ref_soru_sitili" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_ref_soru_tipi" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_sablon" Width="1.5" PointX="8.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_sablon_durum_tarihcesi" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_sablon_soru_tipi_1_secenekleri" Width="1.5" PointX="10.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_sablon_soru_tipi_10_secenekleri" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_sablon_soru_tipi_11_secenekleri" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_sablon_soru_tipi_2_secenekleri" Width="1.5" PointX="2.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_sablon_soru_tipi_3_secenek_kolonlari" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_sablon_soru_tipi_3_secenekleri" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_sablon_soru_tipi_4_secenekleri" Width="1.5" PointX="4.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_sablon_soru_tipi_5_secenekleri" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_sablon_soru_tipi_6_secenekleri" Width="1.5" PointX="14.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_sablon_soru_tipi_7_secenekleri" Width="1.5" PointX="14.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_sablon_soru_tipi_8_secenekleri" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_sablon_soru_tipi_9_secenekleri" Width="1.5" PointX="12.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_sablon_sorulari" Width="1.5" PointX="14.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_1_cevaplari" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_1_secenekleri" Width="1.5" PointX="0.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_10_cevaplari" Width="1.5" PointX="16.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_10_secenekleri" Width="1.5" PointX="16.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_11_cevaplari" Width="1.5" PointX="16.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_11_secenekleri" Width="1.5" PointX="2.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_2_cevaplari" Width="1.5" PointX="4.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_2_secenekleri" Width="1.5" PointX="6.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_3_cevaplari" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_3_secenek_kolonlari" Width="1.5" PointX="18.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_3_secenekleri" Width="1.5" PointX="18.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_4_cevaplari" Width="1.5" PointX="8.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_4_secenekleri" Width="1.5" PointX="10.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_5_cevaplari" Width="1.5" PointX="18.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_5_secenekleri" Width="1.5" PointX="18.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_6_cevaplari" Width="1.5" PointX="16.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_6_secenekleri" Width="1.5" PointX="18.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_7_cevaplari" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_7_secenekleri" Width="1.5" PointX="0.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_8_cevaplari" Width="1.5" PointX="20.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_8_secenekleri" Width="1.5" PointX="20.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_9_cevaplari" Width="1.5" PointX="12.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sbr_soru_tipi_9_secenekleri" Width="1.5" PointX="20.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseWebSites.Models.sysdiagrams" Width="1.5" PointX="20.75" PointY="16.75" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="852fb4e6c0f24b38b6e8e9727d28839d" Name="Diagram1" ZoomLevel="45">
+        <EntityTypeShape EntityType="SurveyModel.BaseAlertResource" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.BaseLoggedInUsers" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_arkadasima_oner" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_duyurular" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_grup_kullanici_tanimlari" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_ileti" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_ileti_alicilar" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_ileti_gelen" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_kullanici_gruplari" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_kullanici_sifre_sifirlama" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_kullanicilar" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_mail_service" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_ref_cinsiyet" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_ref_uyelik_odeme_sekli" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_ref_uyelik_tipleri" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_uye_kullanicilar" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_uyelik_aktivasyon_mail_gonderi_tarihcesi" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_uyelik_bitis_bilgilendirme_mail_gonderi_tarihcesi" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_uyelik_odeme_tipleri_tanimlari" Width="1.5" PointX="11.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.gnl_uyelik_paket_alimlari" Width="1.5" PointX="11.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.log_mail" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="SurveyModel.FK_Baseileti_Baseileti" ManuallyRouted="false" />
+        <AssociationConnector Association="SurveyModel.FK_BaseiletiInbox_Baseileti" ManuallyRouted="false" />
+        <AssociationConnector Association="SurveyModel.FK_BaseiletiUserRelation_Baseileti" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

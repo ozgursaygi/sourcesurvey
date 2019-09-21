@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Genel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="GenelStoreContainer">
+    <EntitySet Name="gnl_grup_kullanici_tanimlari" EntityType="Genel.Store.gnl_grup_kullanici_tanimlari" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gnl_kullanici_gruplari" EntityType="Genel.Store.gnl_kullanici_gruplari" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gnl_kullanici_sifre_sifirlama" EntityType="Genel.Store.gnl_kullanici_sifre_sifirlama" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gnl_kullanicilar" EntityType="Genel.Store.gnl_kullanicilar" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gnl_uye_kullanicilar" EntityType="Genel.Store.gnl_uye_kullanicilar" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="gnl_grup_kullanici_tanimlari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="grup_uid" Type="uniqueidentifier" />
+    <Property Name="kullanici_uid" Type="uniqueidentifier" />
+    <Property Name="aktif" Type="bit" />
+    <Property Name="is_admin" Type="bit" />
+    <Property Name="is_uye_admin" Type="bit" />
+    <Property Name="inserted_by" Type="uniqueidentifier" />
+    <Property Name="inserted_at" Type="datetime" />
+    <Property Name="updated_by" Type="uniqueidentifier" />
+    <Property Name="updated_at" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="gnl_kullanici_gruplari">
+    <Key>
+      <PropertyRef Name="grup_uid" />
+    </Key>
+    <Property Name="grup_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="grup_adi" Type="nvarchar" MaxLength="1000" />
+    <Property Name="aktif" Type="bit" />
+    <Property Name="inserted_by" Type="uniqueidentifier" />
+    <Property Name="inserted_at" Type="datetime" />
+    <Property Name="updated_by" Type="uniqueidentifier" />
+    <Property Name="updated_at" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="gnl_kullanici_sifre_sifirlama">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="sifre_sifirlanacak_email" Type="nvarchar" MaxLength="100" />
+    <Property Name="sifirlama_istek_tarihi" Type="datetime" />
+    <Property Name="sifirlama_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="sifirlama_kabul_edildi" Type="bit" />
+    <Property Name="sifirlama_kabul_edilme_tarihi" Type="datetime" />
+    <Property Name="sifre" Type="varbinary" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="gnl_kullanicilar">
+    <Key>
+      <PropertyRef Name="user_uid" />
+    </Key>
+    <Property Name="user_uid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ad" Type="nvarchar" MaxLength="100" />
+    <Property Name="ikinci_ad" Type="nvarchar" MaxLength="100" />
+    <Property Name="soyad" Type="nvarchar" MaxLength="100" />
+    <Property Name="sifre" Type="varbinary" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="200" />
+    <Property Name="grup_uid" Type="uniqueidentifier" />
+    <Property Name="grup_adi" Type="nvarchar" MaxLength="500" />
+    <Property Name="aktif" Type="bit" />
+    <Property Name="aktivasyon_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="aktivasyon_ok" Type="bit" />
+    <Property Name="inserted_by" Type="uniqueidentifier" />
+    <Property Name="inserted_at" Type="datetime" />
+    <Property Name="updated_by" Type="uniqueidentifier" />
+    <Property Name="updated_at" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="gnl_uye_kullanicilar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="user_uid" Type="uniqueidentifier" />
+    <Property Name="ad" Type="nvarchar" MaxLength="100" />
+    <Property Name="soyad" Type="nvarchar" MaxLength="100" />
+    <Property Name="telefonu" Type="nvarchar" MaxLength="50" />
+    <Property Name="cep_telefonu" Type="nvarchar" MaxLength="50" />
+    <Property Name="adres" Type="text" />
+    <Property Name="email" Type="nvarchar" MaxLength="200" />
+    <Property Name="grup_uid" Type="uniqueidentifier" />
+    <Property Name="grup_adi" Type="nvarchar" MaxLength="500" />
+    <Property Name="dogum_tarihi" Type="datetime" />
+    <Property Name="cinsiyet" Type="int" />
+    <Property Name="sirket_adi" Type="nvarchar" MaxLength="500" />
+    <Property Name="vergi_dairesi" Type="nvarchar" MaxLength="1000" />
+    <Property Name="vergi_no" Type="nvarchar" MaxLength="200" />
+    <Property Name="grup_sirket_tipi_id" Type="int" />
+    <Property Name="aktif" Type="bit" />
+    <Property Name="uye_baslangic_tarihi" Type="datetime" />
+    <Property Name="uye_bitis_tarihi" Type="datetime" />
+    <Property Name="odeme_tipi_id" Type="int" />
+    <Property Name="inserted_by" Type="uniqueidentifier" />
+    <Property Name="inserted_at" Type="datetime" />
+    <Property Name="updated_by" Type="uniqueidentifier" />
+    <Property Name="updated_at" Type="nchar" MaxLength="10" />
+  </EntityType>
+</Schema>

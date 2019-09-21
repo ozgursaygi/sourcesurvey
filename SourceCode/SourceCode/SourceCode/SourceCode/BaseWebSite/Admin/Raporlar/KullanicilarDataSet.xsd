@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="KullanicilarDataSet" targetNamespace="http://tempuri.org/KullanicilarDataSet.xsd" xmlns:mstns="http://tempuri.org/KullanicilarDataSet.xsd" xmlns="http://tempuri.org/KullanicilarDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="AppConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AppConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.AppConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="gnl_kullanicilar_vTableAdapter" GeneratorDataComponentClassName="gnl_kullanicilar_vTableAdapter" Name="gnl_kullanicilar_v" UserDataComponentName="gnl_kullanicilar_vTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AppConnectionString (Web.config)" DbObjectName="SiberSurvey.dbo.gnl_kullanicilar_v" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT user_uid, ad, soyad, email, grup_adi, aktif, is_sistem_admin FROM dbo.gnl_kullanicilar_v</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="user_uid" DataSetColumn="user_uid" />
+              <Mapping SourceColumn="ad" DataSetColumn="ad" />
+              <Mapping SourceColumn="soyad" DataSetColumn="soyad" />
+              <Mapping SourceColumn="email" DataSetColumn="email" />
+              <Mapping SourceColumn="grup_adi" DataSetColumn="grup_adi" />
+              <Mapping SourceColumn="aktif" DataSetColumn="aktif" />
+              <Mapping SourceColumn="is_sistem_admin" DataSetColumn="is_sistem_admin" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="KullanicilarDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="KullanicilarDataSet" msprop:Generator_UserDSName="KullanicilarDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="gnl_kullanicilar_v" msprop:Generator_TableClassName="gnl_kullanicilar_vDataTable" msprop:Generator_TableVarName="tablegnl_kullanicilar_v" msprop:Generator_TablePropName="gnl_kullanicilar_v" msprop:Generator_RowDeletingName="gnl_kullanicilar_vRowDeleting" msprop:Generator_UserTableName="gnl_kullanicilar_v" msprop:Generator_RowChangingName="gnl_kullanicilar_vRowChanging" msprop:Generator_RowEvHandlerName="gnl_kullanicilar_vRowChangeEventHandler" msprop:Generator_RowDeletedName="gnl_kullanicilar_vRowDeleted" msprop:Generator_RowEvArgName="gnl_kullanicilar_vRowChangeEvent" msprop:Generator_RowChangedName="gnl_kullanicilar_vRowChanged" msprop:Generator_RowClassName="gnl_kullanicilar_vRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="user_uid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnuser_uid" msprop:Generator_ColumnPropNameInRow="user_uid" msprop:Generator_ColumnPropNameInTable="user_uidColumn" msprop:Generator_UserColumnName="user_uid" type="xs:string" />
+              <xs:element name="ad" msprop:Generator_ColumnVarNameInTable="columnad" msprop:Generator_ColumnPropNameInRow="ad" msprop:Generator_ColumnPropNameInTable="adColumn" msprop:Generator_UserColumnName="ad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soyad" msprop:Generator_ColumnVarNameInTable="columnsoyad" msprop:Generator_ColumnPropNameInRow="soyad" msprop:Generator_ColumnPropNameInTable="soyadColumn" msprop:Generator_UserColumnName="soyad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="email" msprop:Generator_ColumnVarNameInTable="columnemail" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_UserColumnName="email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="grup_adi" msprop:Generator_ColumnVarNameInTable="columngrup_adi" msprop:Generator_ColumnPropNameInRow="grup_adi" msprop:Generator_ColumnPropNameInTable="grup_adiColumn" msprop:Generator_UserColumnName="grup_adi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="aktif" msprop:Generator_ColumnVarNameInTable="columnaktif" msprop:Generator_ColumnPropNameInRow="aktif" msprop:Generator_ColumnPropNameInTable="aktifColumn" msprop:Generator_UserColumnName="aktif" type="xs:boolean" minOccurs="0" />
+              <xs:element name="is_sistem_admin" msprop:Generator_ColumnVarNameInTable="columnis_sistem_admin" msprop:Generator_ColumnPropNameInRow="is_sistem_admin" msprop:Generator_ColumnPropNameInTable="is_sistem_adminColumn" msprop:Generator_UserColumnName="is_sistem_admin" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:gnl_kullanicilar_v" />
+      <xs:field xpath="mstns:user_uid" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

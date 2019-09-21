@@ -1,0 +1,10 @@
+D:\BaseWebSite\BaseDB\bin\Release\BaseDB.dll
+D:\BaseWebSite\BaseDB\bin\Release\BaseDB.pdb
+D:\BaseWebSite\BaseDB\obj\Release\ResolveAssemblyReference.cache
+D:\BaseWebSite\BaseDB\obj\Release\BaseDB.dll
+D:\BaseWebSite\BaseDB\obj\Release\BaseDB.pdb
+C:\WebApps\BaseWebSite\BaseDB\bin\Release\BaseDB.dll
+C:\WebApps\BaseWebSite\BaseDB\bin\Release\BaseDB.pdb
+C:\WebApps\BaseWebSite\BaseDB\obj\Release\BaseDB.dll
+C:\WebApps\BaseWebSite\BaseDB\obj\Release\BaseDB.pdb
+C:\WebApps\BaseWebSite\BaseDB\obj\Release\BaseDB.csprojResolveAssemblyReference.cache

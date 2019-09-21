@@ -1,0 +1,1094 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SurveyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="BaseAlertResource">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UICulture" Type="varchar" MaxLength="10" />
+          <Property Name="ResourceId" Type="varchar" MaxLength="50" />
+          <Property Name="Resource" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="BaseLoggedInUsers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="50" />
+          <Property Name="user_uid" Type="uniqueidentifier" />
+          <Property Name="user_name" Type="varchar" MaxLength="50" />
+          <Property Name="user_name_surname" Type="varchar" MaxLength="50" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="session_id" Type="varchar" MaxLength="50" />
+          <Property Name="host_name" Type="varchar" MaxLength="50" />
+          <Property Name="user_host_adres" Type="varchar" MaxLength="50" />
+          <Property Name="browser" Type="varchar" MaxLength="50" />
+          <Property Name="platform" Type="varchar" MaxLength="50" />
+          <Property Name="version" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="gnl_arkadasima_oner">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="oneren_kullanici_uid" Type="uniqueidentifier" />
+          <Property Name="onerme_tarihi" Type="datetime" />
+          <Property Name="onerilen_email" Type="nvarchar" MaxLength="200" />
+          <Property Name="onerme_mesaj" Type="nvarchar" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="gnl_duyurular">
+          <Key>
+            <PropertyRef Name="duyuru_uid" />
+          </Key>
+          <Property Name="duyuru_uid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="duyuru_tarihi" Type="datetime" />
+          <Property Name="duyuru_basligi" Type="nvarchar" MaxLength="4000" />
+          <Property Name="duyuru" Type="text" />
+          <Property Name="duyuru_olusturan_uid" Type="uniqueidentifier" />
+          <Property Name="duyuru_olusturma_tarihi" Type="datetime" />
+          <Property Name="duyuru_durumu_id" Type="int" />
+        </EntityType>
+        <EntityType Name="gnl_grup_kullanici_tanimlari">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="grup_uid" Type="uniqueidentifier" />
+          <Property Name="kullanici_uid" Type="uniqueidentifier" />
+          <Property Name="aktif" Type="bit" />
+          <Property Name="is_admin" Type="bit" />
+          <Property Name="is_uye_admin" Type="bit" />
+          <Property Name="inserted_by" Type="uniqueidentifier" />
+          <Property Name="inserted_at" Type="datetime" />
+          <Property Name="updated_by" Type="uniqueidentifier" />
+          <Property Name="updated_at" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="gnl_ileti">
+          <Key>
+            <PropertyRef Name="ileti_uid" />
+          </Key>
+          <Property Name="ileti_uid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="alakali_ileti_uid" Type="uniqueidentifier" />
+          <Property Name="ileti_basligi" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="ileti" Type="nvarchar(max)" />
+          <Property Name="gonderen_kullanici_uid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="gonderim_tarihi" Type="datetime" />
+          <Property Name="inserted_by" Type="uniqueidentifier" />
+          <Property Name="inserted_at" Type="datetime" />
+          <Property Name="updated_by" Type="uniqueidentifier" />
+          <Property Name="updated_at" Type="datetime" />
+          <Property Name="is_deleted" Type="bit" />
+          <Property Name="deleted_by" Type="uniqueidentifier" />
+          <Property Name="deleted_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="gnl_ileti_alicilar">
+          <Key>
+            <PropertyRef Name="ileti_uid" />
+            <PropertyRef Name="kullanici_uid" />
+          </Key>
+          <Property Name="ileti_uid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="kullanici_uid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="alici_sirasi" Type="smallint" Nullable="false" />
+          <Property Name="alici_tipi" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gnl_ileti_gelen">
+          <Key>
+            <PropertyRef Name="ileti_uid" />
+            <PropertyRef Name="kullanici_uid" />
+          </Key>
+          <Property Name="ileti_uid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="kullanici_uid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="alici_tipi" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ileti_okundumu" Type="bit" Nullable="false" />
+          <Property Name="okunma_tarihi" Type="datetime" />
+          <Property Name="is_deleted" Type="bit" />
+          <Property Name="deleted_by" Type="uniqueidentifier" />
+          <Property Name="deleted_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="gnl_kullanici_gruplari">
+          <Key>
+            <PropertyRef Name="grup_uid" />
+          </Key>
+          <Property Name="grup_uid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="grup_adi" Type="nvarchar" MaxLength="1000" />
+          <Property Name="aktif" Type="bit" />
+          <Property Name="inserted_by" Type="uniqueidentifier" />
+          <Property Name="inserted_at" Type="datetime" />
+          <Property Name="updated_by" Type="uniqueidentifier" />
+          <Property Name="updated_at" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="gnl_kullanici_sifre_sifirlama">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="sifre_sifirlanacak_email" Type="nvarchar" MaxLength="100" />
+          <Property Name="sifirlama_istek_tarihi" Type="datetime" />
+          <Property Name="sifirlama_key" Type="nvarchar" MaxLength="50" />
+          <Property Name="sifirlama_kabul_edildi" Type="bit" />
+          <Property Name="sifirlama_kabul_edilme_tarihi" Type="datetime" />
+          <Property Name="sifre" Type="varbinary" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="gnl_kullanicilar">
+          <Key>
+            <PropertyRef Name="user_uid" />
+          </Key>
+          <Property Name="user_uid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ad" Type="nvarchar" MaxLength="100" />
+          <Property Name="ikinci_ad" Type="nvarchar" MaxLength="100" />
+          <Property Name="soyad" Type="nvarchar" MaxLength="100" />
+          <Property Name="sifre" Type="varbinary" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="200" />
+          <Property Name="grup_uid" Type="uniqueidentifier" />
+          <Property Name="grup_adi" Type="nvarchar" MaxLength="500" />
+          <Property Name="aktif" Type="bit" />
+          <Property Name="aktivasyon_key" Type="nvarchar" MaxLength="50" />
+          <Property Name="aktivasyon_ok" Type="bit" />
+          <Property Name="is_sistem_admin" Type="bit" />
+          <Property Name="dont_activate_purchase" Type="bit" />
+          <Property Name="inserted_by" Type="uniqueidentifier" />
+          <Property Name="inserted_at" Type="datetime" />
+          <Property Name="updated_by" Type="uniqueidentifier" />
+          <Property Name="updated_at" Type="nchar" MaxLength="10" />
+          <Property Name="UyelikKosullari" Type="text" />
+          <Property Name="Anket123Sorumluluklari" Type="text" />
+        </EntityType>
+        <EntityType Name="gnl_mail_service">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="eposta_to" Type="nvarchar" MaxLength="200" />
+          <Property Name="subject" Type="nvarchar" MaxLength="2000" />
+          <Property Name="body" Type="text" />
+          <Property Name="eklemetarihi" Type="datetime" />
+          <Property Name="gonderildi" Type="bit" />
+          <Property Name="gonderimtarihi" Type="datetime" />
+          <Property Name="anket_uid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="gnl_ref_cinsiyet">
+          <Key>
+            <PropertyRef Name="cinsiyet_id" />
+          </Key>
+          <Property Name="cinsiyet_id" Type="int" Nullable="false" />
+          <Property Name="cinsiyet" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="gnl_ref_uyelik_odeme_sekli">
+          <Key>
+            <PropertyRef Name="odeme_sekli_id" />
+          </Key>
+          <Property Name="odeme_sekli_id" Type="int" Nullable="false" />
+          <Property Name="odeme_sekli" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="gnl_ref_uyelik_tipleri">
+          <Key>
+            <PropertyRef Name="uyelik_tipi_id" />
+          </Key>
+          <Property Name="uyelik_tipi_id" Type="int" Nullable="false" />
+          <Property Name="uyelik_tipi" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="gnl_uye_kullanicilar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="user_uid" Type="uniqueidentifier" />
+          <Property Name="ad" Type="nvarchar" MaxLength="100" />
+          <Property Name="soyad" Type="nvarchar" MaxLength="100" />
+          <Property Name="telefonu" Type="nvarchar" MaxLength="50" />
+          <Property Name="cep_telefonu" Type="nvarchar" MaxLength="50" />
+          <Property Name="adres" Type="text" />
+          <Property Name="email" Type="nvarchar" MaxLength="200" />
+          <Property Name="grup_uid" Type="uniqueidentifier" />
+          <Property Name="grup_adi" Type="nvarchar" MaxLength="500" />
+          <Property Name="dogum_tarihi" Type="datetime" />
+          <Property Name="cinsiyet" Type="int" />
+          <Property Name="sirket_adi" Type="nvarchar" MaxLength="500" />
+          <Property Name="vergi_dairesi" Type="nvarchar" MaxLength="1000" />
+          <Property Name="vergi_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="grup_sirket_tipi_id" Type="int" />
+          <Property Name="aktif" Type="bit" />
+          <Property Name="uye_baslangic_tarihi" Type="datetime" />
+          <Property Name="uye_bitis_tarihi" Type="datetime" />
+          <Property Name="son_odeme_tipi_id" Type="int" />
+          <Property Name="inserted_by" Type="uniqueidentifier" />
+          <Property Name="inserted_at" Type="datetime" />
+          <Property Name="updated_by" Type="uniqueidentifier" />
+          <Property Name="updated_at" Type="nchar" MaxLength="10" />
+          <Property Name="kalan_anket_sayisi" Type="int" />
+        </EntityType>
+        <EntityType Name="gnl_uyelik_aktivasyon_mail_gonderi_tarihcesi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="paket_uid" Type="uniqueidentifier" />
+          <Property Name="gonderilen_ad" Type="nvarchar" MaxLength="100" />
+          <Property Name="gonderilen_soyad" Type="nvarchar" MaxLength="100" />
+          <Property Name="gonderilen_email" Type="nvarchar" MaxLength="200" />
+          <Property Name="gonderilme_tarihi" Type="datetime" />
+          <Property Name="gonderen_user_uid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="gnl_uyelik_bitis_bilgilendirme_mail_gonderi_tarihcesi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="user_uid" Type="uniqueidentifier" />
+          <Property Name="gonderilen_ad" Type="nvarchar" MaxLength="100" />
+          <Property Name="gonderilen_soyad" Type="nvarchar" MaxLength="100" />
+          <Property Name="gonderilen_email" Type="nvarchar" MaxLength="200" />
+          <Property Name="gonderilme_tarihi" Type="datetime" />
+          <Property Name="gonderen_user_uid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="gnl_uyelik_odeme_tipleri_tanimlari">
+          <Key>
+            <PropertyRef Name="odeme_tipi_id" />
+          </Key>
+          <Property Name="odeme_tipi_id" Type="int" Nullable="false" />
+          <Property Name="uyelik_tip_id" Type="int" />
+          <Property Name="odeme_tipi" Type="nvarchar" MaxLength="1000" />
+          <Property Name="anket_sayisi" Type="int" />
+          <Property Name="katilimci_sayisi" Type="int" />
+          <Property Name="sure_ay" Type="int" />
+          <Property Name="ucret" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="gnl_uyelik_paket_alimlari">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="user_uid" Type="uniqueidentifier" />
+          <Property Name="grup_uid" Type="uniqueidentifier" />
+          <Property Name="odeme_tipi_id" Type="int" />
+          <Property Name="paket_alim_tarihi" Type="datetime" />
+          <Property Name="paket_fiyati" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="anket_sayisi" Type="int" />
+          <Property Name="anket_basina_katilimci_sayisi" Type="int" />
+          <Property Name="paket_suresi" Type="int" />
+          <Property Name="uyelik_bitis_tarihi" Type="datetime" />
+          <Property Name="telefonu" Type="nvarchar" MaxLength="50" />
+          <Property Name="cep_telefonu" Type="nvarchar" MaxLength="50" />
+          <Property Name="adres" Type="text" />
+          <Property Name="sirket_adi" Type="nvarchar" MaxLength="500" />
+          <Property Name="vergi_dairesi" Type="nvarchar" MaxLength="1000" />
+          <Property Name="vergi_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="grup_sirket_tipi_id" Type="int" />
+          <Property Name="odeme_sekli_id" Type="int" />
+          <Property Name="aktive_edildi" Type="bit" />
+          <Property Name="kabul_edildi" Type="bit" />
+          <Property Name="UyelikKosullari" Type="text" />
+          <Property Name="Anket123Sorumluluklari" Type="text" />
+          <Property Name="fatura_kesildi" Type="bit" />
+          <Property Name="islem_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="log_mail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kime" Type="nvarchar" MaxLength="500" />
+          <Property Name="kimden" Type="nvarchar" MaxLength="500" />
+          <Property Name="gonderen_aktif_user_name" Type="nvarchar" MaxLength="500" />
+          <Property Name="tip" Type="nvarchar" MaxLength="50" />
+          <Property Name="subject" Type="nvarchar" MaxLength="4000" />
+          <Property Name="mesaj" Type="nvarchar" MaxLength="4000" />
+          <Property Name="tarih" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Baseileti_Baseileti">
+          <End Role="gnl_ileti" Type="Self.gnl_ileti" Multiplicity="0..1" />
+          <End Role="gnl_ileti1" Type="Self.gnl_ileti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gnl_ileti">
+              <PropertyRef Name="ileti_uid" />
+            </Principal>
+            <Dependent Role="gnl_ileti1">
+              <PropertyRef Name="alakali_ileti_uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BaseiletiInbox_Baseileti">
+          <End Role="gnl_ileti" Type="Self.gnl_ileti" Multiplicity="1" />
+          <End Role="gnl_ileti_gelen" Type="Self.gnl_ileti_gelen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gnl_ileti">
+              <PropertyRef Name="ileti_uid" />
+            </Principal>
+            <Dependent Role="gnl_ileti_gelen">
+              <PropertyRef Name="ileti_uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BaseiletiUserRelation_Baseileti">
+          <End Role="gnl_ileti" Type="Self.gnl_ileti" Multiplicity="1" />
+          <End Role="gnl_ileti_alicilar" Type="Self.gnl_ileti_alicilar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gnl_ileti">
+              <PropertyRef Name="ileti_uid" />
+            </Principal>
+            <Dependent Role="gnl_ileti_alicilar">
+              <PropertyRef Name="ileti_uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SurveyModelStoreContainer">
+          <EntitySet Name="BaseAlertResource" EntityType="Self.BaseAlertResource" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BaseLoggedInUsers" EntityType="Self.BaseLoggedInUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_arkadasima_oner" EntityType="Self.gnl_arkadasima_oner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_duyurular" EntityType="Self.gnl_duyurular" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_grup_kullanici_tanimlari" EntityType="Self.gnl_grup_kullanici_tanimlari" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_ileti" EntityType="Self.gnl_ileti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_ileti_alicilar" EntityType="Self.gnl_ileti_alicilar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_ileti_gelen" EntityType="Self.gnl_ileti_gelen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_kullanici_gruplari" EntityType="Self.gnl_kullanici_gruplari" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_kullanici_sifre_sifirlama" EntityType="Self.gnl_kullanici_sifre_sifirlama" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_kullanicilar" EntityType="Self.gnl_kullanicilar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_mail_service" EntityType="Self.gnl_mail_service" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_ref_cinsiyet" EntityType="Self.gnl_ref_cinsiyet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_ref_uyelik_odeme_sekli" EntityType="Self.gnl_ref_uyelik_odeme_sekli" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_ref_uyelik_tipleri" EntityType="Self.gnl_ref_uyelik_tipleri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_uye_kullanicilar" EntityType="Self.gnl_uye_kullanicilar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_uyelik_aktivasyon_mail_gonderi_tarihcesi" EntityType="Self.gnl_uyelik_aktivasyon_mail_gonderi_tarihcesi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_uyelik_bitis_bilgilendirme_mail_gonderi_tarihcesi" EntityType="Self.gnl_uyelik_bitis_bilgilendirme_mail_gonderi_tarihcesi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_uyelik_odeme_tipleri_tanimlari" EntityType="Self.gnl_uyelik_odeme_tipleri_tanimlari" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gnl_uyelik_paket_alimlari" EntityType="Self.gnl_uyelik_paket_alimlari" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="log_mail" EntityType="Self.log_mail" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Baseileti_Baseileti" Association="Self.FK_Baseileti_Baseileti">
+            <End Role="gnl_ileti" EntitySet="gnl_ileti" />
+            <End Role="gnl_ileti1" EntitySet="gnl_ileti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BaseiletiInbox_Baseileti" Association="Self.FK_BaseiletiInbox_Baseileti">
+            <End Role="gnl_ileti" EntitySet="gnl_ileti" />
+            <End Role="gnl_ileti_gelen" EntitySet="gnl_ileti_gelen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BaseiletiUserRelation_Baseileti" Association="Self.FK_BaseiletiUserRelation_Baseileti">
+            <End Role="gnl_ileti" EntitySet="gnl_ileti" />
+            <End Role="gnl_ileti_alicilar" EntitySet="gnl_ileti_alicilar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SurveyModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="BaseAlertResource">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UICulture" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ResourceId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Resource" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BaseLoggedInUsers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_uid" Type="Guid" />
+          <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_name_surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="session_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="host_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_host_adres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="browser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="platform" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="version" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="gnl_arkadasima_oner">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="oneren_kullanici_uid" Type="Guid" />
+          <Property Name="onerme_tarihi" Type="DateTime" Precision="3" />
+          <Property Name="onerilen_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="onerme_mesaj" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gnl_duyurular">
+          <Key>
+            <PropertyRef Name="duyuru_uid" />
+          </Key>
+          <Property Name="duyuru_uid" Type="Guid" Nullable="false" />
+          <Property Name="duyuru_tarihi" Type="DateTime" Precision="3" />
+          <Property Name="duyuru_basligi" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="duyuru" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="duyuru_olusturan_uid" Type="Guid" />
+          <Property Name="duyuru_olusturma_tarihi" Type="DateTime" Precision="3" />
+          <Property Name="duyuru_durumu_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="gnl_grup_kullanici_tanimlari">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="grup_uid" Type="Guid" />
+          <Property Name="kullanici_uid" Type="Guid" />
+          <Property Name="aktif" Type="Boolean" />
+          <Property Name="is_admin" Type="Boolean" />
+          <Property Name="is_uye_admin" Type="Boolean" />
+          <Property Name="inserted_by" Type="Guid" />
+          <Property Name="inserted_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_by" Type="Guid" />
+          <Property Name="updated_at" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gnl_ileti">
+          <Key>
+            <PropertyRef Name="ileti_uid" />
+          </Key>
+          <Property Name="ileti_uid" Type="Guid" Nullable="false" />
+          <Property Name="alakali_ileti_uid" Type="Guid" />
+          <Property Name="ileti_basligi" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ileti" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="gonderen_kullanici_uid" Type="Guid" Nullable="false" />
+          <Property Name="gonderim_tarihi" Type="DateTime" Precision="3" />
+          <Property Name="inserted_by" Type="Guid" />
+          <Property Name="inserted_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_by" Type="Guid" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
+          <Property Name="is_deleted" Type="Boolean" />
+          <Property Name="deleted_by" Type="Guid" />
+          <Property Name="deleted_at" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="gnl_ileti1" Relationship="Self.FK_Baseileti_Baseileti" FromRole="gnl_ileti" ToRole="gnl_ileti1" />
+          <NavigationProperty Name="gnl_ileti2" Relationship="Self.FK_Baseileti_Baseileti" FromRole="gnl_ileti1" ToRole="gnl_ileti" />
+          <NavigationProperty Name="gnl_ileti_gelen" Relationship="Self.FK_BaseiletiInbox_Baseileti" FromRole="gnl_ileti" ToRole="gnl_ileti_gelen" />
+          <NavigationProperty Name="gnl_ileti_alicilar" Relationship="Self.FK_BaseiletiUserRelation_Baseileti" FromRole="gnl_ileti" ToRole="gnl_ileti_alicilar" />
+        </EntityType>
+        <EntityType Name="gnl_ileti_alicilar">
+          <Key>
+            <PropertyRef Name="ileti_uid" />
+            <PropertyRef Name="kullanici_uid" />
+          </Key>
+          <Property Name="ileti_uid" Type="Guid" Nullable="false" />
+          <Property Name="kullanici_uid" Type="Guid" Nullable="false" />
+          <Property Name="alici_sirasi" Type="Int16" Nullable="false" />
+          <Property Name="alici_tipi" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="gnl_ileti" Relationship="Self.FK_BaseiletiUserRelation_Baseileti" FromRole="gnl_ileti_alicilar" ToRole="gnl_ileti" />
+        </EntityType>
+        <EntityType Name="gnl_ileti_gelen">
+          <Key>
+            <PropertyRef Name="ileti_uid" />
+            <PropertyRef Name="kullanici_uid" />
+          </Key>
+          <Property Name="ileti_uid" Type="Guid" Nullable="false" />
+          <Property Name="kullanici_uid" Type="Guid" Nullable="false" />
+          <Property Name="alici_tipi" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ileti_okundumu" Type="Boolean" Nullable="false" />
+          <Property Name="okunma_tarihi" Type="DateTime" Precision="3" />
+          <Property Name="is_deleted" Type="Boolean" />
+          <Property Name="deleted_by" Type="Guid" />
+          <Property Name="deleted_at" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="gnl_ileti" Relationship="Self.FK_BaseiletiInbox_Baseileti" FromRole="gnl_ileti_gelen" ToRole="gnl_ileti" />
+        </EntityType>
+        <EntityType Name="gnl_kullanici_gruplari">
+          <Key>
+            <PropertyRef Name="grup_uid" />
+          </Key>
+          <Property Name="grup_uid" Type="Guid" Nullable="false" />
+          <Property Name="grup_adi" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="aktif" Type="Boolean" />
+          <Property Name="inserted_by" Type="Guid" />
+          <Property Name="inserted_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_by" Type="Guid" />
+          <Property Name="updated_at" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gnl_kullanici_sifre_sifirlama">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="sifre_sifirlanacak_email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sifirlama_istek_tarihi" Type="DateTime" Precision="3" />
+          <Property Name="sifirlama_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sifirlama_kabul_edildi" Type="Boolean" />
+          <Property Name="sifirlama_kabul_edilme_tarihi" Type="DateTime" Precision="3" />
+          <Property Name="sifre" Type="Binary" MaxLength="50" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="gnl_kullanicilar">
+          <Key>
+            <PropertyRef Name="user_uid" />
+          </Key>
+          <Property Name="user_uid" Type="Guid" Nullable="false" />
+          <Property Name="ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ikinci_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sifre" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="grup_uid" Type="Guid" />
+          <Property Name="grup_adi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="aktif" Type="Boolean" />
+          <Property Name="aktivasyon_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aktivasyon_ok" Type="Boolean" />
+          <Property Name="is_sistem_admin" Type="Boolean" />
+          <Property Name="dont_activate_purchase" Type="Boolean" />
+          <Property Name="inserted_by" Type="Guid" />
+          <Property Name="inserted_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_by" Type="Guid" />
+          <Property Name="updated_at" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="UyelikKosullari" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Anket123Sorumluluklari" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="gnl_mail_service">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="eposta_to" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="subject" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="body" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="eklemetarihi" Type="DateTime" Precision="3" />
+          <Property Name="gonderildi" Type="Boolean" />
+          <Property Name="gonderimtarihi" Type="DateTime" Precision="3" />
+          <Property Name="anket_uid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="gnl_ref_cinsiyet">
+          <Key>
+            <PropertyRef Name="cinsiyet_id" />
+          </Key>
+          <Property Name="cinsiyet_id" Type="Int32" Nullable="false" />
+          <Property Name="cinsiyet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gnl_ref_uyelik_odeme_sekli">
+          <Key>
+            <PropertyRef Name="odeme_sekli_id" />
+          </Key>
+          <Property Name="odeme_sekli_id" Type="Int32" Nullable="false" />
+          <Property Name="odeme_sekli" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gnl_ref_uyelik_tipleri">
+          <Key>
+            <PropertyRef Name="uyelik_tipi_id" />
+          </Key>
+          <Property Name="uyelik_tipi_id" Type="Int32" Nullable="false" />
+          <Property Name="uyelik_tipi" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gnl_uye_kullanicilar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="user_uid" Type="Guid" />
+          <Property Name="ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="telefonu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cep_telefonu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="grup_uid" Type="Guid" />
+          <Property Name="grup_adi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="dogum_tarihi" Type="DateTime" Precision="3" />
+          <Property Name="cinsiyet" Type="Int32" />
+          <Property Name="sirket_adi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="vergi_dairesi" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="vergi_no" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="grup_sirket_tipi_id" Type="Int32" />
+          <Property Name="aktif" Type="Boolean" />
+          <Property Name="uye_baslangic_tarihi" Type="DateTime" Precision="3" />
+          <Property Name="uye_bitis_tarihi" Type="DateTime" Precision="3" />
+          <Property Name="son_odeme_tipi_id" Type="Int32" />
+          <Property Name="inserted_by" Type="Guid" />
+          <Property Name="inserted_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_by" Type="Guid" />
+          <Property Name="updated_at" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="kalan_anket_sayisi" Type="Int32" />
+        </EntityType>
+        <EntityType Name="gnl_uyelik_aktivasyon_mail_gonderi_tarihcesi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="paket_uid" Type="Guid" />
+          <Property Name="gonderilen_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="gonderilen_soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="gonderilen_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="gonderilme_tarihi" Type="DateTime" Precision="3" />
+          <Property Name="gonderen_user_uid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="gnl_uyelik_bitis_bilgilendirme_mail_gonderi_tarihcesi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="user_uid" Type="Guid" />
+          <Property Name="gonderilen_ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="gonderilen_soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="gonderilen_email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="gonderilme_tarihi" Type="DateTime" Precision="3" />
+          <Property Name="gonderen_user_uid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="gnl_uyelik_odeme_tipleri_tanimlari">
+          <Key>
+            <PropertyRef Name="odeme_tipi_id" />
+          </Key>
+          <Property Name="odeme_tipi_id" Type="Int32" Nullable="false" />
+          <Property Name="uyelik_tip_id" Type="Int32" />
+          <Property Name="odeme_tipi" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="anket_sayisi" Type="Int32" />
+          <Property Name="katilimci_sayisi" Type="Int32" />
+          <Property Name="sure_ay" Type="Int32" />
+          <Property Name="ucret" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="gnl_uyelik_paket_alimlari">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="user_uid" Type="Guid" />
+          <Property Name="grup_uid" Type="Guid" />
+          <Property Name="odeme_tipi_id" Type="Int32" />
+          <Property Name="paket_alim_tarihi" Type="DateTime" Precision="3" />
+          <Property Name="paket_fiyati" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="anket_sayisi" Type="Int32" />
+          <Property Name="anket_basina_katilimci_sayisi" Type="Int32" />
+          <Property Name="paket_suresi" Type="Int32" />
+          <Property Name="uyelik_bitis_tarihi" Type="DateTime" Precision="3" />
+          <Property Name="telefonu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cep_telefonu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sirket_adi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="vergi_dairesi" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="vergi_no" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="grup_sirket_tipi_id" Type="Int32" />
+          <Property Name="odeme_sekli_id" Type="Int32" />
+          <Property Name="aktive_edildi" Type="Boolean" />
+          <Property Name="kabul_edildi" Type="Boolean" />
+          <Property Name="UyelikKosullari" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Anket123Sorumluluklari" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fatura_kesildi" Type="Boolean" />
+          <Property Name="islem_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="log_mail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kime" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="kimden" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="gonderen_aktif_user_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="tip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subject" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="mesaj" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_Baseileti_Baseileti">
+          <End Role="gnl_ileti" Type="Self.gnl_ileti" Multiplicity="0..1" />
+          <End Role="gnl_ileti1" Type="Self.gnl_ileti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gnl_ileti">
+              <PropertyRef Name="ileti_uid" />
+            </Principal>
+            <Dependent Role="gnl_ileti1">
+              <PropertyRef Name="alakali_ileti_uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BaseiletiInbox_Baseileti">
+          <End Role="gnl_ileti" Type="Self.gnl_ileti" Multiplicity="1" />
+          <End Role="gnl_ileti_gelen" Type="Self.gnl_ileti_gelen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gnl_ileti">
+              <PropertyRef Name="ileti_uid" />
+            </Principal>
+            <Dependent Role="gnl_ileti_gelen">
+              <PropertyRef Name="ileti_uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BaseiletiUserRelation_Baseileti">
+          <End Role="gnl_ileti" Type="Self.gnl_ileti" Multiplicity="1" />
+          <End Role="gnl_ileti_alicilar" Type="Self.gnl_ileti_alicilar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gnl_ileti">
+              <PropertyRef Name="ileti_uid" />
+            </Principal>
+            <Dependent Role="gnl_ileti_alicilar">
+              <PropertyRef Name="ileti_uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GeneralEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BaseAlertResource" EntityType="Self.BaseAlertResource" />
+          <EntitySet Name="BaseLoggedInUsers" EntityType="Self.BaseLoggedInUsers" />
+          <EntitySet Name="gnl_arkadasima_oner" EntityType="Self.gnl_arkadasima_oner" />
+          <EntitySet Name="gnl_duyurular" EntityType="Self.gnl_duyurular" />
+          <EntitySet Name="gnl_grup_kullanici_tanimlari" EntityType="Self.gnl_grup_kullanici_tanimlari" />
+          <EntitySet Name="gnl_ileti" EntityType="Self.gnl_ileti" />
+          <EntitySet Name="gnl_ileti_alicilar" EntityType="Self.gnl_ileti_alicilar" />
+          <EntitySet Name="gnl_ileti_gelen" EntityType="Self.gnl_ileti_gelen" />
+          <EntitySet Name="gnl_kullanici_gruplari" EntityType="Self.gnl_kullanici_gruplari" />
+          <EntitySet Name="gnl_kullanici_sifre_sifirlama" EntityType="Self.gnl_kullanici_sifre_sifirlama" />
+          <EntitySet Name="gnl_kullanicilar" EntityType="Self.gnl_kullanicilar" />
+          <EntitySet Name="gnl_mail_service" EntityType="Self.gnl_mail_service" />
+          <EntitySet Name="gnl_ref_cinsiyet" EntityType="Self.gnl_ref_cinsiyet" />
+          <EntitySet Name="gnl_ref_uyelik_odeme_sekli" EntityType="Self.gnl_ref_uyelik_odeme_sekli" />
+          <EntitySet Name="gnl_ref_uyelik_tipleri" EntityType="Self.gnl_ref_uyelik_tipleri" />
+          <EntitySet Name="gnl_uye_kullanicilar" EntityType="Self.gnl_uye_kullanicilar" />
+          <EntitySet Name="gnl_uyelik_aktivasyon_mail_gonderi_tarihcesi" EntityType="Self.gnl_uyelik_aktivasyon_mail_gonderi_tarihcesi" />
+          <EntitySet Name="gnl_uyelik_bitis_bilgilendirme_mail_gonderi_tarihcesi" EntityType="Self.gnl_uyelik_bitis_bilgilendirme_mail_gonderi_tarihcesi" />
+          <EntitySet Name="gnl_uyelik_odeme_tipleri_tanimlari" EntityType="Self.gnl_uyelik_odeme_tipleri_tanimlari" />
+          <EntitySet Name="gnl_uyelik_paket_alimlari" EntityType="Self.gnl_uyelik_paket_alimlari" />
+          <EntitySet Name="log_mail" EntityType="Self.log_mail" />
+          <AssociationSet Name="FK_Baseileti_Baseileti" Association="Self.FK_Baseileti_Baseileti">
+            <End Role="gnl_ileti" EntitySet="gnl_ileti" />
+            <End Role="gnl_ileti1" EntitySet="gnl_ileti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BaseiletiInbox_Baseileti" Association="Self.FK_BaseiletiInbox_Baseileti">
+            <End Role="gnl_ileti" EntitySet="gnl_ileti" />
+            <End Role="gnl_ileti_gelen" EntitySet="gnl_ileti_gelen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BaseiletiUserRelation_Baseileti" Association="Self.FK_BaseiletiUserRelation_Baseileti">
+            <End Role="gnl_ileti" EntitySet="gnl_ileti" />
+            <End Role="gnl_ileti_alicilar" EntitySet="gnl_ileti_alicilar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SurveyModelStoreContainer" CdmEntityContainer="GeneralEntities">
+          <EntitySetMapping Name="BaseAlertResource">
+            <EntityTypeMapping TypeName="SurveyModel.BaseAlertResource">
+              <MappingFragment StoreEntitySet="BaseAlertResource">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UICulture" ColumnName="UICulture" />
+                <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+                <ScalarProperty Name="Resource" ColumnName="Resource" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BaseLoggedInUsers">
+            <EntityTypeMapping TypeName="SurveyModel.BaseLoggedInUsers">
+              <MappingFragment StoreEntitySet="BaseLoggedInUsers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="user_uid" ColumnName="user_uid" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="user_name_surname" ColumnName="user_name_surname" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="session_id" ColumnName="session_id" />
+                <ScalarProperty Name="host_name" ColumnName="host_name" />
+                <ScalarProperty Name="user_host_adres" ColumnName="user_host_adres" />
+                <ScalarProperty Name="browser" ColumnName="browser" />
+                <ScalarProperty Name="platform" ColumnName="platform" />
+                <ScalarProperty Name="version" ColumnName="version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_arkadasima_oner">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_arkadasima_oner">
+              <MappingFragment StoreEntitySet="gnl_arkadasima_oner">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="oneren_kullanici_uid" ColumnName="oneren_kullanici_uid" />
+                <ScalarProperty Name="onerme_tarihi" ColumnName="onerme_tarihi" />
+                <ScalarProperty Name="onerilen_email" ColumnName="onerilen_email" />
+                <ScalarProperty Name="onerme_mesaj" ColumnName="onerme_mesaj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_duyurular">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_duyurular">
+              <MappingFragment StoreEntitySet="gnl_duyurular">
+                <ScalarProperty Name="duyuru_uid" ColumnName="duyuru_uid" />
+                <ScalarProperty Name="duyuru_tarihi" ColumnName="duyuru_tarihi" />
+                <ScalarProperty Name="duyuru_basligi" ColumnName="duyuru_basligi" />
+                <ScalarProperty Name="duyuru" ColumnName="duyuru" />
+                <ScalarProperty Name="duyuru_olusturan_uid" ColumnName="duyuru_olusturan_uid" />
+                <ScalarProperty Name="duyuru_olusturma_tarihi" ColumnName="duyuru_olusturma_tarihi" />
+                <ScalarProperty Name="duyuru_durumu_id" ColumnName="duyuru_durumu_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_grup_kullanici_tanimlari">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_grup_kullanici_tanimlari">
+              <MappingFragment StoreEntitySet="gnl_grup_kullanici_tanimlari">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="grup_uid" ColumnName="grup_uid" />
+                <ScalarProperty Name="kullanici_uid" ColumnName="kullanici_uid" />
+                <ScalarProperty Name="aktif" ColumnName="aktif" />
+                <ScalarProperty Name="is_admin" ColumnName="is_admin" />
+                <ScalarProperty Name="is_uye_admin" ColumnName="is_uye_admin" />
+                <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+                <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_ileti">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_ileti">
+              <MappingFragment StoreEntitySet="gnl_ileti">
+                <ScalarProperty Name="ileti_uid" ColumnName="ileti_uid" />
+                <ScalarProperty Name="alakali_ileti_uid" ColumnName="alakali_ileti_uid" />
+                <ScalarProperty Name="ileti_basligi" ColumnName="ileti_basligi" />
+                <ScalarProperty Name="ileti" ColumnName="ileti" />
+                <ScalarProperty Name="gonderen_kullanici_uid" ColumnName="gonderen_kullanici_uid" />
+                <ScalarProperty Name="gonderim_tarihi" ColumnName="gonderim_tarihi" />
+                <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+                <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+                <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_ileti_alicilar">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_ileti_alicilar">
+              <MappingFragment StoreEntitySet="gnl_ileti_alicilar">
+                <ScalarProperty Name="ileti_uid" ColumnName="ileti_uid" />
+                <ScalarProperty Name="kullanici_uid" ColumnName="kullanici_uid" />
+                <ScalarProperty Name="alici_sirasi" ColumnName="alici_sirasi" />
+                <ScalarProperty Name="alici_tipi" ColumnName="alici_tipi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_ileti_gelen">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_ileti_gelen">
+              <MappingFragment StoreEntitySet="gnl_ileti_gelen">
+                <ScalarProperty Name="ileti_uid" ColumnName="ileti_uid" />
+                <ScalarProperty Name="kullanici_uid" ColumnName="kullanici_uid" />
+                <ScalarProperty Name="alici_tipi" ColumnName="alici_tipi" />
+                <ScalarProperty Name="ileti_okundumu" ColumnName="ileti_okundumu" />
+                <ScalarProperty Name="okunma_tarihi" ColumnName="okunma_tarihi" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="deleted_by" ColumnName="deleted_by" />
+                <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_kullanici_gruplari">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_kullanici_gruplari">
+              <MappingFragment StoreEntitySet="gnl_kullanici_gruplari">
+                <ScalarProperty Name="grup_uid" ColumnName="grup_uid" />
+                <ScalarProperty Name="grup_adi" ColumnName="grup_adi" />
+                <ScalarProperty Name="aktif" ColumnName="aktif" />
+                <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+                <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_kullanici_sifre_sifirlama">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_kullanici_sifre_sifirlama">
+              <MappingFragment StoreEntitySet="gnl_kullanici_sifre_sifirlama">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="sifre_sifirlanacak_email" ColumnName="sifre_sifirlanacak_email" />
+                <ScalarProperty Name="sifirlama_istek_tarihi" ColumnName="sifirlama_istek_tarihi" />
+                <ScalarProperty Name="sifirlama_key" ColumnName="sifirlama_key" />
+                <ScalarProperty Name="sifirlama_kabul_edildi" ColumnName="sifirlama_kabul_edildi" />
+                <ScalarProperty Name="sifirlama_kabul_edilme_tarihi" ColumnName="sifirlama_kabul_edilme_tarihi" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_kullanicilar">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_kullanicilar">
+              <MappingFragment StoreEntitySet="gnl_kullanicilar">
+                <ScalarProperty Name="user_uid" ColumnName="user_uid" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="ikinci_ad" ColumnName="ikinci_ad" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="grup_uid" ColumnName="grup_uid" />
+                <ScalarProperty Name="grup_adi" ColumnName="grup_adi" />
+                <ScalarProperty Name="aktif" ColumnName="aktif" />
+                <ScalarProperty Name="aktivasyon_key" ColumnName="aktivasyon_key" />
+                <ScalarProperty Name="aktivasyon_ok" ColumnName="aktivasyon_ok" />
+                <ScalarProperty Name="is_sistem_admin" ColumnName="is_sistem_admin" />
+                <ScalarProperty Name="dont_activate_purchase" ColumnName="dont_activate_purchase" />
+                <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+                <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="UyelikKosullari" ColumnName="UyelikKosullari" />
+                <ScalarProperty Name="Anket123Sorumluluklari" ColumnName="Anket123Sorumluluklari" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_mail_service">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_mail_service">
+              <MappingFragment StoreEntitySet="gnl_mail_service">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="eposta_to" ColumnName="eposta_to" />
+                <ScalarProperty Name="subject" ColumnName="subject" />
+                <ScalarProperty Name="body" ColumnName="body" />
+                <ScalarProperty Name="eklemetarihi" ColumnName="eklemetarihi" />
+                <ScalarProperty Name="gonderildi" ColumnName="gonderildi" />
+                <ScalarProperty Name="gonderimtarihi" ColumnName="gonderimtarihi" />
+                <ScalarProperty Name="anket_uid" ColumnName="anket_uid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_ref_cinsiyet">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_ref_cinsiyet">
+              <MappingFragment StoreEntitySet="gnl_ref_cinsiyet">
+                <ScalarProperty Name="cinsiyet_id" ColumnName="cinsiyet_id" />
+                <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_ref_uyelik_odeme_sekli">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_ref_uyelik_odeme_sekli">
+              <MappingFragment StoreEntitySet="gnl_ref_uyelik_odeme_sekli">
+                <ScalarProperty Name="odeme_sekli_id" ColumnName="odeme_sekli_id" />
+                <ScalarProperty Name="odeme_sekli" ColumnName="odeme_sekli" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_ref_uyelik_tipleri">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_ref_uyelik_tipleri">
+              <MappingFragment StoreEntitySet="gnl_ref_uyelik_tipleri">
+                <ScalarProperty Name="uyelik_tipi_id" ColumnName="uyelik_tipi_id" />
+                <ScalarProperty Name="uyelik_tipi" ColumnName="uyelik_tipi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_uye_kullanicilar">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_uye_kullanicilar">
+              <MappingFragment StoreEntitySet="gnl_uye_kullanicilar">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="user_uid" ColumnName="user_uid" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="telefonu" ColumnName="telefonu" />
+                <ScalarProperty Name="cep_telefonu" ColumnName="cep_telefonu" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="grup_uid" ColumnName="grup_uid" />
+                <ScalarProperty Name="grup_adi" ColumnName="grup_adi" />
+                <ScalarProperty Name="dogum_tarihi" ColumnName="dogum_tarihi" />
+                <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+                <ScalarProperty Name="sirket_adi" ColumnName="sirket_adi" />
+                <ScalarProperty Name="vergi_dairesi" ColumnName="vergi_dairesi" />
+                <ScalarProperty Name="vergi_no" ColumnName="vergi_no" />
+                <ScalarProperty Name="grup_sirket_tipi_id" ColumnName="grup_sirket_tipi_id" />
+                <ScalarProperty Name="aktif" ColumnName="aktif" />
+                <ScalarProperty Name="uye_baslangic_tarihi" ColumnName="uye_baslangic_tarihi" />
+                <ScalarProperty Name="uye_bitis_tarihi" ColumnName="uye_bitis_tarihi" />
+                <ScalarProperty Name="son_odeme_tipi_id" ColumnName="son_odeme_tipi_id" />
+                <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+                <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="kalan_anket_sayisi" ColumnName="kalan_anket_sayisi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_uyelik_aktivasyon_mail_gonderi_tarihcesi">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_uyelik_aktivasyon_mail_gonderi_tarihcesi">
+              <MappingFragment StoreEntitySet="gnl_uyelik_aktivasyon_mail_gonderi_tarihcesi">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="paket_uid" ColumnName="paket_uid" />
+                <ScalarProperty Name="gonderilen_ad" ColumnName="gonderilen_ad" />
+                <ScalarProperty Name="gonderilen_soyad" ColumnName="gonderilen_soyad" />
+                <ScalarProperty Name="gonderilen_email" ColumnName="gonderilen_email" />
+                <ScalarProperty Name="gonderilme_tarihi" ColumnName="gonderilme_tarihi" />
+                <ScalarProperty Name="gonderen_user_uid" ColumnName="gonderen_user_uid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_uyelik_bitis_bilgilendirme_mail_gonderi_tarihcesi">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_uyelik_bitis_bilgilendirme_mail_gonderi_tarihcesi">
+              <MappingFragment StoreEntitySet="gnl_uyelik_bitis_bilgilendirme_mail_gonderi_tarihcesi">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="user_uid" ColumnName="user_uid" />
+                <ScalarProperty Name="gonderilen_ad" ColumnName="gonderilen_ad" />
+                <ScalarProperty Name="gonderilen_soyad" ColumnName="gonderilen_soyad" />
+                <ScalarProperty Name="gonderilen_email" ColumnName="gonderilen_email" />
+                <ScalarProperty Name="gonderilme_tarihi" ColumnName="gonderilme_tarihi" />
+                <ScalarProperty Name="gonderen_user_uid" ColumnName="gonderen_user_uid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_uyelik_odeme_tipleri_tanimlari">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_uyelik_odeme_tipleri_tanimlari">
+              <MappingFragment StoreEntitySet="gnl_uyelik_odeme_tipleri_tanimlari">
+                <ScalarProperty Name="odeme_tipi_id" ColumnName="odeme_tipi_id" />
+                <ScalarProperty Name="uyelik_tip_id" ColumnName="uyelik_tip_id" />
+                <ScalarProperty Name="odeme_tipi" ColumnName="odeme_tipi" />
+                <ScalarProperty Name="anket_sayisi" ColumnName="anket_sayisi" />
+                <ScalarProperty Name="katilimci_sayisi" ColumnName="katilimci_sayisi" />
+                <ScalarProperty Name="sure_ay" ColumnName="sure_ay" />
+                <ScalarProperty Name="ucret" ColumnName="ucret" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gnl_uyelik_paket_alimlari">
+            <EntityTypeMapping TypeName="SurveyModel.gnl_uyelik_paket_alimlari">
+              <MappingFragment StoreEntitySet="gnl_uyelik_paket_alimlari">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="user_uid" ColumnName="user_uid" />
+                <ScalarProperty Name="grup_uid" ColumnName="grup_uid" />
+                <ScalarProperty Name="odeme_tipi_id" ColumnName="odeme_tipi_id" />
+                <ScalarProperty Name="paket_alim_tarihi" ColumnName="paket_alim_tarihi" />
+                <ScalarProperty Name="paket_fiyati" ColumnName="paket_fiyati" />
+                <ScalarProperty Name="anket_sayisi" ColumnName="anket_sayisi" />
+                <ScalarProperty Name="anket_basina_katilimci_sayisi" ColumnName="anket_basina_katilimci_sayisi" />
+                <ScalarProperty Name="paket_suresi" ColumnName="paket_suresi" />
+                <ScalarProperty Name="uyelik_bitis_tarihi" ColumnName="uyelik_bitis_tarihi" />
+                <ScalarProperty Name="telefonu" ColumnName="telefonu" />
+                <ScalarProperty Name="cep_telefonu" ColumnName="cep_telefonu" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="sirket_adi" ColumnName="sirket_adi" />
+                <ScalarProperty Name="vergi_dairesi" ColumnName="vergi_dairesi" />
+                <ScalarProperty Name="vergi_no" ColumnName="vergi_no" />
+                <ScalarProperty Name="grup_sirket_tipi_id" ColumnName="grup_sirket_tipi_id" />
+                <ScalarProperty Name="odeme_sekli_id" ColumnName="odeme_sekli_id" />
+                <ScalarProperty Name="aktive_edildi" ColumnName="aktive_edildi" />
+                <ScalarProperty Name="kabul_edildi" ColumnName="kabul_edildi" />
+                <ScalarProperty Name="UyelikKosullari" ColumnName="UyelikKosullari" />
+                <ScalarProperty Name="Anket123Sorumluluklari" ColumnName="Anket123Sorumluluklari" />
+                <ScalarProperty Name="fatura_kesildi" ColumnName="fatura_kesildi" />
+                <ScalarProperty Name="islem_id" ColumnName="islem_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="log_mail">
+            <EntityTypeMapping TypeName="SurveyModel.log_mail">
+              <MappingFragment StoreEntitySet="log_mail">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="kime" ColumnName="kime" />
+                <ScalarProperty Name="kimden" ColumnName="kimden" />
+                <ScalarProperty Name="gonderen_aktif_user_name" ColumnName="gonderen_aktif_user_name" />
+                <ScalarProperty Name="tip" ColumnName="tip" />
+                <ScalarProperty Name="subject" ColumnName="subject" />
+                <ScalarProperty Name="mesaj" ColumnName="mesaj" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

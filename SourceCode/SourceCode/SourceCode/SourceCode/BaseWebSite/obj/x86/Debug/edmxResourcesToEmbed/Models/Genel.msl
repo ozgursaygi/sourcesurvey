@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="Genel" />
+  <Alias Key="Target" Value="Genel.Store" />
+  <EntityContainerMapping CdmEntityContainer="GenelContainer1" StorageEntityContainer="GenelStoreContainer">
+    <EntitySetMapping Name="gnl_kullanici_gruplari">
+      <EntityTypeMapping TypeName="Genel.gnl_kullanici_gruplari">
+        <MappingFragment StoreEntitySet="gnl_kullanici_gruplari">
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+          <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+          <ScalarProperty Name="aktif" ColumnName="aktif" />
+          <ScalarProperty Name="grup_adi" ColumnName="grup_adi" />
+          <ScalarProperty Name="grup_uid" ColumnName="grup_uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_kullanici_sifre_sifirlama">
+      <EntityTypeMapping TypeName="Genel.gnl_kullanici_sifre_sifirlama">
+        <MappingFragment StoreEntitySet="gnl_kullanici_sifre_sifirlama">
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="sifirlama_kabul_edilme_tarihi" ColumnName="sifirlama_kabul_edilme_tarihi" />
+          <ScalarProperty Name="sifirlama_kabul_edildi" ColumnName="sifirlama_kabul_edildi" />
+          <ScalarProperty Name="sifirlama_key" ColumnName="sifirlama_key" />
+          <ScalarProperty Name="sifirlama_istek_tarihi" ColumnName="sifirlama_istek_tarihi" />
+          <ScalarProperty Name="sifre_sifirlanacak_email" ColumnName="sifre_sifirlanacak_email" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_grup_kullanici_tanimlari">
+      <EntityTypeMapping TypeName="Genel.gnl_grup_kullanici_tanimlari">
+        <MappingFragment StoreEntitySet="gnl_grup_kullanici_tanimlari">
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+          <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+          <ScalarProperty Name="is_uye_admin" ColumnName="is_uye_admin" />
+          <ScalarProperty Name="is_admin" ColumnName="is_admin" />
+          <ScalarProperty Name="aktif" ColumnName="aktif" />
+          <ScalarProperty Name="kullanici_uid" ColumnName="kullanici_uid" />
+          <ScalarProperty Name="grup_uid" ColumnName="grup_uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_kullanicilar">
+      <EntityTypeMapping TypeName="Genel.gnl_kullanicilar">
+        <MappingFragment StoreEntitySet="gnl_kullanicilar">
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+          <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+          <ScalarProperty Name="aktivasyon_ok" ColumnName="aktivasyon_ok" />
+          <ScalarProperty Name="aktivasyon_key" ColumnName="aktivasyon_key" />
+          <ScalarProperty Name="aktif" ColumnName="aktif" />
+          <ScalarProperty Name="grup_adi" ColumnName="grup_adi" />
+          <ScalarProperty Name="grup_uid" ColumnName="grup_uid" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="ikinci_ad" ColumnName="ikinci_ad" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="user_uid" ColumnName="user_uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gnl_uye_kullanicilar">
+      <EntityTypeMapping TypeName="Genel.gnl_uye_kullanicilar">
+        <MappingFragment StoreEntitySet="gnl_uye_kullanicilar">
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+          <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+          <ScalarProperty Name="odeme_tipi_id" ColumnName="odeme_tipi_id" />
+          <ScalarProperty Name="uye_bitis_tarihi" ColumnName="uye_bitis_tarihi" />
+          <ScalarProperty Name="uye_baslangic_tarihi" ColumnName="uye_baslangic_tarihi" />
+          <ScalarProperty Name="aktif" ColumnName="aktif" />
+          <ScalarProperty Name="grup_sirket_tipi_id" ColumnName="grup_sirket_tipi_id" />
+          <ScalarProperty Name="vergi_no" ColumnName="vergi_no" />
+          <ScalarProperty Name="vergi_dairesi" ColumnName="vergi_dairesi" />
+          <ScalarProperty Name="sirket_adi" ColumnName="sirket_adi" />
+          <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+          <ScalarProperty Name="dogum_tarihi" ColumnName="dogum_tarihi" />
+          <ScalarProperty Name="grup_adi" ColumnName="grup_adi" />
+          <ScalarProperty Name="grup_uid" ColumnName="grup_uid" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="cep_telefonu" ColumnName="cep_telefonu" />
+          <ScalarProperty Name="telefonu" ColumnName="telefonu" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="user_uid" ColumnName="user_uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

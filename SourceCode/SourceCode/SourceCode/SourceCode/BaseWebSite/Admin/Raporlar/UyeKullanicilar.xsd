@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="UyeKullanicilar" targetNamespace="http://tempuri.org/UyeKullanicilar.xsd" xmlns:mstns="http://tempuri.org/UyeKullanicilar.xsd" xmlns="http://tempuri.org/UyeKullanicilar.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="AppConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AppConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.AppConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="gnl_uye_kullanicilar_vTableAdapter" GeneratorDataComponentClassName="gnl_uye_kullanicilar_vTableAdapter" Name="gnl_uye_kullanicilar_v" UserDataComponentName="gnl_uye_kullanicilar_vTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AppConnectionString (Web.config)" DbObjectName="SiberSurvey.dbo.gnl_uye_kullanicilar_v" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, user_uid, ad, soyad, telefonu, cep_telefonu, adres, email, grup_adi, sirket_adi, vergi_dairesi, vergi_no, uye_baslangic_tarihi, uye_bitis_tarihi, son_odeme_tipi_id, kalan_anket_sayisi, aktif, odeme_tipi, anket_sayisi, ucret FROM dbo.gnl_uye_kullanicilar_v</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="user_uid" DataSetColumn="user_uid" />
+              <Mapping SourceColumn="ad" DataSetColumn="ad" />
+              <Mapping SourceColumn="soyad" DataSetColumn="soyad" />
+              <Mapping SourceColumn="telefonu" DataSetColumn="telefonu" />
+              <Mapping SourceColumn="cep_telefonu" DataSetColumn="cep_telefonu" />
+              <Mapping SourceColumn="adres" DataSetColumn="adres" />
+              <Mapping SourceColumn="email" DataSetColumn="email" />
+              <Mapping SourceColumn="grup_adi" DataSetColumn="grup_adi" />
+              <Mapping SourceColumn="sirket_adi" DataSetColumn="sirket_adi" />
+              <Mapping SourceColumn="vergi_dairesi" DataSetColumn="vergi_dairesi" />
+              <Mapping SourceColumn="vergi_no" DataSetColumn="vergi_no" />
+              <Mapping SourceColumn="uye_baslangic_tarihi" DataSetColumn="uye_baslangic_tarihi" />
+              <Mapping SourceColumn="uye_bitis_tarihi" DataSetColumn="uye_bitis_tarihi" />
+              <Mapping SourceColumn="son_odeme_tipi_id" DataSetColumn="son_odeme_tipi_id" />
+              <Mapping SourceColumn="kalan_anket_sayisi" DataSetColumn="kalan_anket_sayisi" />
+              <Mapping SourceColumn="aktif" DataSetColumn="aktif" />
+              <Mapping SourceColumn="odeme_tipi" DataSetColumn="odeme_tipi" />
+              <Mapping SourceColumn="anket_sayisi" DataSetColumn="anket_sayisi" />
+              <Mapping SourceColumn="ucret" DataSetColumn="ucret" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="UyeKullanicilar" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="UyeKullanicilar" msprop:Generator_UserDSName="UyeKullanicilar">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="gnl_uye_kullanicilar_v" msprop:Generator_TableClassName="gnl_uye_kullanicilar_vDataTable" msprop:Generator_TableVarName="tablegnl_uye_kullanicilar_v" msprop:Generator_TablePropName="gnl_uye_kullanicilar_v" msprop:Generator_RowDeletingName="gnl_uye_kullanicilar_vRowDeleting" msprop:Generator_UserTableName="gnl_uye_kullanicilar_v" msprop:Generator_RowChangingName="gnl_uye_kullanicilar_vRowChanging" msprop:Generator_RowEvHandlerName="gnl_uye_kullanicilar_vRowChangeEventHandler" msprop:Generator_RowDeletedName="gnl_uye_kullanicilar_vRowDeleted" msprop:Generator_RowEvArgName="gnl_uye_kullanicilar_vRowChangeEvent" msprop:Generator_RowChangedName="gnl_uye_kullanicilar_vRowChanged" msprop:Generator_RowClassName="gnl_uye_kullanicilar_vRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
+              <xs:element name="user_uid" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnuser_uid" msprop:Generator_ColumnPropNameInRow="user_uid" msprop:Generator_ColumnPropNameInTable="user_uidColumn" msprop:Generator_UserColumnName="user_uid" type="xs:string" minOccurs="0" />
+              <xs:element name="ad" msprop:Generator_ColumnVarNameInTable="columnad" msprop:Generator_ColumnPropNameInRow="ad" msprop:Generator_ColumnPropNameInTable="adColumn" msprop:Generator_UserColumnName="ad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soyad" msprop:Generator_ColumnVarNameInTable="columnsoyad" msprop:Generator_ColumnPropNameInRow="soyad" msprop:Generator_ColumnPropNameInTable="soyadColumn" msprop:Generator_UserColumnName="soyad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefonu" msprop:Generator_ColumnVarNameInTable="columntelefonu" msprop:Generator_ColumnPropNameInRow="telefonu" msprop:Generator_ColumnPropNameInTable="telefonuColumn" msprop:Generator_UserColumnName="telefonu" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cep_telefonu" msprop:Generator_ColumnVarNameInTable="columncep_telefonu" msprop:Generator_ColumnPropNameInRow="cep_telefonu" msprop:Generator_ColumnPropNameInTable="cep_telefonuColumn" msprop:Generator_UserColumnName="cep_telefonu" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="adres" msprop:Generator_ColumnVarNameInTable="columnadres" msprop:Generator_ColumnPropNameInRow="adres" msprop:Generator_ColumnPropNameInTable="adresColumn" msprop:Generator_UserColumnName="adres" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="email" msprop:Generator_ColumnVarNameInTable="columnemail" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_UserColumnName="email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="grup_adi" msprop:Generator_ColumnVarNameInTable="columngrup_adi" msprop:Generator_ColumnPropNameInRow="grup_adi" msprop:Generator_ColumnPropNameInTable="grup_adiColumn" msprop:Generator_UserColumnName="grup_adi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sirket_adi" msprop:Generator_ColumnVarNameInTable="columnsirket_adi" msprop:Generator_ColumnPropNameInRow="sirket_adi" msprop:Generator_ColumnPropNameInTable="sirket_adiColumn" msprop:Generator_UserColumnName="sirket_adi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vergi_dairesi" msprop:Generator_ColumnVarNameInTable="columnvergi_dairesi" msprop:Generator_ColumnPropNameInRow="vergi_dairesi" msprop:Generator_ColumnPropNameInTable="vergi_dairesiColumn" msprop:Generator_UserColumnName="vergi_dairesi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vergi_no" msprop:Generator_ColumnVarNameInTable="columnvergi_no" msprop:Generator_ColumnPropNameInRow="vergi_no" msprop:Generator_ColumnPropNameInTable="vergi_noColumn" msprop:Generator_UserColumnName="vergi_no" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="uye_baslangic_tarihi" msprop:Generator_ColumnVarNameInTable="columnuye_baslangic_tarihi" msprop:Generator_ColumnPropNameInRow="uye_baslangic_tarihi" msprop:Generator_ColumnPropNameInTable="uye_baslangic_tarihiColumn" msprop:Generator_UserColumnName="uye_baslangic_tarihi" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="uye_bitis_tarihi" msprop:Generator_ColumnVarNameInTable="columnuye_bitis_tarihi" msprop:Generator_ColumnPropNameInRow="uye_bitis_tarihi" msprop:Generator_ColumnPropNameInTable="uye_bitis_tarihiColumn" msprop:Generator_UserColumnName="uye_bitis_tarihi" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="son_odeme_tipi_id" msprop:Generator_ColumnVarNameInTable="columnson_odeme_tipi_id" msprop:Generator_ColumnPropNameInRow="son_odeme_tipi_id" msprop:Generator_ColumnPropNameInTable="son_odeme_tipi_idColumn" msprop:Generator_UserColumnName="son_odeme_tipi_id" type="xs:int" minOccurs="0" />
+              <xs:element name="kalan_anket_sayisi" msprop:Generator_ColumnVarNameInTable="columnkalan_anket_sayisi" msprop:Generator_ColumnPropNameInRow="kalan_anket_sayisi" msprop:Generator_ColumnPropNameInTable="kalan_anket_sayisiColumn" msprop:Generator_UserColumnName="kalan_anket_sayisi" type="xs:int" minOccurs="0" />
+              <xs:element name="aktif" msprop:Generator_ColumnVarNameInTable="columnaktif" msprop:Generator_ColumnPropNameInRow="aktif" msprop:Generator_ColumnPropNameInTable="aktifColumn" msprop:Generator_UserColumnName="aktif" type="xs:boolean" minOccurs="0" />
+              <xs:element name="odeme_tipi" msprop:Generator_ColumnVarNameInTable="columnodeme_tipi" msprop:Generator_ColumnPropNameInRow="odeme_tipi" msprop:Generator_ColumnPropNameInTable="odeme_tipiColumn" msprop:Generator_UserColumnName="odeme_tipi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anket_sayisi" msprop:Generator_ColumnVarNameInTable="columnanket_sayisi" msprop:Generator_ColumnPropNameInRow="anket_sayisi" msprop:Generator_ColumnPropNameInTable="anket_sayisiColumn" msprop:Generator_UserColumnName="anket_sayisi" type="xs:int" minOccurs="0" />
+              <xs:element name="ucret" msprop:Generator_ColumnVarNameInTable="columnucret" msprop:Generator_ColumnPropNameInRow="ucret" msprop:Generator_ColumnPropNameInTable="ucretColumn" msprop:Generator_UserColumnName="ucret" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:gnl_uye_kullanicilar_v" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

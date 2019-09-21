@@ -1,0 +1,815 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BaseWebSitesModelsStoreContainer" CdmEntityContainer="SurveyEntities">
+    <EntitySetMapping Name="sbr_anket">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_anket">
+        <MappingFragment StoreEntitySet="sbr_anket">
+          <ScalarProperty Name="anket_uid" ColumnName="anket_uid" />
+          <ScalarProperty Name="grup_uid" ColumnName="grup_uid" />
+          <ScalarProperty Name="kullanici_uid" ColumnName="kullanici_uid" />
+          <ScalarProperty Name="anket_adi" ColumnName="anket_adi" />
+          <ScalarProperty Name="anket_goruntulenen_ad" ColumnName="anket_goruntulenen_ad" />
+          <ScalarProperty Name="anket_goruntulenen_ad_ekle" ColumnName="anket_goruntulenen_ad_ekle" />
+          <ScalarProperty Name="kategori_id" ColumnName="kategori_id" />
+          <ScalarProperty Name="anket_tipi_id" ColumnName="anket_tipi_id" />
+          <ScalarProperty Name="anket_mesaji" ColumnName="anket_mesaji" />
+          <ScalarProperty Name="anket_mesaji_ekle" ColumnName="anket_mesaji_ekle" />
+          <ScalarProperty Name="anket_sonuc_mesaji" ColumnName="anket_sonuc_mesaji" />
+          <ScalarProperty Name="anket_sonuc_mesaji_ekle" ColumnName="anket_sonuc_mesaji_ekle" />
+          <ScalarProperty Name="baslangic_tarihi" ColumnName="baslangic_tarihi" />
+          <ScalarProperty Name="bitis_tarihi" ColumnName="bitis_tarihi" />
+          <ScalarProperty Name="olusturma_tarihi" ColumnName="olusturma_tarihi" />
+          <ScalarProperty Name="olusturan_kullanici_uid" ColumnName="olusturan_kullanici_uid" />
+          <ScalarProperty Name="anket_durumu_id" ColumnName="anket_durumu_id" />
+          <ScalarProperty Name="anket_durumu_uid" ColumnName="anket_durumu_uid" />
+          <ScalarProperty Name="ip_kisitlamasi" ColumnName="ip_kisitlamasi" />
+          <ScalarProperty Name="sayfadaki_soru_sayisi" ColumnName="sayfadaki_soru_sayisi" />
+          <ScalarProperty Name="soru_cevaplama_zorunlulugu" ColumnName="soru_cevaplama_zorunlulugu" />
+          <ScalarProperty Name="anket_tema_id" ColumnName="anket_tema_id" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="bitis_tarihinde_anketi_kaldir" ColumnName="bitis_tarihinde_anketi_kaldir" />
+          <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+          <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_anket_davet">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_anket_davet">
+        <MappingFragment StoreEntitySet="sbr_anket_davet">
+          <ScalarProperty Name="davet_uid" ColumnName="davet_uid" />
+          <ScalarProperty Name="davet_eden_kullanici_uid" ColumnName="davet_eden_kullanici_uid" />
+          <ScalarProperty Name="davet_edilen_grup_uid" ColumnName="davet_edilen_grup_uid" />
+          <ScalarProperty Name="davet_edilen_email" ColumnName="davet_edilen_email" />
+          <ScalarProperty Name="davet_key" ColumnName="davet_key" />
+          <ScalarProperty Name="davet_tarihi" ColumnName="davet_tarihi" />
+          <ScalarProperty Name="davet_kabul_edildi" ColumnName="davet_kabul_edildi" />
+          <ScalarProperty Name="davet_kabul_edilme_tarihi" ColumnName="davet_kabul_edilme_tarihi" />
+          <ScalarProperty Name="davet_kabul_eden_kullanici_uid" ColumnName="davet_kabul_eden_kullanici_uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_anket_durum_tarihcesi">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_anket_durum_tarihcesi">
+        <MappingFragment StoreEntitySet="sbr_anket_durum_tarihcesi">
+          <ScalarProperty Name="anket_durumu_uid" ColumnName="anket_durumu_uid" />
+          <ScalarProperty Name="anket_uid" ColumnName="anket_uid" />
+          <ScalarProperty Name="anket_durumu_id" ColumnName="anket_durumu_id" />
+          <ScalarProperty Name="durumu_olusturan_kullanici" ColumnName="durumu_olusturan_kullanici" />
+          <ScalarProperty Name="durum_olusma_tarihi" ColumnName="durum_olusma_tarihi" />
+          <ScalarProperty Name="durum_aciklamasi" ColumnName="durum_aciklamasi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_anket_sorulari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_anket_sorulari">
+        <MappingFragment StoreEntitySet="sbr_anket_sorulari">
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="anket_uid" ColumnName="anket_uid" />
+          <ScalarProperty Name="soru_tipi_id" ColumnName="soru_tipi_id" />
+          <ScalarProperty Name="soru" ColumnName="soru" />
+          <ScalarProperty Name="soru_sira_no" ColumnName="soru_sira_no" />
+          <ScalarProperty Name="soru_sitili_id" ColumnName="soru_sitili_id" />
+          <ScalarProperty Name="soru_siralama_sekli_id" ColumnName="soru_siralama_sekli_id" />
+          <ScalarProperty Name="soru_zorunlu" ColumnName="soru_zorunlu" />
+          <ScalarProperty Name="soru_sayisal_ondalik" ColumnName="soru_sayisal_ondalik" />
+          <ScalarProperty Name="soru_olusturma_tarihi" ColumnName="soru_olusturma_tarihi" />
+          <ScalarProperty Name="soru_olusturan_kullanici_uid" ColumnName="soru_olusturan_kullanici_uid" />
+          <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+          <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="soru_tek_satir" ColumnName="soru_tek_satir" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_anket_test_mail_gonderi_kisi_tarihcesi">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_anket_test_mail_gonderi_kisi_tarihcesi">
+        <MappingFragment StoreEntitySet="sbr_anket_test_mail_gonderi_kisi_tarihcesi">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="anket_uid" ColumnName="anket_uid" />
+          <ScalarProperty Name="gonderi_tarihi" ColumnName="gonderi_tarihi" />
+          <ScalarProperty Name="gonderen_user_uid" ColumnName="gonderen_user_uid" />
+          <ScalarProperty Name="gonderilen_email_adresi" ColumnName="gonderilen_email_adresi" />
+          <ScalarProperty Name="anket_test_key" ColumnName="anket_test_key" />
+          <ScalarProperty Name="anket_test_sonucu_id" ColumnName="anket_test_sonucu_id" />
+          <ScalarProperty Name="anket_test_sonucu" ColumnName="anket_test_sonucu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_anket_yayinlama_acik_anket_aktivasyon">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_anket_yayinlama_acik_anket_aktivasyon">
+        <MappingFragment StoreEntitySet="sbr_anket_yayinlama_acik_anket_aktivasyon">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="anket_uid" ColumnName="anket_uid" />
+          <ScalarProperty Name="giris_key" ColumnName="giris_key" />
+          <ScalarProperty Name="anket_bitirildi" ColumnName="anket_bitirildi" />
+          <ScalarProperty Name="anket_bitirilme_tarihi" ColumnName="anket_bitirilme_tarihi" />
+          <ScalarProperty Name="host_name" ColumnName="host_name" />
+          <ScalarProperty Name="user_host_adres" ColumnName="user_host_adres" />
+          <ScalarProperty Name="browser" ColumnName="browser" />
+          <ScalarProperty Name="platform" ColumnName="platform" />
+          <ScalarProperty Name="versiyon" ColumnName="versiyon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_anket_yayinlama_mail_gonderi_aktivasyon">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_anket_yayinlama_mail_gonderi_aktivasyon">
+        <MappingFragment StoreEntitySet="sbr_anket_yayinlama_mail_gonderi_aktivasyon">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="anket_uid" ColumnName="anket_uid" />
+          <ScalarProperty Name="tarihce_uid" ColumnName="tarihce_uid" />
+          <ScalarProperty Name="anket_gonderilen_ad" ColumnName="anket_gonderilen_ad" />
+          <ScalarProperty Name="anket_gonderilen_soyad" ColumnName="anket_gonderilen_soyad" />
+          <ScalarProperty Name="anket_gonderilen_email" ColumnName="anket_gonderilen_email" />
+          <ScalarProperty Name="anket_gonderilme_tarihi" ColumnName="anket_gonderilme_tarihi" />
+          <ScalarProperty Name="anket_gonderilme_key" ColumnName="anket_gonderilme_key" />
+          <ScalarProperty Name="ankete_girildi" ColumnName="ankete_girildi" />
+          <ScalarProperty Name="ankete_giris_tarihi" ColumnName="ankete_giris_tarihi" />
+          <ScalarProperty Name="anket_bitirildi" ColumnName="anket_bitirildi" />
+          <ScalarProperty Name="anket_bitirilme_tarihi" ColumnName="anket_bitirilme_tarihi" />
+          <ScalarProperty Name="ankete_cevap_verildi" ColumnName="ankete_cevap_verildi" />
+          <ScalarProperty Name="ankete_cevap_verilme_tarihi" ColumnName="ankete_cevap_verilme_tarihi" />
+          <ScalarProperty Name="anket_mail_grubu_uid" ColumnName="anket_mail_grubu_uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_anket_yayinlama_mail_gonderi_kisi_tarihcesi">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_anket_yayinlama_mail_gonderi_kisi_tarihcesi">
+        <MappingFragment StoreEntitySet="sbr_anket_yayinlama_mail_gonderi_kisi_tarihcesi">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tarihce_uid" ColumnName="tarihce_uid" />
+          <ScalarProperty Name="gonderilen_kisi_ismi" ColumnName="gonderilen_kisi_ismi" />
+          <ScalarProperty Name="gonderilen_email_adresi" ColumnName="gonderilen_email_adresi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_anket_yayinlama_mail_gonderi_tarihcesi">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_anket_yayinlama_mail_gonderi_tarihcesi">
+        <MappingFragment StoreEntitySet="sbr_anket_yayinlama_mail_gonderi_tarihcesi">
+          <ScalarProperty Name="tarihce_uid" ColumnName="tarihce_uid" />
+          <ScalarProperty Name="anket_uid" ColumnName="anket_uid" />
+          <ScalarProperty Name="gonderilen_mail_grubu_uid" ColumnName="gonderilen_mail_grubu_uid" />
+          <ScalarProperty Name="gonderi_tarihi" ColumnName="gonderi_tarihi" />
+          <ScalarProperty Name="gonderen_user_uid" ColumnName="gonderen_user_uid" />
+          <ScalarProperty Name="gonderilen_mail_konusu" ColumnName="gonderilen_mail_konusu" />
+          <ScalarProperty Name="gonderilen_mail" ColumnName="gonderilen_mail" />
+          <ScalarProperty Name="host_name" ColumnName="host_name" />
+          <ScalarProperty Name="user_host_adres" ColumnName="user_host_adres" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_mail_gruplari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_mail_gruplari">
+        <MappingFragment StoreEntitySet="sbr_mail_gruplari">
+          <ScalarProperty Name="mail_grubu_uid" ColumnName="mail_grubu_uid" />
+          <ScalarProperty Name="grup_uid" ColumnName="grup_uid" />
+          <ScalarProperty Name="mail_grubu_adi" ColumnName="mail_grubu_adi" />
+          <ScalarProperty Name="olusturan_kullanici_uid" ColumnName="olusturan_kullanici_uid" />
+          <ScalarProperty Name="olusturma_tarihi" ColumnName="olusturma_tarihi" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_mail_gruplari_dosyalari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_mail_gruplari_dosyalari">
+        <MappingFragment StoreEntitySet="sbr_mail_gruplari_dosyalari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dosya_ekleyen_user_uid" ColumnName="dosya_ekleyen_user_uid" />
+          <ScalarProperty Name="dosya_eklenma_tarihi" ColumnName="dosya_eklenma_tarihi" />
+          <ScalarProperty Name="dosya_uzanti_adi" ColumnName="dosya_uzanti_adi" />
+          <ScalarProperty Name="dosya" ColumnName="dosya" />
+          <ScalarProperty Name="mail_grubu_uid" ColumnName="mail_grubu_uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_mail_gruplari_kullanici_listesi">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_mail_gruplari_kullanici_listesi">
+        <MappingFragment StoreEntitySet="sbr_mail_gruplari_kullanici_listesi">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="mail_grubu_uid" ColumnName="mail_grubu_uid" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+          <ScalarProperty Name="olusturma_tarihi" ColumnName="olusturma_tarihi" />
+          <ScalarProperty Name="olusturan_kullanici_uid" ColumnName="olusturan_kullanici_uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_ref_anket_durumu">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_ref_anket_durumu">
+        <MappingFragment StoreEntitySet="sbr_ref_anket_durumu">
+          <ScalarProperty Name="anket_durumu_id" ColumnName="anket_durumu_id" />
+          <ScalarProperty Name="anket_durumu" ColumnName="anket_durumu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_ref_anket_kategori">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_ref_anket_kategori">
+        <MappingFragment StoreEntitySet="sbr_ref_anket_kategori">
+          <ScalarProperty Name="kategori_id" ColumnName="kategori_id" />
+          <ScalarProperty Name="kategori_kodu" ColumnName="kategori_kodu" />
+          <ScalarProperty Name="kategori_adi" ColumnName="kategori_adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_ref_anket_temalari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_ref_anket_temalari">
+        <MappingFragment StoreEntitySet="sbr_ref_anket_temalari">
+          <ScalarProperty Name="anket_tema_id" ColumnName="anket_tema_id" />
+          <ScalarProperty Name="anket_tema_name" ColumnName="anket_tema_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_ref_anket_test_sonucu">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_ref_anket_test_sonucu">
+        <MappingFragment StoreEntitySet="sbr_ref_anket_test_sonucu">
+          <ScalarProperty Name="anket_test_sonucu_id" ColumnName="anket_test_sonucu_id" />
+          <ScalarProperty Name="anket_test_sonucu" ColumnName="anket_test_sonucu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_ref_anket_tipi">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_ref_anket_tipi">
+        <MappingFragment StoreEntitySet="sbr_ref_anket_tipi">
+          <ScalarProperty Name="anket_tipi_id" ColumnName="anket_tipi_id" />
+          <ScalarProperty Name="anket_tipi" ColumnName="anket_tipi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_ref_sablon_durumu">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_ref_sablon_durumu">
+        <MappingFragment StoreEntitySet="sbr_ref_sablon_durumu">
+          <ScalarProperty Name="sablon_durumu_id" ColumnName="sablon_durumu_id" />
+          <ScalarProperty Name="sablon_durumu" ColumnName="sablon_durumu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_ref_soru_siralama_sekli">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_ref_soru_siralama_sekli">
+        <MappingFragment StoreEntitySet="sbr_ref_soru_siralama_sekli">
+          <ScalarProperty Name="soru_siralama_sekli_id" ColumnName="soru_siralama_sekli_id" />
+          <ScalarProperty Name="soru_siralama_sekli" ColumnName="soru_siralama_sekli" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_ref_soru_sitili">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_ref_soru_sitili">
+        <MappingFragment StoreEntitySet="sbr_ref_soru_sitili">
+          <ScalarProperty Name="soru_sitili_id" ColumnName="soru_sitili_id" />
+          <ScalarProperty Name="soru_sitili" ColumnName="soru_sitili" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_ref_soru_tipi">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_ref_soru_tipi">
+        <MappingFragment StoreEntitySet="sbr_ref_soru_tipi">
+          <ScalarProperty Name="soru_tipi_id" ColumnName="soru_tipi_id" />
+          <ScalarProperty Name="soru_tipi_kodu" ColumnName="soru_tipi_kodu" />
+          <ScalarProperty Name="soru_tipi_adi" ColumnName="soru_tipi_adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_sablon">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_sablon">
+        <MappingFragment StoreEntitySet="sbr_sablon">
+          <ScalarProperty Name="sablon_uid" ColumnName="sablon_uid" />
+          <ScalarProperty Name="grup_uid" ColumnName="grup_uid" />
+          <ScalarProperty Name="kullanici_uid" ColumnName="kullanici_uid" />
+          <ScalarProperty Name="sablon_adi" ColumnName="sablon_adi" />
+          <ScalarProperty Name="kategori_id" ColumnName="kategori_id" />
+          <ScalarProperty Name="soru_sayisal_ondalik" ColumnName="soru_sayisal_ondalik" />
+          <ScalarProperty Name="olusturma_tarihi" ColumnName="olusturma_tarihi" />
+          <ScalarProperty Name="olusturan_kullanici_uid" ColumnName="olusturan_kullanici_uid" />
+          <ScalarProperty Name="sablon_durumu_id" ColumnName="sablon_durumu_id" />
+          <ScalarProperty Name="sablon_durumu_uid" ColumnName="sablon_durumu_uid" />
+          <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+          <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_sablon_durum_tarihcesi">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_sablon_durum_tarihcesi">
+        <MappingFragment StoreEntitySet="sbr_sablon_durum_tarihcesi">
+          <ScalarProperty Name="sablon_durumu_uid" ColumnName="sablon_durumu_uid" />
+          <ScalarProperty Name="sablon_uid" ColumnName="sablon_uid" />
+          <ScalarProperty Name="sablon_durumu_id" ColumnName="sablon_durumu_id" />
+          <ScalarProperty Name="durumu_olusturan_kullanici" ColumnName="durumu_olusturan_kullanici" />
+          <ScalarProperty Name="durum_olusma_tarihi" ColumnName="durum_olusma_tarihi" />
+          <ScalarProperty Name="durum_aciklamasi" ColumnName="durum_aciklamasi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_sablon_soru_tipi_1_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_sablon_soru_tipi_1_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_sablon_soru_tipi_1_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_sablon_soru_tipi_10_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_sablon_soru_tipi_10_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_sablon_soru_tipi_10_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_sablon_soru_tipi_11_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_sablon_soru_tipi_11_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_sablon_soru_tipi_11_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_sablon_soru_tipi_2_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_sablon_soru_tipi_2_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_sablon_soru_tipi_2_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_sablon_soru_tipi_3_secenek_kolonlari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_sablon_soru_tipi_3_secenek_kolonlari">
+        <MappingFragment StoreEntitySet="sbr_sablon_soru_tipi_3_secenek_kolonlari">
+          <ScalarProperty Name="soru_secenek_kolon_uid" ColumnName="soru_secenek_kolon_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_kolon_ad" ColumnName="soru_secenek_kolon_ad" />
+          <ScalarProperty Name="soru_secenek_kolon_sira_no" ColumnName="soru_secenek_kolon_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_sablon_soru_tipi_3_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_sablon_soru_tipi_3_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_sablon_soru_tipi_3_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_sablon_soru_tipi_4_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_sablon_soru_tipi_4_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_sablon_soru_tipi_4_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_sablon_soru_tipi_5_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_sablon_soru_tipi_5_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_sablon_soru_tipi_5_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_sablon_soru_tipi_6_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_sablon_soru_tipi_6_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_sablon_soru_tipi_6_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_sablon_soru_tipi_7_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_sablon_soru_tipi_7_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_sablon_soru_tipi_7_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_sablon_soru_tipi_8_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_sablon_soru_tipi_8_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_sablon_soru_tipi_8_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_sablon_soru_tipi_9_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_sablon_soru_tipi_9_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_sablon_soru_tipi_9_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_sablon_sorulari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_sablon_sorulari">
+        <MappingFragment StoreEntitySet="sbr_sablon_sorulari">
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="sablon_uid" ColumnName="sablon_uid" />
+          <ScalarProperty Name="soru_tipi_id" ColumnName="soru_tipi_id" />
+          <ScalarProperty Name="soru" ColumnName="soru" />
+          <ScalarProperty Name="soru_sira_no" ColumnName="soru_sira_no" />
+          <ScalarProperty Name="soru_sitili_id" ColumnName="soru_sitili_id" />
+          <ScalarProperty Name="soru_siralama_sekli_id" ColumnName="soru_siralama_sekli_id" />
+          <ScalarProperty Name="soru_zorunlu" ColumnName="soru_zorunlu" />
+          <ScalarProperty Name="soru_sayisal_ondalik" ColumnName="soru_sayisal_ondalik" />
+          <ScalarProperty Name="soru_olusturma_tarihi" ColumnName="soru_olusturma_tarihi" />
+          <ScalarProperty Name="soru_olusturan_kullanici_uid" ColumnName="soru_olusturan_kullanici_uid" />
+          <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+          <ScalarProperty Name="inserted_at" ColumnName="inserted_at" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="soru_tek_satir" ColumnName="soru_tek_satir" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_1_cevaplari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_1_cevaplari">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_1_cevaplari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cevap_key" ColumnName="cevap_key" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="cevap" ColumnName="cevap" />
+          <ScalarProperty Name="cevaplayan_ad" ColumnName="cevaplayan_ad" />
+          <ScalarProperty Name="cevaplayan_soyad" ColumnName="cevaplayan_soyad" />
+          <ScalarProperty Name="cevaplayan_email" ColumnName="cevaplayan_email" />
+          <ScalarProperty Name="cavaplama_tarihi" ColumnName="cavaplama_tarihi" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="host_name" ColumnName="host_name" />
+          <ScalarProperty Name="user_host_adres" ColumnName="user_host_adres" />
+          <ScalarProperty Name="browser" ColumnName="browser" />
+          <ScalarProperty Name="platform" ColumnName="platform" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_1_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_1_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_1_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_10_cevaplari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_10_cevaplari">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_10_cevaplari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cevap_key" ColumnName="cevap_key" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="cevap" ColumnName="cevap" />
+          <ScalarProperty Name="cevaplayan_ad" ColumnName="cevaplayan_ad" />
+          <ScalarProperty Name="cevaplayan_soyad" ColumnName="cevaplayan_soyad" />
+          <ScalarProperty Name="cevaplayan_email" ColumnName="cevaplayan_email" />
+          <ScalarProperty Name="cavaplama_tarihi" ColumnName="cavaplama_tarihi" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="host_name" ColumnName="host_name" />
+          <ScalarProperty Name="user_host_adres" ColumnName="user_host_adres" />
+          <ScalarProperty Name="browser" ColumnName="browser" />
+          <ScalarProperty Name="platform" ColumnName="platform" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_10_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_10_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_10_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_11_cevaplari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_11_cevaplari">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_11_cevaplari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cevap_key" ColumnName="cevap_key" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="cevap" ColumnName="cevap" />
+          <ScalarProperty Name="cevaplayan_ad" ColumnName="cevaplayan_ad" />
+          <ScalarProperty Name="cevaplayan_soyad" ColumnName="cevaplayan_soyad" />
+          <ScalarProperty Name="cevaplayan_email" ColumnName="cevaplayan_email" />
+          <ScalarProperty Name="cavaplama_tarihi" ColumnName="cavaplama_tarihi" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="host_name" ColumnName="host_name" />
+          <ScalarProperty Name="user_host_adres" ColumnName="user_host_adres" />
+          <ScalarProperty Name="browser" ColumnName="browser" />
+          <ScalarProperty Name="platform" ColumnName="platform" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_11_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_11_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_11_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_2_cevaplari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_2_cevaplari">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_2_cevaplari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cevap_key" ColumnName="cevap_key" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="cevap" ColumnName="cevap" />
+          <ScalarProperty Name="cevaplayan_ad" ColumnName="cevaplayan_ad" />
+          <ScalarProperty Name="cevaplayan_soyad" ColumnName="cevaplayan_soyad" />
+          <ScalarProperty Name="cevaplayan_email" ColumnName="cevaplayan_email" />
+          <ScalarProperty Name="cavaplama_tarihi" ColumnName="cavaplama_tarihi" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="host_name" ColumnName="host_name" />
+          <ScalarProperty Name="user_host_adres" ColumnName="user_host_adres" />
+          <ScalarProperty Name="browser" ColumnName="browser" />
+          <ScalarProperty Name="platform" ColumnName="platform" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_2_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_2_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_2_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_3_cevaplari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_3_cevaplari">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_3_cevaplari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cevap_key" ColumnName="cevap_key" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_secenek_kolon_uid" ColumnName="soru_secenek_kolon_uid" />
+          <ScalarProperty Name="cevap" ColumnName="cevap" />
+          <ScalarProperty Name="cevaplayan_ad" ColumnName="cevaplayan_ad" />
+          <ScalarProperty Name="cevaplayan_soyad" ColumnName="cevaplayan_soyad" />
+          <ScalarProperty Name="cevaplayan_email" ColumnName="cevaplayan_email" />
+          <ScalarProperty Name="cavaplama_tarihi" ColumnName="cavaplama_tarihi" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="host_name" ColumnName="host_name" />
+          <ScalarProperty Name="user_host_adres" ColumnName="user_host_adres" />
+          <ScalarProperty Name="browser" ColumnName="browser" />
+          <ScalarProperty Name="platform" ColumnName="platform" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_3_secenek_kolonlari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_3_secenek_kolonlari">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_3_secenek_kolonlari">
+          <ScalarProperty Name="soru_secenek_kolon_uid" ColumnName="soru_secenek_kolon_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_kolon_ad" ColumnName="soru_secenek_kolon_ad" />
+          <ScalarProperty Name="soru_secenek_kolon_sira_no" ColumnName="soru_secenek_kolon_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_3_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_3_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_3_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_4_cevaplari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_4_cevaplari">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_4_cevaplari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cevap_key" ColumnName="cevap_key" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="cevap" ColumnName="cevap" />
+          <ScalarProperty Name="cevaplayan_ad" ColumnName="cevaplayan_ad" />
+          <ScalarProperty Name="cevaplayan_soyad" ColumnName="cevaplayan_soyad" />
+          <ScalarProperty Name="cevaplayan_email" ColumnName="cevaplayan_email" />
+          <ScalarProperty Name="cavaplama_tarihi" ColumnName="cavaplama_tarihi" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="host_name" ColumnName="host_name" />
+          <ScalarProperty Name="user_host_adres" ColumnName="user_host_adres" />
+          <ScalarProperty Name="browser" ColumnName="browser" />
+          <ScalarProperty Name="platform" ColumnName="platform" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_4_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_4_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_4_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_5_cevaplari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_5_cevaplari">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_5_cevaplari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cevap_key" ColumnName="cevap_key" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="cevap" ColumnName="cevap" />
+          <ScalarProperty Name="cevaplayan_ad" ColumnName="cevaplayan_ad" />
+          <ScalarProperty Name="cevaplayan_soyad" ColumnName="cevaplayan_soyad" />
+          <ScalarProperty Name="cevaplayan_email" ColumnName="cevaplayan_email" />
+          <ScalarProperty Name="cavaplama_tarihi" ColumnName="cavaplama_tarihi" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="host_name" ColumnName="host_name" />
+          <ScalarProperty Name="user_host_adres" ColumnName="user_host_adres" />
+          <ScalarProperty Name="browser" ColumnName="browser" />
+          <ScalarProperty Name="platform" ColumnName="platform" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_5_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_5_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_5_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_6_cevaplari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_6_cevaplari">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_6_cevaplari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cevap_key" ColumnName="cevap_key" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="cevap" ColumnName="cevap" />
+          <ScalarProperty Name="cevaplayan_ad" ColumnName="cevaplayan_ad" />
+          <ScalarProperty Name="cevaplayan_soyad" ColumnName="cevaplayan_soyad" />
+          <ScalarProperty Name="cevaplayan_email" ColumnName="cevaplayan_email" />
+          <ScalarProperty Name="cavaplama_tarihi" ColumnName="cavaplama_tarihi" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="host_name" ColumnName="host_name" />
+          <ScalarProperty Name="user_host_adres" ColumnName="user_host_adres" />
+          <ScalarProperty Name="browser" ColumnName="browser" />
+          <ScalarProperty Name="platform" ColumnName="platform" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_6_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_6_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_6_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_7_cevaplari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_7_cevaplari">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_7_cevaplari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cevap_key" ColumnName="cevap_key" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="cevap" ColumnName="cevap" />
+          <ScalarProperty Name="cevaplayan_ad" ColumnName="cevaplayan_ad" />
+          <ScalarProperty Name="cevaplayan_soyad" ColumnName="cevaplayan_soyad" />
+          <ScalarProperty Name="cevaplayan_email" ColumnName="cevaplayan_email" />
+          <ScalarProperty Name="cavaplama_tarihi" ColumnName="cavaplama_tarihi" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="host_name" ColumnName="host_name" />
+          <ScalarProperty Name="user_host_adres" ColumnName="user_host_adres" />
+          <ScalarProperty Name="browser" ColumnName="browser" />
+          <ScalarProperty Name="platform" ColumnName="platform" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_7_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_7_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_7_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_8_cevaplari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_8_cevaplari">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_8_cevaplari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cevap_key" ColumnName="cevap_key" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="cevap" ColumnName="cevap" />
+          <ScalarProperty Name="cevaplayan_ad" ColumnName="cevaplayan_ad" />
+          <ScalarProperty Name="cevaplayan_soyad" ColumnName="cevaplayan_soyad" />
+          <ScalarProperty Name="cevaplayan_email" ColumnName="cevaplayan_email" />
+          <ScalarProperty Name="cavaplama_tarihi" ColumnName="cavaplama_tarihi" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="host_name" ColumnName="host_name" />
+          <ScalarProperty Name="user_host_adres" ColumnName="user_host_adres" />
+          <ScalarProperty Name="browser" ColumnName="browser" />
+          <ScalarProperty Name="platform" ColumnName="platform" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_8_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_8_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_8_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_9_cevaplari">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_9_cevaplari">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_9_cevaplari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cevap_key" ColumnName="cevap_key" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="cevap" ColumnName="cevap" />
+          <ScalarProperty Name="cevaplayan_ad" ColumnName="cevaplayan_ad" />
+          <ScalarProperty Name="cevaplayan_soyad" ColumnName="cevaplayan_soyad" />
+          <ScalarProperty Name="cevaplayan_email" ColumnName="cevaplayan_email" />
+          <ScalarProperty Name="cavaplama_tarihi" ColumnName="cavaplama_tarihi" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="host_name" ColumnName="host_name" />
+          <ScalarProperty Name="user_host_adres" ColumnName="user_host_adres" />
+          <ScalarProperty Name="browser" ColumnName="browser" />
+          <ScalarProperty Name="platform" ColumnName="platform" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sbr_soru_tipi_9_secenekleri">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sbr_soru_tipi_9_secenekleri">
+        <MappingFragment StoreEntitySet="sbr_soru_tipi_9_secenekleri">
+          <ScalarProperty Name="soru_secenek_uid" ColumnName="soru_secenek_uid" />
+          <ScalarProperty Name="soru_uid" ColumnName="soru_uid" />
+          <ScalarProperty Name="soru_secenek_ad" ColumnName="soru_secenek_ad" />
+          <ScalarProperty Name="soru_secenek_sira_no" ColumnName="soru_secenek_sira_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="BaseWebSites.Models.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

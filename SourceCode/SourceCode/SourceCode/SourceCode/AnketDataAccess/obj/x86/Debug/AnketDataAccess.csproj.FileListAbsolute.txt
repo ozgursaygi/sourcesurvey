@@ -1,0 +1,9 @@
+D:\BaseWebSite\AnketDataAccess\bin\x86\Debug\AnketDataAccess.dll
+D:\BaseWebSite\AnketDataAccess\bin\x86\Debug\AnketDataAccess.pdb
+D:\BaseWebSite\AnketDataAccess\bin\x86\Debug\BaseClasses.dll
+D:\BaseWebSite\AnketDataAccess\bin\x86\Debug\BaseDB.dll
+D:\BaseWebSite\AnketDataAccess\bin\x86\Debug\BaseClasses.pdb
+D:\BaseWebSite\AnketDataAccess\bin\x86\Debug\BaseDB.pdb
+D:\BaseWebSite\AnketDataAccess\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\BaseWebSite\AnketDataAccess\obj\x86\Debug\AnketDataAccess.dll
+D:\BaseWebSite\AnketDataAccess\obj\x86\Debug\AnketDataAccess.pdb

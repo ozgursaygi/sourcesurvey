@@ -1,0 +1,5 @@
+D:\BaseWebSite\BaseDB\bin\x86\Debug\BaseDB.dll
+D:\BaseWebSite\BaseDB\bin\x86\Debug\BaseDB.pdb
+D:\BaseWebSite\BaseDB\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\BaseWebSite\BaseDB\obj\x86\Debug\BaseDB.dll
+D:\BaseWebSite\BaseDB\obj\x86\Debug\BaseDB.pdb

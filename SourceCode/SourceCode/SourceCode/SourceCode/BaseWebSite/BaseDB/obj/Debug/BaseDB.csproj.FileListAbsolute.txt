@@ -1,0 +1,14 @@
+D:\BaseWebSite\BaseDB\bin\Debug\BaseDB.dll
+D:\BaseWebSite\BaseDB\bin\Debug\BaseDB.pdb
+D:\BaseWebSite\BaseDB\obj\Debug\ResolveAssemblyReference.cache
+D:\BaseWebSite\BaseDB\obj\Debug\BaseDB.dll
+D:\BaseWebSite\BaseDB\obj\Debug\BaseDB.pdb
+C:\WebApps\BaseWebSite\BaseDB\bin\Debug\BaseDB.dll
+C:\WebApps\BaseWebSite\BaseDB\bin\Debug\BaseDB.pdb
+C:\WebApps\BaseWebSite\BaseDB\obj\Debug\BaseDB.dll
+C:\WebApps\BaseWebSite\BaseDB\obj\Debug\BaseDB.pdb
+C:\WebApps\BaseSurvey\BaseDB\bin\Debug\BaseDB.dll
+C:\WebApps\BaseSurvey\BaseDB\bin\Debug\BaseDB.pdb
+C:\WebApps\BaseSurvey\BaseDB\obj\Debug\BaseDB.dll
+C:\WebApps\BaseSurvey\BaseDB\obj\Debug\BaseDB.pdb
+C:\WebApps\BaseSurvey\BaseDB\obj\Debug\BaseDB.csproj.CoreCompileInputs.cache
